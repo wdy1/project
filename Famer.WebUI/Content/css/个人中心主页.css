@@ -1,0 +1,476 @@
+﻿#usernav{
+    background: #e2231a;
+    width: 100%;
+}
+#usernav .w{
+    background: #e2231a;
+    width: 990px;
+    margin: 0 auto;
+}
+#usernav .w .zn-logo{
+    position: relative;
+    float: left;
+    width: 272px;
+    height: 80px;
+    overflow: hidden;
+}
+#usernav a{
+    color: #fff;
+    text-decoration: none;
+}
+#usernav .zn-logo .logo-fore1{
+    float: left;
+    margin-right: 10px;
+    width: 158px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 38px;
+    font-family: "华文隶书";
+}
+#usernav .zn-logo .logo-fore2{
+    float: left;
+    font-size: 20px;
+    height: 22px;
+    font-family: "microsoft yahei";
+    margin: 20px 0 0 6px;
+}
+#usernav .zn-logo .logo-fore3{
+    float: left;
+    margin: 5px 0 0;
+    color: #ffb2b2;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 10px;
+    box-sizing: content-box;
+    border-radius: 10px;
+    border: 1px solid #ffb2b2;
+    transition: all 0.25s ease;
+}
+#usernav .zn-logo .logo-fore3:hover{
+    color: #e4393c;
+    background: #fff;
+    border-color: #fff;
+}
+
+/* 个人设置 */
+#usernav .navitems{
+    float: left;
+    height: 36px;
+    width: 342px;
+    padding: 22px 0;
+    margin: 0 0 0 30px;
+    font-size: 14px;
+    box-sizing: content-box;
+    line-height: 36px;
+}
+#usernav .navitems ul{
+    display: block;
+    list-style: none;
+    /* 由于ul元素默认在除IE浏览器外自动加内边距40px 因此定义ul元素样式时有必要手动消除 */
+    padding: 0;
+    margin: 0;
+}
+/* 清除浮动 */
+#usernav .navitems ul:after{
+    content: '';
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+}
+#usernav .navitems ul li.fore-1{
+    float: left;
+    margin: 0 20px 0 0;
+    list-style: none;
+}
+#usernav .navitems ul li.fore-2{
+    float: left;
+    margin: 0;
+}
+#usernav .navitems .fore-2 .dl{
+    position: relative;
+}
+/* 鼠标悬浮效果 start*/
+#usernav .navitems .fore-2 .dl:hover{
+    z-index: 10;
+}
+#usernav .navitems .fore-2 .dl:hover .dt{
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    border-bottom: 0;
+    box-shadow: 0 3px 5px rgba(153,153,153,.5);
+}
+#usernav .navitems .fore-2 .dl:hover .dt span{
+    color: #333;
+}
+#usernav .navitems .fore-2 .dl:hover .dt b{
+    background-position: 0 -135px;
+    transform: rotate(180deg);
+}
+#usernav .navitems .fore-2 .dl:hover .dd{
+    display: block;
+}
+/* end */
+#usernav .navitems .fore-2 .dl .dt{
+    white-space: nowrap;
+    height: 18px;
+    line-height: 18px;
+    padding: 9px 16px;
+    width: 74px;
+    box-sizing: content-box;
+}
+#usernav .navitems .user-set{
+    color: #fff;
+}
+#usernav .navitems .fore-2 b{
+    display: inline-block;
+    vertical-align: middle;
+    width: 9px;
+    height: 6px;
+    overflow: hidden;
+    margin-left: 5px;
+    background: url("../../Images/icon.png") 0 -120px no-repeat;
+    transition: transform .2s ease-in 0s;
+}
+#usernav .navitems .fore-2 .dl .dd{
+    /* 相对于dl绝对定位 */
+    position: absolute;
+    top: 34px;
+    left: 0;
+    display: none;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: 0;
+    font-size: 12px;
+}
+#usernav .navitems .fore-2 .dl .dd a{
+    display: block;
+    text-decoration: none;
+    width: 88px;
+    box-sizing: content-box;
+    padding: 0 0 0 16px;
+    line-height: 30px;
+    color: #333;
+    position: relative;
+}
+#usernav .navitems .fore-2 .dl .dd a:hover{
+    color: red;
+}
+/* 右边搜索框 */
+#usernav .nav-right{
+    float: right;
+    width: 340px;
+    margin-right: 5px;
+}
+#usernav .nav-right .search-2018{
+    position: relative;
+    z-index: 11;
+    margin-top: 25px;
+    float: left;
+    width: 186px;
+}
+#usernav .nav-right .search-2018 .form{
+    width: auto;
+    height: 36px;
+}
+#usernav .nav-right .search-2018 .text{
+    width: 120px;
+    border: 0;
+    float: left;
+    height: 24px;
+    line-height: 24px;
+    color: #666;
+    padding: 4px;
+    box-sizing: content-box;
+    margin-bottom: 4px;
+    outline: 0;
+    font-size: 14px;
+    font-family: "microsoft yahei";
+}
+#usernav .nav-right .search-2018 .button{
+    width: 56px;
+    font-size: 12px;
+    height: 32px;
+    color: #333;
+    background-color: #f7f7f7;
+    float: left;
+    border: none;
+    border-radius: 0;
+    line-height: 1;
+    cursor: pointer;
+    font-family: "microsoft yahei";
+}
+/* 主体内容 */
+#container{
+    background: #f5f5f5;
+}
+#container .w{
+    width: 990px;
+    margin: 0 auto;
+}
+#container .w #content{
+    padding-left: 120px;
+    padding-top: 20px;
+    display: block;
+    box-sizing: content-box;
+}
+/* 主体内容的导航 */
+#container .w #sub{
+    float: left;
+    width: 120px;
+    left: -120px;
+    position: relative;
+}
+#container .w #menu{
+    width: 100px;
+    padding-left: 10px;
+    box-sizing: content-box;
+}
+#container .w #menu dl.sub-fore{
+    padding-bottom: 15px;
+}
+#container .w #menu dl dt{
+    height: 28px;
+    line-height: 28px;
+    color: #333;
+    font-weight: 700;
+}
+#container .w #menu dl dd{
+    color: #666;
+    line-height: 25px;
+}
+#container .w #menu dl dd a{
+    font-weight: 700;
+    text-decoration: none;
+    color: #777;
+}
+#container .w #menu dl dd a:hover{
+    color: red;
+}
+/* 个人信息显示 */
+#container .w #main{
+    float: left;
+    width: 99.9%;
+    margin-left: -120px;
+    overflow: hidden;
+}
+#container .w #main .user-main{
+    padding: 10px;
+    background: #fff;
+    margin-bottom: 20px;
+    box-sizing: content-box;
+}
+#container .w #main .user-main .mt{
+    display: block;
+    padding: 10px;
+    overflow: hidden;
+    zoom: 1;
+    box-sizing: content-box;
+}
+#container .w #main .user-main .mt ul{
+    list-style: none;
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+#container .w #main .mt ul li{
+    float: left;
+    padding-left: 20px;
+}
+#container .w #main .mt ul li a{
+    display: inline-block;
+    padding-bottom: 0;
+    box-sizing: content-box;
+    color: #999;
+    text-decoration: none;
+}
+#container .w #main .mt ul li a:hover{
+    color: red;
+}
+#container .w #main .mt .now a{
+    color: #e4393c;
+    cursor: pointer;
+    border-bottom: 2px solid #e4393c;
+    font-weight: 700;
+}
+#container .w #main .mc{
+    overflow: visible;
+}
+#container .w #main .mc-item2,#container .w #main .mc-item3{
+    display: none;
+}
+/* 基本设置选项卡样式  start*/
+#container .w #main .mc .mc-item1 .basi-set{
+    width: 500px;
+    float: left;
+    padding: 20px 5px 0 15px;
+}
+#container .w #main .mc p{
+    margin: 0;
+    padding: 0;
+    margin-top: 6px;
+}
+#container .w #main .mc em{
+    color: #e4393c;
+    font-style: normal;
+}
+#container .w #main .mc .mc-item1 a.set-change{
+    text-decoration: none;
+    color: #005ea7;
+    margin-left: 10px;
+    display: inline-block;
+    margin-top: 6px;
+}
+#container .w #main .mc .mc-item1 a.set-change:hover{
+    color: red;
+}
+#container .w #main .mc .mc-item1 input.sexradio{
+    margin-right: 3px;
+    vertical-align: -2px;
+}
+#container .mr10{
+    margin-right: 10px;
+}
+#container .m5{
+    margin: 0 5px 0 5px;
+}
+textarea{
+    resize: none;
+}
+#container .w #main .mc .mc-item1 .user-info{
+    overflow: hidden;
+    width: 280px;
+    float: left;
+    padding: 10px;
+    box-sizing: content-box;
+    height: 102px;
+    border: 1px solid #ccc;
+    line-height: 20px;
+    background: #f9f9f9;
+    margin-bottom: 10px;
+}
+#container .w #main .mc .mc-item1 .user-info .u-img{
+    position: relative;
+    z-index: 0;
+    width: 104px;
+    height: 104px;
+    overflow: hidden;
+    text-align: center;
+    margin-right: 6px;
+    float: left;
+}
+#container .w #main .mc .mc-item1 .u-img .mask{
+    background: url("../../Images/头像bg.png") 0 0;
+    width: 104px;
+    height: 104px;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 2;
+}
+#container .w #main .mc .mc-item1 .u-info{
+    float: left;
+    width: 170px;
+}
+#container .w #main .mc-item1 .u-info s{
+    background: url("../../Images/分享图标.png");
+    width: 19px;
+    height: 19px;
+    margin-right: 3px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    display: inline-block;
+}
+#container .w #main .mc-item1 .u-info .u-level{
+    margin-bottom: 5px;
+    height: 18px;
+}
+#container .w #main .mc-item1 .u-info .u-level .rank{
+    margin-right: 10px;
+    height: 19px;
+    line-height: 19px;
+    display: inline-block;
+}
+#container .w #main .mc-item1 .u-info .u-level .rank a{
+    color: #f03435;
+    font-family: simson;
+    display: inline-block;
+    vertical-align: middle;
+}
+#container .w #main .mc-item1 .u-info a{
+    color: #005ea7;
+    text-decoration: none;
+}
+#container .w #main .mc-item1 .annotate{
+    float: right;
+    width: 280px;
+    text-align: center;
+}
+#container .w #main .mc-item1 .annotate a{
+    color: #005ea7;
+    margin-left: 5px;
+}
+/* end */
+/* 头像照片选项样式 */
+#container .w #main .mc-item2{
+    padding: 20px 0;
+    box-sizing: content-box;
+    overflow: visible;
+    zoom: 1;
+}
+#container .w #main .photo-set{
+    padding: 0 30px;
+    width: 470px;
+    float: left;
+    border-right: 1px solid #e9eaec;
+    box-sizing: content-box;
+}
+#container .w #main .photo-set form{
+    margin-bottom: 9px;
+}
+#container .photo-set .btn input{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    background: transparent;
+    cursor: default;
+}
+#container .w #main .mc-item2 #upload-file-info{
+    margin-top: 5px;
+    padding: 5px 0;
+}
+#container .w #main .mc .mc-item2 .photo-set .img-count{
+    position: relative;
+    width: 470px;
+    height: 236px;
+    display: table;
+    text-align: center;
+    background: #f9f9f9;
+    box-sizing: content-box;
+    border: 1px solid #e9eaec;
+    margin-bottom: 20px;
+}
+#container .w #main .mc .photo-set .img-count .header-img{
+    /*  该元素将作为表格的单元格显示，使得vertical-align生效的重要条件
+         table-cell元素无法拥有margin值 它与父元素的距离使用 top,left来设置
+    */
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    z-index: 5;
+}
+#container .w #main .mc .mc-item2 .photo-set .recommend{
+    overflow: hidden;
+    zoom: 1;
+}
+#main .mc-item2 .recommend h3{
+    font-family: "microsoft yahei";
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0;
+}

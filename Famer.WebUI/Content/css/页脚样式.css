@@ -1,0 +1,128 @@
+﻿.mod-footer{
+    background-color: #00c65d;
+    height: 480px;
+}
+.mod-footer .mod-footer-service{
+    padding: 50px 0 40px;
+    box-sizing: content-box;
+    width: 1190px;
+    margin: 0 auto;
+}
+.mod-footer .mod-footer-service li.mod-footer-service-item{
+    position: relative;
+    float: left;
+    width: 20%;
+    list-style: none;
+}
+.mod-footer .mod-footer-service li:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -10px;
+    width: 1px;
+    height: 22px;
+    background: hsla(0,0%,100%,.34);
+}
+/* 取消第一个分割线 */
+.mod-footer .mod-footer-service li:first-child:before{
+    width: 0;
+}
+.mod-footer .mod-footer-service .mod-footer-service-item .mod-footer-item-inner{
+    position: relative;
+    margin: 0 30px;
+    padding-left: 50px;
+    box-sizing: content-box;
+}
+.mod-footer .mod-footer-service .mod-footer-item-inner i{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -20px;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    color: #fff;
+}
+.mod-footer .mod-footer-service .mod-footer-item-inner .mod-footer-item-title{
+    font-size: 18px;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+.mod-footer .mod-footer-service .mod-footer-item-inner .mod-footer-item-des{
+    color: hsla(0,0%,100%,.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+.mod-footer .mod-footer-main{
+    height: 254px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(34,34,34,.2);
+    width: 1190px;
+    margin: 0 auto;
+    box-sizing: content-box;
+}
+.mod-footer .mod-footer-main .mod-footer-qrcode{
+    float: left;
+    width: 400px;
+}
+.mod-footer .mod-footer-main .mod-footer-guide{
+    float: left;
+}
+.mod-footer .mod-footer-main .mod-footer-qrcode .qrcode-item{
+    float: left;
+    width: 140px;
+    margin-right: 60px;
+    list-style: none;
+}
+.mod-footer .mod-footer-main img{
+    margin-bottom: 10px;
+}
+.mod-footer .mod-footer-main .qrcode-item .qr-item-title{
+    font-size: 16px;
+    white-space: nowrap;
+    text-align: center;
+    color: #00632e;
+}
+.mod-footer .mod-footer-main .mod-footer-guide .mod-footer-guide-item{
+    float: left;
+    list-style: none;
+    width: 195px;
+}
+.mod-footer .mod-footer-guide-item .guide-item-title{
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #fff;
+}
+.mod-footer .mod-footer-guide-item .guide-item-body .item-body-item{
+    display: block;
+    margin: 0 0 3px;
+    color: hsla(0,0%,100%,.5);
+    cursor: pointer;
+    white-space:nowrap;
+    font-size: 14px;
+    font-family: "microsoft yahei";
+    text-decoration: none;
+    width: 30%;
+}
+.mod-footer .mod-footer-guide-item .guide-item-body .item-body-item.no-hover:hover{
+    color: hsla(0,0%,100%,.5);
+}
+.mod-footer .mod-footer-guide-item .guide-item-body .item-body-item.no-hover{
+    cursor: text;
+    width: 75%;
+}
+.mod-footer .mod-footer-guide-item .guide-item-body .item-body-item:hover{
+    color: #FFF;
+}
+.mod-footer .mod-footer-copyright{
+    text-align: center;
+    font-family: Tahoma,Helvetica,sans-serif;
+    color: rgba(0,0,0,.5);
+}

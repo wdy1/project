@@ -1,0 +1,370 @@
+﻿body {
+    font: 12px/150% tahoma,arial,Microsoft YaHei,Hiragino Sans GB,"\u5b8b\u4f53",sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #666;
+    background: #fff
+}
+a{
+    color: #666;
+}
+a:hover{
+    color: #f30213;
+}
+.top-wrapper{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background: #fff;
+}
+.top-wrapper .top-content{
+    color: #666;
+    position: relative !important;
+    width: 1190px !important;
+    margin: 0 auto;
+}
+.top-wrapper .content-left{
+    float: left;
+    margin-bottom: 0;
+}
+.content-left li{
+    float: left;
+    height: 30px;
+    padding: 0 2px;
+}
+.top-wrapper ul{
+    list-style: none;
+    margin-bottom: 0;
+}
+.top-wrapper .dropdown{
+    /* 子元素dropdown-layer 将会相对于该元素定位*/
+    position: relative;
+}
+.top-wrapper .dropdown-layer{
+    display: none;
+    position: absolute;
+}
+.top-wrapper .dropdown:hover .dropdown-layer,.top-wrapper .hover .dropdown-layer{
+    display: block;
+}
+.cw-icon{
+    position: relative;
+    cursor: default;
+    zoom: 1;
+}
+/* 图标 */
+.content-left i{
+    font-size: 16px;
+    color: #5c5452;
+    display: inline-block;
+    position: relative;
+}
+/* 链接 */
+.top-wrapper .top-content a{
+    text-decoration: none;
+    color: #666;
+    font: 12px/1.5 "Microsoft Himalaya";
+    cursor: pointer;
+}
+.top-wrapper .top-content a:hover{
+    color: #f30213;
+}
+.top-wrapper #address{
+    padding-left: 0;
+}
+/* 接下来的两组代码使得鼠标移入时不会有晃动元素的效果  很神奇*/
+.top-wrapper #address .dt{
+    float: left;
+    padding: 0 25px 0 10px
+}
+.top-wrapper #address:hover .dt{
+    padding: 0 24px 0 9px;
+}
+
+.top-wrapper li.dropdown{
+    z-index: 13;
+}
+
+.top-wrapper li.dropdown:hover .dt{
+    background-color: #fff;
+    border: solid #ddd;
+    border-width: 0 1px;
+}
+
+/* 隐藏部分 */
+.top-wrapper .dd-spacer{
+    position: absolute;
+    top: -7px;
+    height: 10px;
+    background: #fff;
+    overflow: hidden;
+}
+.top-wrapper .dd{
+    line-height: 24px;
+}
+.top-wrapper .dropdown-layer{
+    top: 30px;
+    background: #fff;
+    border: 1px solid #ddd;
+    *left: 1px;
+}
+/* 地址 */
+.top-wrapper #address .dd{
+    width: 315px;
+    padding: 10px 0 10px 10px;
+}
+.top-wrapper #address .item{
+    float: left;
+    width: 60px;
+    padding: 1px 0;
+}
+.top-wrapper #address .item a{
+    float: left;
+    padding: 7px 7px;
+    padding-bottom: 2px;
+    cursor: pointer;
+    text-align: center;
+}
+.top-wrapper #address .item a:hover{
+    background: #f4f4f4;
+}
+.top-wrapper #address .item a.selected{
+    background: #f30213;
+    color: #fff;
+}
+.top-wrapper .top-content ul.content-right{
+    float: right;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 7%
+}
+.content-right i{
+    display: block;
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    width: 12px;
+    height: 12px;
+    line-height: 12px;
+    transition: transform 0.2s ease-in 0s;
+}
+/* 登录 */
+#login .dt{
+    box-sizing: content-box;
+    float: left;
+    padding-right: 72px;
+    padding-left: 8px;
+}
+
+#login:hover i:first-child{
+    transform: rotate(180deg);
+}
+#login .dropdown-layer{
+    width: 280px;
+    box-sizing: content-box;
+}
+#login .dd-spacer{
+    width: 154px;
+}
+#login .u-plus{
+    padding: 10px 0 0;
+    overflow: hidden;
+}
+#login a.username{
+    overflow: hidden;
+    width: 70px;
+    white-space: nowrap;
+    display: block;
+    text-align: right;
+    padding-top: 9px;
+}
+#login .userinfo{
+    box-sizing: content-box;
+    padding: 10px 0 10px 15px;
+    overflow: hidden;
+}
+#login .u-pic{
+    float: left;
+    margin-right: 10px;
+}
+#login i.icon-plus {
+    position: absolute;
+    right: 27px;
+    display: block;
+    top: 7px;
+    width: 38px;
+    height: 16px;
+    background: #d7d4cb url("../../Images/会员等级.png") no-repeat 0 -68px;
+}
+#login a.icon-plus{
+    width: 80px;
+    display: block;
+    height: 16px;
+    background: url("../../Images/会员等级.png") no-repeat 0 -34px;
+}
+#login .login-out{
+    margin-top: 5px;
+    float: right;
+    margin-right: 10px;
+    line-height: 1.2;
+}
+#login .u-msg{
+    font-family: simsun,Hiragino Sans GB,sans-serif;
+    padding-top: 4px;
+}
+li.dropdown:hover{
+    padding: 0 1px;
+}
+li.dropdown:hover .dt{
+    background: #fff;
+    border:0px slide #ddd;
+    border-width: 0 1px;
+}
+.top-wrapper #login{
+    margin-right: 10px;
+}
+.top-wrapper #login .link-login{
+    font-family: "verdana,simsun";
+}
+.top-wrapper #login .style-red{
+    color: #f30213;
+}
+.content-right li{
+    float: left;
+    height: 30px;
+    padding: 0 2px;
+}
+/* 分割线 */
+.content-right li.spacer{
+    width: 1.2px;
+    height: 15px;
+    margin-top: 9px;
+    padding: 0;
+    background-color: #bbb;
+    overflow: hidden;
+}
+.content-right .fore2 .dt{
+    float: left;
+    padding: 0 8px;
+}
+/* 我的农场 */
+.top-wrapper #myfamer .dt{
+    box-sizing: content-box;
+    float: left;
+    width: 49px;
+    padding: 0 25px 0 10px;
+}
+
+.top-wrapper #myfamer:hover .dt i{
+    transform: rotate(180deg);
+}
+.top-wrapper #myfamer .dd-spacer{
+    width: 84px;
+    left: 0;
+}
+.top-wrapper #myfamer .dropdown-layer{
+    width: 280px;
+}
+.top-wrapper #myfamer .myfmlist1,.top-wrapper #myfamer .myfmlist2{
+    /* 纯内容宽度 265px 整个页面属于 border-box*/
+    box-sizing: content-box;
+    width: 265px;
+    padding: 5px 0 5px 15px;
+    overflow: hidden;
+}
+.top-wrapper #myfamer .myfmlist2{
+    border: 1px solid #f1f1f1;
+}
+.top-wrapper #myfamer .myfmlist1 .fore1,.top-wrapper #myfamer .myfmlist1 .fore2,.top-wrapper #myfamer .myfmlist2 .fore1,.myfmlist2 .fore2{
+    float: left;
+    width: 126px;
+}
+/* 我的会员 */
+.top-wrapper #mymember .dt{
+    float: left;
+    padding: 0 8px;
+}
+/* 企业采购 */
+.top-wrapper #enterprise .dt{
+    box-sizing: content-box;
+    width: 49px;
+    padding: 0 25px 0 10px;
+}
+
+.top-wrapper #enterprise:hover .dt i{
+    transform: rotate(180deg);
+}
+.top-wrapper #enterprise .dd-spacer{
+    width: 84px;
+    left: 0;
+}
+.top-wrapper #enterprise .item{
+    display: inline-block;
+    width: 56px;
+    white-space: nowrap;
+}
+.top-wrapper #enterprise .dd{
+    box-sizing: content-box;
+    left: 1px;
+    width: 140px;
+    padding: 6px 0 10px 15px;
+}
+/* 客服服务 */
+.top-wrapper #serve .dt{
+    color: #666;
+    box-sizing: content-box;
+    width:49px;
+    padding: 0 25px 0 10px;
+}
+
+.top-wrapper #serve:hover .dt i{
+    transform: rotate(180deg);
+}
+.top-wrapper #serve .dd{
+    box-sizing: content-box;
+    width: 175px;
+    right: 1px;
+    padding: 10px 0;
+}
+.top-wrapper #serve .dd-spacer{
+    width: 84px;
+    right: 0;
+}
+.top-wrapper #serve .item-client{
+    font-weight: 700;
+    color: indianred;
+    padding-left: 10px;
+}
+.top-wrapper #serve .item{
+    padding-left: 10px;
+    width: 70px;
+    display: inline-block;
+}
+.top-wrapper #serve .item-business{
+    border-top: 1px dotted #eee;
+    padding-top: 5px;
+    margin-top: 5px;
+    padding-left: 10px;
+    font-weight: 700;
+    color: indianred;
+}
+/* 全站导航列表 */
+.top-wrapper #navs .dt{
+    color: #666;
+    box-sizing: content-box;
+    width: 49px;
+    padding: 0 25px 0 10px;
+}
+.top-wrapper #navs:hover .dt i{
+    transform: rotate(-270deg);
+    color: #111111;
+}
+.top-wrapper #navs .dd{
+    width: 1280px;
+    right: -69px;
+    padding: 20px 0 16px;
+}
+.top-wrapper #nav .dd-spacer{
+    right: 0px;
+    width: 82px;
+}

@@ -1,0 +1,761 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{82EA7148-93FE-4B10-89B7-2C1CE3E5C783}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Famer.WebUI</RootNamespace>
+    <AssemblyName>Famer.WebUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.0.0.7\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MVC3.3.0.0.6\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivator, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivator.1.5\lib\net40\WebActivator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\animate.min.css" />
+    <Content Include="Content\bootstrap - 2.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrapValidator.css" />
+    <Content Include="Content\bootstrapValidator.min.css" />
+    <Content Include="Content\css\FreshNews.css" />
+    <Content Include="Content\css\Login.css" />
+    <Content Include="Content\css\Register.css" />
+    <Content Include="Content\css\个人中心主页.css" />
+    <Content Include="Content\css\优选一百样式.css" />
+    <Content Include="Content\css\供应信息详情信息.css" />
+    <Content Include="Content\css\供应大厅分类导航栏.css" />
+    <Content Include="Content\css\入驻表单样式.css" />
+    <Content Include="Content\css\全局右侧工具条.css" />
+    <Content Include="Content\css\功能主页二级页面.css" />
+    <Content Include="Content\css\功能主页导航栏.css" />
+    <Content Include="Content\css\助农学堂.css" />
+    <Content Include="Content\css\商品详情页.css" />
+    <Content Include="Content\css\商家登录.css" />
+    <Content Include="Content\css\新闻详情页样式.css" />
+    <Content Include="Content\css\购物车主页样式.css" />
+    <Content Include="Content\css\页脚样式.css" />
+    <Content Include="Content\flaticon.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\gloab.css" />
+    <Content Include="Content\IntroducedStyle.css" />
+    <Content Include="Content\normalize.min.css" />
+    <Content Include="Content\css\功能主页产品类.css" />
+    <Content Include="Content\css\功能主页类别层.css" />
+    <Content Include="Content\css\功能主页轮播图.css" />
+    <Content Include="Content\css\主页搜索栏.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\iconfont.css" />
+    <Content Include="fonts\iconfont.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\1五谷杂粮\1谷类\小麦1.jpg" />
+    <Content Include="Images\1五谷杂粮\1谷类\小麦2.jpg" />
+    <Content Include="Images\1五谷杂粮\1谷类\玉米1.jpg" />
+    <Content Include="Images\1五谷杂粮\1谷类\玉米2.jpg" />
+    <Content Include="Images\1五谷杂粮\1谷类\稻谷1.jpg" />
+    <Content Include="Images\1五谷杂粮\1谷类\稻谷2.jpg" />
+    <Content Include="Images\1五谷杂粮\2杂粮\扁豆1.jpg" />
+    <Content Include="Images\1五谷杂粮\2杂粮\扁豆2.jpg" />
+    <Content Include="Images\1五谷杂粮\2杂粮\绿豆1.jpg" />
+    <Content Include="Images\1五谷杂粮\2杂粮\绿豆2.jpg" />
+    <Content Include="Images\1五谷杂粮\3油料\花生1.jpg" />
+    <Content Include="Images\1五谷杂粮\3油料\花生2.jpg" />
+    <Content Include="Images\1五谷杂粮\3油料\花生3.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\柚子\柚子.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\柚子\柚子2.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\柚子\柚子3.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\柚子\柚子4.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\柚子\柚子5.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\柚子\柚子6.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\柚子\柚子7.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\柚子\柚子8.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\梨1.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\梨2.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\梨\梨.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\梨\梨2.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\梨\梨3.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\梨\梨4.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\梨\梨5.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\梨\梨6.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\梨\梨7.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\梨\梨8.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\精选苹果.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\苹果1.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\苹果2.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\苹果\苹果.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\苹果\苹果10.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\苹果\苹果11.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\苹果\苹果12.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\苹果\苹果13.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\苹果\苹果14.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\苹果\苹果2.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\苹果\苹果3.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\苹果\苹果4.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\苹果\苹果5.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\苹果\苹果6.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\苹果\苹果7.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\苹果\苹果8.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\苹果\详情页展示\苹果.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\苹果\详情页展示\苹果2.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\苹果\详情页展示\苹果3.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\苹果\详情页展示\苹果4.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\苹果\详情页展示\苹果5.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\车厘子\车厘子.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\车厘子\车厘子2.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\车厘子\车厘子3.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\车厘子\车厘子4.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\车厘子\车厘子5.jpg" />
+    <Content Include="Images\2新鲜瓜果\1仁果类\车厘子\车厘子6.jpg" />
+    <Content Include="Images\2新鲜瓜果\2核果类\枣子1.jpg" />
+    <Content Include="Images\2新鲜瓜果\2核果类\枣子2.jpg" />
+    <Content Include="Images\2新鲜瓜果\2核果类\桃子1.jpg" />
+    <Content Include="Images\2新鲜瓜果\2核果类\桃子2.jpg" />
+    <Content Include="Images\2新鲜瓜果\3浆果类\葡萄1.jpg" />
+    <Content Include="Images\2新鲜瓜果\3浆果类\葡萄2.jpg" />
+    <Content Include="Images\2新鲜瓜果\3浆果类\香蕉1.jpg" />
+    <Content Include="Images\2新鲜瓜果\3浆果类\香蕉2.jpg" />
+    <Content Include="Images\2新鲜瓜果\4坚果类\板栗1.jpg" />
+    <Content Include="Images\2新鲜瓜果\4坚果类\板栗2.jpg" />
+    <Content Include="Images\2新鲜瓜果\4坚果类\核桃1.jpg" />
+    <Content Include="Images\2新鲜瓜果\4坚果类\核桃2.jpg" />
+    <Content Include="Images\2新鲜瓜果\5复果类\菠萝1.jpg" />
+    <Content Include="Images\2新鲜瓜果\5复果类\菠萝2.jpg" />
+    <Content Include="Images\2新鲜瓜果\6柑桔类\甜橙.jpg" />
+    <Content Include="Images\2新鲜瓜果\6柑桔类\甜橙2.jpg" />
+    <Content Include="Images\2新鲜瓜果\6柑桔类\甜橙3.jpg" />
+    <Content Include="Images\2新鲜瓜果\6柑桔类\甜橙4.jpg" />
+    <Content Include="Images\2新鲜瓜果\6柑桔类\甜橙5.jpg" />
+    <Content Include="Images\2新鲜瓜果\6柑桔类\甜橙6.jpg" />
+    <Content Include="Images\2新鲜瓜果\6柑桔类\甜橙7.jpg" />
+    <Content Include="Images\2新鲜瓜果\6柑桔类\甜橙8.jpg" />
+    <Content Include="Images\2新鲜瓜果\6柑桔类\脐橙1.jpg" />
+    <Content Include="Images\2新鲜瓜果\6柑桔类\脐橙2.jpg" />
+    <Content Include="Images\2新鲜瓜果\7瓜类\西瓜1.jpg" />
+    <Content Include="Images\2新鲜瓜果\7瓜类\西瓜2.jpg" />
+    <Content Include="Images\2新鲜瓜果\水果礼盒\水果礼盒1.jpg" />
+    <Content Include="Images\2新鲜瓜果\水果礼盒\水果礼盒2.jpg" />
+    <Content Include="Images\2新鲜瓜果\水果礼盒\水果礼盒3.png" />
+    <Content Include="Images\2新鲜瓜果\水果礼盒\水果礼盒4.jpg" />
+    <Content Include="Images\2新鲜瓜果\水果礼盒\水果礼盒5.jpg" />
+    <Content Include="Images\2新鲜瓜果\水果礼盒\水果礼盒6.jpg" />
+    <Content Include="Images\2新鲜瓜果\水果礼盒\水果礼盒7.jpg" />
+    <Content Include="Images\2新鲜瓜果\百香果\百香果1.jpg" />
+    <Content Include="Images\2新鲜瓜果\百香果\百香果2.jpg" />
+    <Content Include="Images\2新鲜瓜果\百香果\百香果3.png" />
+    <Content Include="Images\2新鲜瓜果\百香果\百香果4.jpg" />
+    <Content Include="Images\2新鲜瓜果\蓝莓\蓝莓1.jpg" />
+    <Content Include="Images\2新鲜瓜果\蓝莓\蓝莓2.jpg" />
+    <Content Include="Images\2新鲜瓜果\蓝莓\蓝莓3.jpg" />
+    <Content Include="Images\2新鲜瓜果\蓝莓\蓝莓4.jpg" />
+    <Content Include="Images\2新鲜瓜果\蓝莓\蓝莓5.jpg" />
+    <Content Include="Images\2新鲜瓜果\蓝莓\蓝莓6.jpg" />
+    <Content Include="Images\2新鲜瓜果\蓝莓\蓝莓7.jpg" />
+    <Content Include="Images\2新鲜瓜果\蓝莓\蓝莓8.jpg" />
+    <Content Include="Images\2新鲜瓜果\蓝莓\蓝莓9.jpg" />
+    <Content Include="Images\3时鲜蔬菜\1根菜类\萝卜1.jpg" />
+    <Content Include="Images\3时鲜蔬菜\1根菜类\萝卜2.jpg" />
+    <Content Include="Images\3时鲜蔬菜\2茎菜类\莴笋1.jpg" />
+    <Content Include="Images\3时鲜蔬菜\2茎菜类\莴笋2.jpg" />
+    <Content Include="Images\3时鲜蔬菜\3叶菜类\小白菜1.jpg" />
+    <Content Include="Images\3时鲜蔬菜\3叶菜类\小白菜2.jpg" />
+    <Content Include="Images\3时鲜蔬菜\4果菜类\茄子1.jpg" />
+    <Content Include="Images\3时鲜蔬菜\4果菜类\茄子2.jpg" />
+    <Content Include="Images\3时鲜蔬菜\5花菜类\西兰花1.jpg" />
+    <Content Include="Images\3时鲜蔬菜\5花菜类\西兰花2.jpg" />
+    <Content Include="Images\3时鲜蔬菜\食用菌类\香菇1.jpg" />
+    <Content Include="Images\3时鲜蔬菜\食用菌类\香菇2.jpg" />
+    <Content Include="Images\4肉类蛋品\1肉制品\猪肉1.jpg" />
+    <Content Include="Images\4肉类蛋品\1肉制品\猪肉2.jpg" />
+    <Content Include="Images\4肉类蛋品\2蛋类\鸡蛋1.jpg" />
+    <Content Include="Images\4肉类蛋品\2蛋类\鸡蛋2.jpg" />
+    <Content Include="Images\4肉类蛋品\3乳制品\牛乳1.jpg" />
+    <Content Include="Images\4肉类蛋品\3乳制品\牛乳2.jpg" />
+    <Content Include="Images\4肉类蛋品\4皮毛\羊绒1.jpg" />
+    <Content Include="Images\4肉类蛋品\4皮毛\羊绒2.jpg" />
+    <Content Include="Images\4肉类蛋品\4皮毛\羊绒3.jpg" />
+    <Content Include="Images\4肉类蛋品\五花肉\五花肉1.jpg" />
+    <Content Include="Images\4肉类蛋品\五花肉\五花肉2.jpg" />
+    <Content Include="Images\4肉类蛋品\五花肉\五花肉3.jpg" />
+    <Content Include="Images\4肉类蛋品\五花肉\五花肉4.jpg" />
+    <Content Include="Images\4肉类蛋品\五花肉\五花肉5.jpg" />
+    <Content Include="Images\4肉类蛋品\五花肉\五花肉6.jpg" />
+    <Content Include="Images\4肉类蛋品\五花肉\五花肉7.jpg" />
+    <Content Include="Images\4肉类蛋品\五花肉\五花肉8.jpg" />
+    <Content Include="Images\4肉类蛋品\五花肉\五花肉9.jpg" />
+    <Content Include="Images\4肉类蛋品\汤骨\汤骨1.jpg" />
+    <Content Include="Images\4肉类蛋品\汤骨\汤骨2.jpg" />
+    <Content Include="Images\4肉类蛋品\汤骨\汤骨3.jpg" />
+    <Content Include="Images\4肉类蛋品\汤骨\汤骨4.jpg" />
+    <Content Include="Images\4肉类蛋品\汤骨\汤骨5.jpg" />
+    <Content Include="Images\4肉类蛋品\牛排\牛排1.jpg" />
+    <Content Include="Images\4肉类蛋品\牛排\牛排10.jpg" />
+    <Content Include="Images\4肉类蛋品\牛排\牛排2.jpg" />
+    <Content Include="Images\4肉类蛋品\牛排\牛排3.jpg" />
+    <Content Include="Images\4肉类蛋品\牛排\牛排4.jpg" />
+    <Content Include="Images\4肉类蛋品\牛排\牛排5.jpg" />
+    <Content Include="Images\4肉类蛋品\牛排\牛排6.jpg" />
+    <Content Include="Images\4肉类蛋品\牛排\牛排7.jpg" />
+    <Content Include="Images\4肉类蛋品\牛排\牛排8.jpg" />
+    <Content Include="Images\4肉类蛋品\牛排\牛排9.jpg" />
+    <Content Include="Images\5海鲜水产\1鱼类\鲫鱼1.jpg" />
+    <Content Include="Images\5海鲜水产\1鱼类\鲫鱼2.jpg" />
+    <Content Include="Images\5海鲜水产\2虾蟹类\螃蟹1.jpg" />
+    <Content Include="Images\5海鲜水产\2虾蟹类\螃蟹2.jpg" />
+    <Content Include="Images\5海鲜水产\3贝类\扇贝1.jpg" />
+    <Content Include="Images\5海鲜水产\3贝类\扇贝2.jpg" />
+    <Content Include="Images\5海鲜水产\4藻类\海带1.jpg" />
+    <Content Include="Images\5海鲜水产\4藻类\海带2.jpg" />
+    <Content Include="Images\5海鲜水产\三文鱼\三文鱼1.jpg" />
+    <Content Include="Images\5海鲜水产\三文鱼\三文鱼2.jpg" />
+    <Content Include="Images\5海鲜水产\三文鱼\三文鱼3.jpg" />
+    <Content Include="Images\5海鲜水产\三文鱼\三文鱼4.jpg" />
+    <Content Include="Images\5海鲜水产\三文鱼\三文鱼5.jpg" />
+    <Content Include="Images\5海鲜水产\三文鱼\三文鱼6.jpg" />
+    <Content Include="Images\5海鲜水产\三文鱼\三文鱼7.jpg" />
+    <Content Include="Images\6特色农产\1蜂产品\蜂蜜1.jpg" />
+    <Content Include="Images\6特色农产\1蜂产品\蜂蜜2.jpg" />
+    <Content Include="Images\6特色农产\2蚕茧\蚕丝1.jpg" />
+    <Content Include="Images\6特色农产\2蚕茧\蚕丝2.jpg" />
+    <Content Include="Images\6特色农产\3林业产品\茶叶1.jpg" />
+    <Content Include="Images\6特色农产\3林业产品\茶叶2.jpg" />
+    <Content Include="Images\6特色农产\4棉麻\棉花1.jpg" />
+    <Content Include="Images\6特色农产\4棉麻\棉花2.jpg" />
+    <Content Include="Images\6特色农产\5中药材\红花1.jpg" />
+    <Content Include="Images\6特色农产\5中药材\红花2.jpg" />
+    <Content Include="Images\black-star.png" />
+    <Content Include="Images\fresh-icon.png" />
+    <Content Include="Images\headerqrcode.png" />
+    <Content Include="Images\hidePwd.png" />
+    <Content Include="Images\homelogo.jpg" />
+    <Content Include="Images\icon-hot-hover.png" />
+    <Content Include="Images\icon-hot-more.png" />
+    <Content Include="Images\icon-hot.png" />
+    <Content Include="Images\icon.png" />
+    <Content Include="Images\iconcatg.png" />
+    <Content Include="Images\icons-small.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\met.png" />
+    <Content Include="Images\met2.png" />
+    <Content Include="Images\met3.png" />
+    <Content Include="Images\met4.png" />
+    <Content Include="Images\payment.jpg" />
+    <Content Include="Images\price-tips.png" />
+    <Content Include="Images\search.ele.png" />
+    <Content Include="Images\settleup-nogoods.png" />
+    <Content Include="Images\showPwd.png" />
+    <Content Include="Images\star.png" />
+    <Content Include="Images\work1.jpg" />
+    <Content Include="Images\work2.jpg" />
+    <Content Include="Images\work3.jpg" />
+    <Content Include="Images\work4.jpg" />
+    <Content Include="Images\work5.jpg" />
+    <Content Include="Images\work6.jpg" />
+    <Content Include="Images\二维码.jpg" />
+    <Content Include="Images\优选100\background.jpg" />
+    <Content Include="Images\优选100\logomid.png" />
+    <Content Include="Images\优选100\lunbo3.jpg" />
+    <Content Include="Images\优选100\more_bg1.png" />
+    <Content Include="Images\优选100\more_bg2.png" />
+    <Content Include="Images\优选100\more_bg3.png" />
+    <Content Include="Images\优选100\top100.png" />
+    <Content Include="Images\优选100\youxuan-youxia.png" />
+    <Content Include="Images\优选100\youxuan-zuoxia.png" />
+    <Content Include="Images\优选100\zuoxia.png" />
+    <Content Include="Images\优选100\冷冻速食\三文鱼.jpg" />
+    <Content Include="Images\优选100\冷冻速食\发毛肚.jpg" />
+    <Content Include="Images\优选100\冷冻速食\奇异果.png" />
+    <Content Include="Images\优选100\冷冻速食\奇异果干.jpg" />
+    <Content Include="Images\优选100\冷冻速食\山药.jpg" />
+    <Content Include="Images\优选100\冷冻速食\干海参.jpg" />
+    <Content Include="Images\优选100\冷冻速食\干海参条.jpg" />
+    <Content Include="Images\优选100\冷冻速食\生鱼片.jpg" />
+    <Content Include="Images\优选100\冷冻速食\鲅鱼水饺.jpg" />
+    <Content Include="Images\优选100\新鲜果蔬\椰子.jpg" />
+    <Content Include="Images\优选100\新鲜果蔬\榴莲.jpg" />
+    <Content Include="Images\优选100\新鲜果蔬\牛油果.jpg" />
+    <Content Include="Images\优选100\新鲜果蔬\百香果.jpg" />
+    <Content Include="Images\优选100\新鲜果蔬\红柚子.jpg" />
+    <Content Include="Images\优选100\新鲜果蔬\苹果.jpg" />
+    <Content Include="Images\优选100\新鲜果蔬\蓝莓.jpg" />
+    <Content Include="Images\优选100\新鲜果蔬\青提.jpg" />
+    <Content Include="Images\优选100\新鲜果蔬\鲜橙.jpg" />
+    <Content Include="Images\优选100\本期优选\优选1.png" />
+    <Content Include="Images\优选100\本期优选\优选2.png" />
+    <Content Include="Images\优选100\本期优选\优选3.png" />
+    <Content Include="Images\优选100\本期优选\优选4.png" />
+    <Content Include="Images\优选100\本期优选\优选5.png" />
+    <Content Include="Images\优选100\海鲜水产\冻虾.jpg" />
+    <Content Include="Images\优选100\海鲜水产\大龙虾.jpg" />
+    <Content Include="Images\优选100\海鲜水产\星斑鱼.jpg" />
+    <Content Include="Images\优选100\海鲜水产\海参.jpg" />
+    <Content Include="Images\优选100\海鲜水产\牡丹虾.jpg" />
+    <Content Include="Images\优选100\海鲜水产\红毛蟹.jpg" />
+    <Content Include="Images\优选100\海鲜水产\老虎蟹.jpg" />
+    <Content Include="Images\优选100\海鲜水产\金枪鱼.jpg" />
+    <Content Include="Images\优选100\海鲜水产\鲜虾.jpg" />
+    <Content Include="Images\优选100\海鲜水产\黑金鲍鱼.png" />
+    <Content Include="Images\优选100\肉禽蛋品\A级鸡蛋.jpg" />
+    <Content Include="Images\优选100\肉禽蛋品\乌鬃鹅.jpg" />
+    <Content Include="Images\优选100\肉禽蛋品\土鸡肉.jpg" />
+    <Content Include="Images\优选100\肉禽蛋品\土鸡蛋.jpg" />
+    <Content Include="Images\优选100\肉禽蛋品\大羊排.jpg" />
+    <Content Include="Images\优选100\肉禽蛋品\牛排.jpg" />
+    <Content Include="Images\优选100\肉禽蛋品\牛排套餐.jpg" />
+    <Content Include="Images\优选100\肉禽蛋品\猪肋排.jpg" />
+    <Content Include="Images\优选100\肉禽蛋品\猪腿肉.jpg" />
+    <Content Include="Images\优选100\肉禽蛋品\羊排.jpg" />
+    <Content Include="Images\优选100\肉禽蛋品\羊肉片.jpg" />
+    <Content Include="Images\优选100\肉禽蛋品\羊腿子.jpg" />
+    <Content Include="Images\优选100\肉禽蛋品\羊骨头.jpg" />
+    <Content Include="Images\优选100\肉禽蛋品\黄油鸡.jpg" />
+    <Content Include="Images\优选100\轮播1.jpg" />
+    <Content Include="Images\优选100\轮播2.jpg" />
+    <Content Include="Images\会员等级.png" />
+    <Content Include="Images\农业1.jpg" />
+    <Content Include="Images\农业2.jpg" />
+    <Content Include="Images\农业3.jpg" />
+    <Content Include="Images\农业4.jpg" />
+    <Content Include="Images\分享图标.png" />
+    <Content Include="Images\分享部分.png" />
+    <Content Include="Images\功能主页1.jpg" />
+    <Content Include="Images\功能主页10.png" />
+    <Content Include="Images\功能主页11.png" />
+    <Content Include="Images\功能主页12.jpg" />
+    <Content Include="Images\功能主页13.png" />
+    <Content Include="Images\功能主页2.png" />
+    <Content Include="Images\功能主页3.jpg" />
+    <Content Include="Images\功能主页4.png" />
+    <Content Include="Images\功能主页5.png" />
+    <Content Include="Images\功能主页6.png" />
+    <Content Include="Images\功能主页7.png" />
+    <Content Include="Images\功能主页8.png" />
+    <Content Include="Images\功能主页9.png" />
+    <Content Include="Images\功能主页轮播图\功能主页轮播图1.jpg" />
+    <Content Include="Images\功能主页轮播图\功能主页轮播图2.jpg" />
+    <Content Include="Images\功能主页轮播图\功能主页轮播图3.jpg" />
+    <Content Include="Images\功能主页轮播图\功能主页轮播图4.jpg" />
+    <Content Include="Images\功能主页轮播图\功能主页轮播图5.jpg" />
+    <Content Include="Images\功能主页轮播图\功能主页轮播图6.jpg" />
+    <Content Include="Images\功能主页轮播图\功能主页轮播图7.jpg" />
+    <Content Include="Images\功能主页轮播图\功能主页轮播图8.jpg" />
+    <Content Include="Images\助农二维码.png" />
+    <Content Include="Images\助农二维码2.png" />
+    <Content Include="Images\商务1.jpg" />
+    <Content Include="Images\商务2.jpg" />
+    <Content Include="Images\商务3.jpg" />
+    <Content Include="Images\商家登录背景.jpg" />
+    <Content Include="Images\头像bg.png" />
+    <Content Include="Images\客服图片.png" />
+    <Content Include="Images\展示图片\展示图片1.jpg" />
+    <Content Include="Images\展示图片\展示图片2.png" />
+    <Content Include="Images\弄啥勒\丰收1.jpg" />
+    <Content Include="Images\弄啥勒\丰收2.jpg" />
+    <Content Include="Images\弄啥勒\丰收图.jpg" />
+    <Content Include="Images\弄啥勒\企业认证.png" />
+    <Content Include="Images\弄啥勒\头像.jpg" />
+    <Content Include="Images\弄啥勒\实名认证.png" />
+    <Content Include="Images\弄啥勒\实地认证.png" />
+    <Content Include="Images\弄啥勒\广告图片.jpg" />
+    <Content Include="Images\弄啥勒\用户头像.png" />
+    <Content Include="Images\抢购区域\午市\午市1.png" />
+    <Content Include="Images\抢购区域\午市\午市2.png" />
+    <Content Include="Images\抢购区域\早市\早市1.png" />
+    <Content Include="Images\抢购区域\早市\早市2.png" />
+    <Content Include="Images\抢购区域\早市\早市3.png" />
+    <Content Include="Images\抢购区域\早市\降价之一.jpg" />
+    <Content Include="Images\抢购区域\晚市\晚市1.png" />
+    <Content Include="Images\抢购区域\晚市\晚市2.png" />
+    <Content Include="Images\抢购区域\晚市\晚市3.png" />
+    <Content Include="Images\抢购区域\晚市\晚市4.png" />
+    <Content Include="Images\文章图片\qq咨询.png" />
+    <Content Include="Images\文章图片\背景1.jpg" />
+    <Content Include="Images\文章图片\让农业生产不再难.png" />
+    <Content Include="Images\点击.png" />
+    <Content Include="Images\特色购4\优选1.png" />
+    <Content Include="Images\特色购4\优选2.png" />
+    <Content Include="Images\特色购4\优选3.png" />
+    <Content Include="Images\特色购4\优选4.png" />
+    <Content Include="Images\特色购4\优选5.png" />
+    <Content Include="Images\精选\精选苹果.jpg" />
+    <Content Include="Images\精选\精选苹果2.jpg" />
+    <Content Include="Images\精选\精选苹果3.jpg" />
+    <Content Include="Images\精选\精选苹果4.jpg" />
+    <Content Include="Images\精选\精选苹果5.png" />
+    <Content Include="Images\精选\精选苹果6.jpg" />
+    <Content Include="Images\精选\精选苹果7.jpg" />
+    <Content Include="Images\精选\精选苹果8.jpg" />
+    <Content Include="Images\系统头像\大头像.jpg" />
+    <Content Include="Images\系统头像\系统头像1.jpg" />
+    <Content Include="Images\系统头像\系统头像2.jpg" />
+    <Content Include="Images\系统头像\表情按钮.png" />
+    <Content Include="Images\系统头像\评论区域.png" />
+    <Content Include="Images\行业资讯\hyzx_1.jpg" />
+    <Content Include="Images\行业资讯\hyzx_10.png" />
+    <Content Include="Images\行业资讯\hyzx_11.jpg" />
+    <Content Include="Images\行业资讯\hyzx_12.jpg" />
+    <Content Include="Images\行业资讯\hyzx_13.png" />
+    <Content Include="Images\行业资讯\hyzx_14.png" />
+    <Content Include="Images\行业资讯\hyzx_15.png" />
+    <Content Include="Images\行业资讯\hyzx_16.jpg" />
+    <Content Include="Images\行业资讯\hyzx_17.jpg" />
+    <Content Include="Images\行业资讯\hyzx_18.jpg" />
+    <Content Include="Images\行业资讯\hyzx_19.jpg" />
+    <Content Include="Images\行业资讯\hyzx_2.jpg" />
+    <Content Include="Images\行业资讯\hyzx_20.jpg" />
+    <Content Include="Images\行业资讯\hyzx_21.png" />
+    <Content Include="Images\行业资讯\hyzx_22.jpg" />
+    <Content Include="Images\行业资讯\hyzx_23.png" />
+    <Content Include="Images\行业资讯\hyzx_24.jpg" />
+    <Content Include="Images\行业资讯\hyzx_25.jpg" />
+    <Content Include="Images\行业资讯\hyzx_26.png" />
+    <Content Include="Images\行业资讯\hyzx_3.png" />
+    <Content Include="Images\行业资讯\hyzx_4.png" />
+    <Content Include="Images\行业资讯\hyzx_5.jpg" />
+    <Content Include="Images\行业资讯\hyzx_6.png" />
+    <Content Include="Images\行业资讯\hyzx_8.png" />
+    <Content Include="Images\行业资讯\hyzx_9.jpg" />
+    <Content Include="Images\行业资讯\lbzx_1.jpg" />
+    <Content Include="Images\行业资讯\lbzx_2.jpeg" />
+    <Content Include="Images\行业资讯\lbzx_3.png" />
+    <Content Include="Images\行业资讯\lbzx_4.png" />
+    <Content Include="Images\行业资讯\lb_1.png" />
+    <Content Include="Images\行业资讯\lb_2.jpg" />
+    <Content Include="Images\行业资讯\lb_3.jpg" />
+    <Content Include="Images\行业资讯\qq.png" />
+    <Content Include="Images\行业资讯\QQ空间.png" />
+    <Content Include="Images\行业资讯\xxzx_5.png" />
+    <Content Include="Images\行业资讯\微信.png" />
+    <Content Include="Images\行业资讯\新浪微博.png" />
+    <Content Include="Images\行业资讯\腾讯微博.png" />
+    <Content Include="Images\评价图片\叫啥名.jpg" />
+    <Content Include="Images\评论.png" />
+    <Content Include="Images\默认头像.jpg" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="Content\flaticon.woff" />
+    <Content Include="fonts\iconfont.eot" />
+    <Content Include="fonts\iconfont.ttf" />
+    <Content Include="fonts\iconfont.woff" />
+    <None Include="scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="scripts\bootstrapValidator.js" />
+    <Content Include="scripts\highcharts.js" />
+    <Content Include="scripts\jquery-3.3.1.js" />
+    <Content Include="scripts\jquery-3.3.1.min.js" />
+    <Content Include="scripts\jquery-3.3.1.slim.js" />
+    <Content Include="scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="scripts\jquery.validate-vsdoc.js" />
+    <Content Include="scripts\jquery.mCustomScrollbar.min.js" />
+    <Content Include="scripts\jquery.smooth-scroll.js" />
+    <Content Include="scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="scripts\jquery.validate.js" />
+    <Content Include="scripts\jquery.validate.min.js" />
+    <Content Include="scripts\messages_zh.js" />
+    <Content Include="scripts\register.js" />
+    <Content Include="scripts\shuffle.js" />
+    <Content Include="scripts\vue.js" />
+    <Content Include="scripts\wow.js" />
+    <Content Include="Views\Introduced\Index.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\FreshNewsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IntroducedController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ProviderController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\RequirementController.cs" />
+    <Compile Include="Controllers\SellerController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\youxuan100Controller.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\AjaxMsg.cs" />
+    <Compile Include="Infrastructure\Binders\UserInfoModelBinder.cs" />
+    <Compile Include="Infrastructure\LoginAttributes.cs" />
+    <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
+    <Compile Include="Models\CartFormViewModel.cs" />
+    <Compile Include="Models\FreshNewsDetailViewModel.cs" />
+    <Compile Include="Models\FreshNewsViewModel.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
+    <Compile Include="Models\OrderViewModel.cs" />
+    <Compile Include="Models\ProductsViewModel.cs" />
+    <Compile Include="Models\RegisterViewModel.cs" />
+    <Compile Include="Models\ShopFormViewModel.cs" />
+    <Compile Include="Models\UserInfoViewModel.cs" />
+    <Compile Include="Models\YouXuanViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="scripts\jquery-3.3.1.min.map" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
+    <Content Include="Views\Home\LoginSummary.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Seller\ERSeller.cshtml" />
+    <Content Include="Views\Seller\Login.cshtml" />
+    <Content Include="Views\Shared\_EnterLayout.cshtml" />
+    <Content Include="Views\Seller\Enter.cshtml" />
+    <Content Include="Views\Cart\Summary.cshtml" />
+    <Content Include="Views\Shared\_DetailsLayout.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Shared\_CartLayout.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\CartSummary.cshtml" />
+    <Content Include="Views\Shared\_UserInfoLayout.cshtml" />
+    <Content Include="Views\User\Info.cshtml" />
+    <Content Include="Views\User\UploadHeaderImg.cshtml" />
+    <Content Include="Views\Products\CommentSummery.cshtml" />
+    <Content Include="Views\youxuan100\Index.cshtml" />
+    <Content Include="Views\Provider\Details.cshtml" />
+    <Content Include="Views\Provider\GetDescription.cshtml" />
+    <Content Include="Views\Provider\Index.cshtml" />
+    <Content Include="Views\Provider\Show.cshtml" />
+    <Content Include="Views\Provider\Sort.cshtml" />
+    <Content Include="Views\Provider\View.cshtml" />
+    <Content Include="Views\Requirement\Index.cshtml" />
+    <Content Include="Views\Article\Details.cshtml" />
+    <Content Include="Views\Article\Forum.cshtml" />
+    <Content Include="Views\Article\ForumSummery.cshtml" />
+    <Content Include="Views\Article\Index.cshtml" />
+    <Content Include="Views\Article\Show.cshtml" />
+    <Content Include="Views\Shared\_Layout1.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\Shared\_Layout3.cshtml" />
+    <Content Include="Views\Shared\_Layout4.cshtml" />
+    <Content Include="Views\User\MyOrder.cshtml" />
+    <Content Include="Views\Provider\Search.cshtml" />
+    <Content Include="Views\FreshNews\Index.cshtml" />
+    <Content Include="Views\FreshNews\SellerDetails.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Famer.Entity\Famer.Entity.csproj">
+      <Project>{41e5c4b6-ffdc-4167-998f-ae556a7fb68c}</Project>
+      <Name>Famer.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51378</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51378/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

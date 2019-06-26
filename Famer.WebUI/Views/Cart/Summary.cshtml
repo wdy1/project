@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Famer.Entity.Model.CartLine>
+
+@if (Model==null ||  Model.Count()==0)
+{
+    <div class="mycart-2018">
+        <div class="cw-icon">
+            <i class="glyphicon glyphicon-shopping-cart ci-left"></i>
+            <i class="ci-count" id="shopping-amount">0</i>
+            <a target="_blank" href="#">我的购物车</a>
+        </div>
+        <div class="dropdown-layer">
+            <div class="dd-spacer"></div>
+            <div class="prompt">
+                <div class="nogoods">
+                    <b></b>
+                    购物车中还没有商品，赶紧选购吧！
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="mycart-2018">
+        <div class="cw-icon">
+            <i class="glyphicon glyphicon-shopping-cart ci-left"></i>
+            <i class="ci-count" id="shopping-amount">@Model.Sum(e=>e.Num)</i>
+            <a target="_blank" href="@Url.Action("Index","Cart")">我的购物车</a>
+        </div>
+        <div class="dropdown-layer">
+            <div class="spacer"></div>
+            <div class="Cart-content">
+                <div class="cart-head">
+                    <h4 class="cart-head-title">最新加入的商品</h4>
+                </div>
+                <div class="cart-inner">
+                    <ul id="cart-list">
+                        <li class="dt">
+                            <div class="fl"><span class="hl-orange">满赠</span>已购满0元，您可领赠品 </div>
+                            <div class="fr"><em>小计：¥@Model.Sum(e => e.Price * e.Num)</em></div>
+                            <div class="clearfix"></div>
+                        </li>
+                        @foreach (var item in Model)
+                        {
+                            <li>
+                                <div class="cart-img fl">
+                                    <a href="#" class="thumbnail" target="_blank" style="margin-bottom:0">
+                                        <img src="@item.Image" height="50" width="50" />
+                                    </a>
+                                </div>
+                                <div class="cart-des fl">
+                                    <span></span>
+                                    <a href="#" target="_blank" title="@item.ProductDes">@item.ProductDes</a>
+                                </div>
+                                <div class="cart-detail fr">
+                                    <span class="p-price">
+                                        <strong>¥@item.Price</strong>×@item.Num
+                                    </span>
+                                    <br />
+                                    <a class="delete" href="#" data-id="@item.CartLineID">删除</a>
+                                </div>
+                            </li>
+                         }
+                    </ul>
+                </div>
+                <div class="cart-footer">
+                    <div class="cart-total">共<b>@Model.Sum(e=>e.Num)</b>件商品 共计<strong>¥@Model.Sum(e=>e.Price * e.Num)</strong></div>
+                    <a target="_blank" href="@Url.Action("Index","Cart")" title="去购物车">去购物车</a>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+}
+
+

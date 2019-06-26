@@ -1,0 +1,370 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/fonts/iconfont.css" rel="stylesheet" />
+    <link href="~/Content/css/功能主页导航栏.css" rel="stylesheet" />
+    <script src="~/scripts/jquery-3.3.1.js"></script>
+    <script src="~/scripts/bootstrap.js"></script>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="top-wrapper" style="background-color:#e3e4e5">
+        <div class="top-content">
+            <ul class="content-left">
+                <li id="service-home">
+                    <i class="glyphicon glyphicon-home"></i>
+                    <a href="/Introduced/Index" target="_blank">服务主页</a>
+                </li>
+                <li id="address" class="dropdown">
+                    <div class="dt cw-icon">
+                        <i class="glyphicon glyphicon-map-marker"></i>
+                        <span title="北京" data-id="1">北京</span>
+                    </div>
+                    <div class="dd dropdown-layer">
+                        <div class="dd-spacer"></div>
+                        <div class="ui-areamini-content-wrap" style="left: auto">
+                            <div class="ui-areamini-content">
+                                <div class="ui-areamini-content-list clearfix">
+                                    <div class="item">
+                                        <a data-id="1" class="selected">北京</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="2">上海</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="3">天津</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="4">重庆</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="5">河北</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="6">山西</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="7">河南</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="8">辽宁</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="9">吉林</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="10">黑龙江</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="11">内蒙古</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="12">江苏</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="13">山东</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="14">安徽</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="15">浙江</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="16">福建</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="17">湖北</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="18">湖南</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="19">广东</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="20">广西</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="21">江西</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="22">四川</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="23">海南</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="24">贵州</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="25">云南</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="26">西藏</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="27">
+                                            陕西
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="28">甘肃</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="29">青海</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="30">宁夏</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="31">新疆</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="32">港澳</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="33">台湾</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="34">钓鱼岛</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="35">海外</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="content-right">
+                @Html.Action("LoginSummary", "Home")
+                <li class="spacer"></li>
+                <li class="fore2">
+                    <div class="dt">
+                        <a href="@Url.Action("MyOrder","User")" target="_blank">我的订单</a>
+                    </div>
+                </li>
+                <li class="spacer"></li>
+                <li class="fore3 dropdown" id="myfamer">
+                    <div class="dt cw-icon">
+                        <a target="_blank" href="#">我的农场</a>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                    </div>
+                    <div class="dd dropdown-layer">
+                        <div class="dd-spacer"></div>
+                        <div class="myfmlist1">
+                            <div class="fore1">
+                                <div class="item">
+                                    <a href="#">待处理订单<span class="num-unfinishedorder"></span></a>
+                                </div>
+                                <div class="item">
+                                    <a href="#">返修退换货</a>
+                                </div>
+                                <div class="item">
+                                    <a href="#">降价商品<span class="num-reduction"></span></a>
+                                </div>
+                            </div>
+                            <div class="fore2">
+                                <div class="item">
+                                    <a href="#" target="_blank">消息<span class="num-tip"></span> </a>
+                                </div>
+                                <div class="item">
+                                    <a href="#" target="_blank">我的问答<span class="num-consultation"></span></a>
+                                </div>
+                                <div class="item">
+                                    <a href="#" target="_blank">我的关注</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="myfmlist2">
+                            <div class="fore1">
+                                <div class="item">
+                                    <a href="#">我的积分</a>
+                                </div>
+                                <div class="item">
+                                    <a href="#">我的白条</a>
+                                </div>
+                            </div>
+                            <div class="fore2">
+                                <div class="item">
+                                    <a href="#">我的优惠券<span class="num-ticket"></span></a>
+                                </div>
+                                <div class="item">
+                                    <a href="#">我的理财</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="spacer"></li>
+                <li class="fore4" id="mymember">
+                    <div class="dt">
+                        <a target="_blank" href="#">我的会员</a>
+                    </div>
+                </li>
+                <li class="spacer"></li>
+                <li class="fore5 dropdown" id="enterprise">
+                    <div class="dt cw-icon">
+                        <a href="#" target="_blank">企业采购</a>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                    </div>
+                    <div class="dd dropdown-layer">
+                        <div class="dd-spacer"></div>
+                        <div class="dd-inner" id="ent-main">
+                            <div class="item">
+                                <a href="#" target="_blank">企业购</a>
+                            </div>
+                            <div class="item">
+                                <a href="#" target="_blank">商用产品馆</a>
+                            </div>
+                            <div class="item">
+                                <a href="#" target="_blank">工业品</a>
+                            </div>
+                            <div class="item">
+                                <a href="#" target="_blank">礼卡品</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="spacer"></li>
+                <li class="fore6 dropdown" id="serve">
+                    <div class="dt cw-icon">
+                        客服服务
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-layer dd">
+                        <div class="dd-spacer"></div>
+                        <div class="item-client">客户</div>
+                        <div class="item">
+                            <a href="#" target="_blank">帮助中心</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">售后服务</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">在线客服</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">意见建议</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">电话客服</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">客服邮箱</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">金融资讯</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">全球售客服</a>
+                        </div>
+                        <div class="item-business">商户</div>
+                        <div class="item">
+                            <a href="#" target="_blank">合作招商</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">学习中心</a>
+                        </div>
+                        <div class="item">
+                            <a href="@Url.Action("Index","Seller")" target="_blank">商家后台</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">工作台</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">商家帮助</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">规则平台</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="spacer"></li>
+                <li class="fore7 dropdown" id="navs">
+                    <div class="dt cw-icon">
+                        网站导航
+                        <i class="glyphicon glyphicon-send"></i>
+                    </div>
+                    <div class="dd dropdown-layer">
+                        <div class="dd-spacer"></div>
+                        <!-- 网站导航部分代码 -->
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 个人中心导航 -->
+    <div id="usernav">
+        <div class="w">
+            <div class="zn-logo">
+                <a href="/Home/Index" target="_blank" class="logo-fore1">助农为乐</a>
+                <a href="#" target="_self" class="logo-fore2">我的农场</a>
+                <a href="/Home/Index" target="_blank" class="logo-fore3">返回助农首页</a>
+            </div>
+            <div class="navitems">
+                <ul>
+                    <li class="fore-1">
+                        <a href="/User/Info">首页</a>
+                    </li>
+                    <li class="fore-2">
+                        <div class="dl">
+                            <div class="dt">
+                                <span class="user-set">账户设置</span>
+                                <b></b>
+                            </div>
+                            <div class="dd">
+                                <a href="#" target="_self">个人信息</a>
+                                <a href="#" target="_self">账户安全</a>
+                                <a href="#" target="_self">账号绑定</a>
+                                <a href="#" target="_self">收货地址</a>
+                                <a href="#" target="_self">邮件订阅</a>
+                                <a href="#" target="_blank">应用授权</a>
+                                <a href="#" target="_self">采购需求单</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="fore-2">
+                        <div class="dl">
+                            <div class="dt" style="width: 84px">
+                                <span class="user-set Undeveloped">未开放区域</span>
+                                <b></b>
+                            </div>
+                            <div class="dd">
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="fore-4">
+
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <div class="search-2018">
+                    <div class="form">
+                        <input type="text" autocomplete="off" id="key" accesskey="s" class="text" />
+                        <button class="button cw-icon" type="button">
+                            <i></i>
+                            搜索
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- 不清除浮动 父元素将无法拥有高度 -->
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    @RenderBody()
+    
+
+</body>
+</html>

@@ -1,0 +1,403 @@
+﻿@model Famer.WebUI.Models.OrderViewModel
+
+@{
+    ViewBag.Title = Model.ProductDes;
+    Layout = "~/Views/Shared/_DetailsLayout.cshtml";
+}
+
+<!-- 步骤指示列表 -->
+<div class="step-wrap">
+    <div class="w">
+        <div class="step-left clearfix">
+            <div class="item first">
+                <a href="#">助农</a>
+            </div>
+            <div class="item sep">></div>
+            <div class="item">
+                <a href="#">@Model.KindName</a>
+            </div>
+            <div class="item sep">></div>
+            <div class="item">
+                <a href="#">@Model.ProductName</a>
+            </div>
+            <div class="item sep">></div>
+            <div class="item">
+                <a href="#">农夫山泉</a>
+            </div>
+        </div>
+        <div class="step-right clearfix">
+            <div class="zn-shop">
+                <em class="u-zn">
+                    <span>ZN</span>自营
+                </em>
+            </div>
+            <div class="zn-hover-wrap">
+                <div class="item">
+                    <div class="name">
+                        <a href="#">助农水果自营专区</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<!-- 主题内容-->
+<div class="w" style="width: 1210px;margin: 0 auto">
+    <div class="Product-intro clearfix">
+        <!-- 三列布局 -->
+        <!-- 第一列 -->
+        <div class="preview-wrap">
+            <div class="preview" id="preview">
+                <div class="main-img">
+                    <img id="spec-img" src="@Model.Image" height="350" width="350"/>
+                </div>
+                <div class="img-list">
+                    <div class="img-items">
+                        <ul id="img-list">
+                            <li class="thumbnail">
+                                <img src="@Model.Image" width="50" height="50" />
+                            </li>
+                            <li class="thumbnail">
+                                <img src="~/Images/2新鲜瓜果/1仁果类/苹果/详情页展示/苹果2.jpg" width="50" height="50" />
+                            </li>
+                            <li class="thumbnail">
+                                <img src="~/Images/2新鲜瓜果/1仁果类/苹果/详情页展示/苹果3.jpg" width="50" height="50" />
+                            </li>
+                            <li class="thumbnail">
+                                <img src="~/Images/2新鲜瓜果/1仁果类/苹果/详情页展示/苹果4.jpg" width="50" height="50" />
+                            </li>
+                            <li class="thumbnail">
+                                <img src="~/Images/2新鲜瓜果/1仁果类/苹果/详情页展示/苹果5.jpg" width="50" height="50" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="preview-info">
+                    <div class="left-btn">
+                        <a class="share" href="#"><i></i><em>分享</em></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 第二列 -->
+        <div class="iteminfo-wrap">
+            <div class="product-title">
+                <span class="p-tag">助农水果</span>
+                农夫山泉 17.5°苹果 阿克苏苹果 15个装 单果径约85-89mm  新鲜水果
+            </div>
+            <div class="product-des">
+                口感细腻松脆，汁多无渣，香甜可口
+            </div>
+            <div class="product-price">
+                <div class="price-wrap">
+                    <div class="summary-price">
+                        <div class="dt">助 农 价</div>
+                        <div class="dd">
+                            <span class="dd-price">
+                                <span>￥</span>
+                                <span class="price">@Model.Price</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="summary-commit clearfix">
+                        <div class="comment-count">
+                            <p class="comment">累计评价</p>
+                            <a href="#">4.9万+</a>
+                        </div>
+                    </div>
+                    <div class="summary-promotion">
+                        <div class="dt">促　　销</div>
+                        <div class="dd">
+                            <div class="p-promotions">
+                                <div class="zn-prom">
+                                    <em class="red-bg">换购</em>
+                                    <em class="hl-red">购买1件可优惠换购热销商品</em>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="transport">
+                <form id="orderform" class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">购买数量</label>
+                        <div class="col-md-10">
+                            <input name="Number" id="o-number" style="width: 50%;float: left" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">配 送 至</label>
+                        <div class="col-md-10">
+                            <input name="Address" id="o-address" style="width: 50%;float: left" class="form-control" type="text" value="@Model.Address" />
+                        </div>
+                        <div class="col-md-offset-2 col-md-8" style="margin-top: 10px">
+                            地址格式为XX省XX市XX县（可精确到门牌号）<br>
+                            由 <span class="hl-red"> 商家 </span>发货, 并提供售后服务. 23:00前下单,预计<b>后天到达</b>
+                        </div>
+                    </div>
+                    <div class="summary-weight">
+                        <div class="dt">重　　量</div>
+                        <div class="dd">4.5kg</div>
+                    </div>
+                    <div class="choose-btn">
+                        <a data-target="#Order" class="btn-special">购买该商品</a>
+                    </div>
+                </form>
+                <!-- 订单模态框 -->
+                <div class="modal fade" id="Order" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="order-title">助农为乐 - 订单确认</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="alert alert-warning">
+                                    <button class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    请仔细检查后提交订单
+                                </div>
+                                @using (Html.BeginForm("PlaceAnOrder", "Products", FormMethod.Post, new { id = "relOrder", @class = "form-horizontal" }))
+                                {
+
+                                    <div class="panel panel-default panel-info">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">商品</h3>
+                                        </div>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>名称</th>
+                                                    <th>数量</th>
+                                                    <th>单价</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><img src="@Model.Image" height="50" width="50" /></td>
+                                                    <td>苹果</td>
+                                                    <td class="o-number"></td>
+                                                    <td class="o-price">@Model.Price</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">*收货地址</label>
+                                        <div class="col-md-9">
+                                            <p class="o-address">上海市徐汇区华山路105号</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">*收货人姓名</label>
+                                        <div class="col-md-9">
+                                            <p class="o-name">@Model.UserName</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">*店铺名称</label>
+                                        <div class="col-md-9">
+                                            <p class="o-shop">北京万氏水果</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">*收货人电话</label>
+                                        <div class="col-md-9">
+                                            <p class="o-phone">@Model.Phone</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">*物流编号</label>
+                                        <div class="col-md-9">
+                                            <p class="o-code"></p>
+                                        </div>
+                                        <div class="col-md-offset-3">
+                                            <span class="o-text">您可以通过物流编号来关注商品物流的动态</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div id="order-btn1" class="btn btn-success col-md-offset-3 col-md-3">
+                                            <span class="xuan xuan-49 process"></span>
+                                            提交订单
+                                        </div>
+                                    </div>
+                                    @Html.Hidden("UserId",Model.UserId)
+                                    @Html.Hidden("UserName",Model.UserName)
+                                    @Html.Hidden("Address",Model.Address)
+                                    @Html.Hidden("Phone",Model.Phone)
+                                    @Html.Hidden("ShopId",Model.ShopId)
+                                    @Html.Hidden("ListId",Model.ListId)
+                                    @Html.Hidden("ProductId",Model.ProductId)
+                                    <input name="Total" id="Total" type="text" style="display:none"/>
+                                }
+                            </div>
+                            <div class="order-ok" style="display: none">
+                                <div class="col-md-offset-4 col-md-4" style="padding:98px 0 0 70px">
+                                    <span class="xuan xuan-chulizhong state1" style="display: inline-block;font-size: 56px;color: #ffd700"></span>
+                                    <span class="xuan xuan-chenggong state2" style="display: none;font-size: 56px;color: #5cb85c;"></span>
+                                </div>
+                                <div class="col-md-offset-5 col-md-6" style="margin-top: 25px;padding: 0">
+                                    <button onclick="document.getElementById('relOrder').submit()" style="width: 100px" data-dismiss="modal" class="btn btn-success col-md-3">继续购物</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="summary-tip">
+                <div class="dt">温馨提示</div>
+                <div class="dd">
+                    <ol class="clearfix">
+                        <li>·不支持7天无理由退货</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 评论区域 -->
+<div class="w" style="width: 1210px;margin: 0 auto">
+    <div class="comment-details">
+        <div class="comment-tab">
+            <div class="tab-main">
+                <ul>
+                    <li>商品评论<s>(27万+)</s></li>
+                </ul>
+            </div>
+        </div>
+        <div class="m-comment" id="comment">
+            <div class="mt">
+                <h3>商品评价</h3>
+            </div>
+            <div class="mc">
+                <div class="comment-list">
+                    <div class="flex-text-wrap">
+                        <div id="Commentform">
+                            <textarea id="Content" name="Comment" rows="7" cols="17" class="form-control" style="resize: none;"></textarea>
+                            <button id="emoji" type="button"></button>
+                            <a data-list="@Model.ListId" id="report" class="btn btn-success col-md-2 col-md-offset-10" style="margin-top: 2px">发表评论</a>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div id="comment-show" class="comment-show">
+                        @Html.Action("CommentSummery","Products",new { ListId=Model.ListId})
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //自定义jQuery方法
+        function changestyle() {
+            $(".state1").hide();
+            $(".state2").show();
+        }
+        //图片遍历
+        $("#img-list").children().each(function (index, domEle) {
+            $(domEle).hover(function () {
+                $("#spec-img").attr("src", $(this).children("img:first-child").attr("src"));
+            })
+        });
+        //打开订单模态框
+        $(".btn-special").click(function () {
+            var unitprice = parseInt($(".o-price").text(), 10);
+            var address = $("#o-address").val();
+            var number = $("#o-number").val();
+            var total = number * unitprice;
+            if ($("#orderform").data('bootstrapValidator').isValid()) {
+                $("#Total").attr("value", total);
+                $(".o-address").text(address);
+                $(".o-number").text(number);
+                $(".o-code").text(Math.floor(Math.random() * (10000000000 - 1000000000 + 1) + 1000000000));
+                $("#Order").modal();
+            } else {
+                $('#orderform').bootstrapValidator('validate');
+            }
+        });
+        //关闭模态框事件
+        $("#Order").on('hidden.bs.modal', function () {
+            //可以保证下一次打开模态框时 总是展示订单表单页
+            $(".modal-body").show();
+            $(".order-ok").hide();
+            $(".state1").show();
+            $(".state2").hide();
+        });
+        //订单模态框按钮事件
+        $("#order-btn1").click(function (e) {
+            e.preventDefault();
+            if ($(".modal-body").is(":visible")) {
+                $(".modal-body").hide();
+                $(".order-ok").show();
+                setTimeout(changestyle, 2000);
+            }
+        });
+        //客户端验证
+        $("#orderform").bootstrapValidator({
+            message: 'This value is not valid',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                Number: {
+                    validators: {
+                        notEmpty: {
+                            message: "购买数量不能为空"
+                        },
+                        regexp: {
+                            regexp: /^[1-9]{1}[0-9]{0,4}$/,
+                            message: "数量只能是纯数字，且不超过5位数"
+                        }
+                    }
+                },
+                Address: {
+                    validators: {
+                        notEmpty: {
+                            message: "配送地址不能为空"
+                        },
+                        regexp: {
+                            regexp: /^[\u4e00-\u9fa5]+[0-9]*$/,
+                            message: "配送地址格式错误"
+                        }
+                    }
+                }
+            }
+        })
+    })
+</script>
+
+<script type="text/javascript">
+        $(document).ready(function () {
+            $("#report").click(function () {
+                var ListId = parseInt($("#report").attr("data-list"), 10);
+                var Content = $("#Content").val() ? $("#Content").val() : "";
+                if(Content!=="")
+                {
+                    $.ajax({
+                        url: "/Products/CommentSummery",
+                        data: JSON.stringify({ "ListId": ListId, "Content": Content }),
+                        type: 'Post',
+                        contentType: 'application/json;charset=utf-8',
+                        success: function (data) {
+                            $("#comment-show").html(data);
+                        },
+                        error: function () {
+                            console.log("请求失败");
+                        }
+                    })
+                } else {
+                    alert("还未输入评论呢！")
+                    $("#Content").focus();
+                }
+            })
+        })
+</script>

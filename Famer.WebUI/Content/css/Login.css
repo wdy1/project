@@ -1,0 +1,134 @@
+﻿body{
+            margin:0 0;
+            font-family: "Open Sans",sans-serif;
+            height: 100vh;
+            background: url("https://i.imgur.com/HgflTDf.jpg") 50% fixed;
+            background-size: cover;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        /* 登录背景设置 */
+        .wrapper {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            min-height: 100%;
+            padding: 0px;
+            background: rgba(4, 40, 68, 0.4);
+        }
+        .login{
+            border-radius: 2px 2px 5px 5px;
+            padding: 10px 20px 20px 20px;
+            width: 90%;
+            max-width: 320px;
+            background: #FFF;
+            /* 子元素将相对于login定位  */
+            position: relative;
+            padding-bottom: 80px;
+            box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+        }
+        .login input{
+            display: block;
+            padding: 15px 10px;
+            color: #ccc;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            width: 100%;
+            border: 1px solid #dddddd;
+            transition: border-width 0.2s ease;
+            border-radius: 4px;
+        }
+        /*
+           按照一般布局i元素将顺序排列在前一个input元素的下面，也就是说如果单单设置left:0 得到的将是
+           在input下一行靠左边的i元素,因为login的position:relative,所以i元素将相对于完整的login(不考虑padding内边距)
+           定位,这个例子恰好存在padding-left所以 造成i元素(没有设置margin-top负值之前)与下一个input处于同一水平线且
+           未重合,如果不存在内边距则i元素将与下一个input重合.
+        */
+        .login input+i.fa{
+            color: #FFF;
+            font-size: 1em;
+            position: absolute;
+            /* 负值的margin-top会使得元素上移 */
+            margin-top: -40px;
+            opacity: 0;
+            /* 靠最左边并且设置透明隐藏效果 */
+            left: 0px;
+            transition: all 0.2s ease-in 0s;
+        }
+        .login input:focus{
+            outline: none;
+            color: #444;
+            border-color: #2196F3;
+            border-left-width: 35px;
+        }
+        .login input:focus + i.fa{
+            opacity: 1;
+            left: 32px;
+            /* 第一次动画执行完毕后 更改之后每一次动画的执行时间和函数 */
+            transition: all 0.3s ease-out 0s;
+        }
+        .login a{
+            display: block;
+            font-size: 0.8em;
+            color: #2196F3;
+            text-decoration: none;
+        }
+        .login .title{
+            color: #444;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin: 10px 0 30px 0;
+            padding-bottom: 20px;
+        }
+        .login button{
+            width: 100%;
+            height: 100%;
+            max-height: 60px;
+            display: block;
+            color: #fff;
+            background: #2196F3;
+            margin-top: 20px;
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            padding: 10px 10px;
+            border: 0px solid rgba(0,0,0,0.1);
+            border-radius: 0 0 2px 2px;
+            transition: all .6s ease-out 0s;
+        }
+        .login button span{
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .login .spiner{
+            color: #d0d0d0;
+        }
+        /* 表单提交后的动画 */
+        .login.loading button{
+            max-height: 100%;
+            /* 填充整个按钮时确保文本内容处于合理位置 */
+            padding-top: 10px;
+        }
+        .login.loading .spiner{
+            font-size: 30px;
+        }
+        .login.loading .state{
+            font-size: 30px;
+        }
+        .login.ok button{
+            background-color: #8bc34a;
+            border: 1px solid #8bc34a;
+        }
+        .login.ok .spiner{
+            /* 实现上下分开 */
+            display: block;
+            font-size: 40px;
+            color: #fff;
+        }
+        .login span.Errormsg-1,span.Errormsg-2{
+            color: red;
+            font-size: 12px;
+        }

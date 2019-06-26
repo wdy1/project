@@ -1,0 +1,190 @@
+﻿@*@model IEnumerable<Famer.Entity.Model.CartLine>*@
+
+@{
+    ViewBag.Title = "我的购物车";
+    Layout = "~/Views/Shared/_CartLayout.cshtml";
+}
+<link href="~/Content/css/购物车主页样式.css" rel="stylesheet" />
+<div id="cart-main" class="col-md-offset-2 col-md-8">
+    <table class="table table-hover col-md-6" id="app">
+        <thead>
+            <tr>
+                <th class="col-md-1"></th>
+                <th class="col-md-5">商品图片</th>
+                <th class="col-md-2">商品名称</th>
+                <th class="col-md-2">购买数量</th>
+                <th class="col-md-2">商品单价</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            @Html.Action("CartSummary","Cart")
+            @*@foreach (var item in Model)
+            {
+                <tr>
+                    <td class="text-center col-md-1"><input type="checkbox" name="checked" value="@item.Price" data-num="@item.Num" /></td>
+                    <td><img src="@item.Image" height="80" width="80"></td>
+                    <td class="col-md-3">@item.ProductDes</td>
+                    <td class="col-md-2">@item.Num</td>
+                    <td>￥@item.Price</td>
+                    <td><a id="@item.CartLineID" class="btn btn-delete" href="">删除</a></td>
+                </tr>
+            }*@
+        </tbody>
+    </table>
+    <div class="clearfix"></div>
+    <div class="cart-floatbar">
+        <div class="cart-wrap" style="width: 1030px;height: 52px;margin: 0 auto">
+            <div class="cart-toolbar" style="width: 1028px;height: 50px">
+                <div class="cart-toolbar-wrap">
+                    <div class="options-box" style="height: 50px;position: relative">
+                        <!---->
+                        <!---->
+                        <div class="toolbar-right">
+                            <div class="normal" style="height: 52px">
+                                <div class="comm-right">
+                                    <div class="btn-area">
+                                        <a href="javascript:;" class="submit-btn" id="balance" data-content="请先选中一些商品" data-placement="top" data-toggle="popover">去结算</a>
+                                    </div>
+                                    <div class="price-sum">
+                                        <div>
+                                            <span class="txt">总价：</span>
+                                            <span class="right-price">
+                                                ￥<em id="Total">0.00</em>
+                                            </span>
+                                            <b class="price-tips" data-toggle="tooltip" data-placement="top" title="不含运费及送装服务费"></b>
+                                            <br>
+                                            <span class="txt">以节省：</span>
+                                            <span class="Reprice">-￥0.00</span>
+                                        </div>
+                                    </div>
+                                    <div class="amount-sum">
+                                        已选择<em id="Sum">0</em>件商品
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#balance").on("click", function () {
+            var checkes = [];
+            for (var i = 0; i < $("input[name='checked']").length; i++) {
+                if ($("input[name='checked']").eq(i).prop("checked")) {
+                    checkes.push(parseInt($("input[name='checked']").eq(i).attr("data-id"), 10));
+                }
+            }
+            if (checkes.length > 0) {
+                $("[data-toggle='popover']").popover('hide');
+                $.ajax({
+                    type: 'Post',
+                    url: "/Cart/BalanceAccount",
+                    data: { "CLs": checkes },
+                    dataType: 'json',
+                    traditional: true,
+                    success: function (data) {
+                        alert(data.Message);
+                        window.history.go(0);
+                        console.log(data);
+                    },
+                    error: function () {
+                        alert("请求失败");
+                    }
+                });
+            } else {
+                $("[data-toggle='popover']").popover();
+            }
+        })
+    })
+</script>
+
+@*<script type="text/javascript">
+    var app=new Vue({
+        el:"#app",
+        data:{
+            show:true,
+
+        },
+        methods:{
+
+        }
+    })
+    $(document).ready(function () {
+        var total = 0;
+        var sum = 0;
+        //视觉感官
+        $("input[type='checkbox']").each(function (index) {
+            _this = $(this);
+            $(this).on("click", function () {
+                if ($(this).is(":checked")) {
+                    total += parseInt($(this).val(), 10) * parseInt($(this).attr("data-num"), 10);
+                    sum += parseInt($(this).attr("data-num"), 10);
+                } else {
+                    total -= parseInt($(this).val(), 10) * parseInt($(this).attr("data-num"), 10);
+                    sum -= parseInt($(this).attr("data-num"), 10)
+                }
+                $("#Total").text(total.toFixed(2));
+                $("#Sum").text(sum);
+            })
+        });
+        $("a[class*='btn-delete']").each(function (index) {
+            $(this).click(function () {
+                s = sum - parseInt($(this).attr("data-num"), 10);
+                sum = s > 0 ? s : 0;
+                t = total - parseInt($(this).val(), 10) * parseInt($(this).attr("data-num"), 10);
+                total = t > 0 ? t : 0;
+                $("#Sum").text(sum);
+                $("#Total").text(total);
+            })
+        });
+
+        $("[data-toggle='tooltip']").tooltip();
+
+        var deletes = $('a[class*="btn-delete"]');
+        $(deletes).each(function (i) {
+            $(this).on("click", function () {
+                var cartlineID = parseInt($(this).attr("id"), 10);
+                //并未实现完全的局部刷新 要实现局部刷新 应该将Model循环部分放入另外一个分布试图
+                //$.ajax({
+                //    url: '/Cart/RemoveFromCart',
+                //    data: JSON.stringify({ "CartLineID": cartlineID }),
+                //    type: 'POST',
+                //    dataType: 'json',
+                //    contentType: 'application/json',
+                //    success: function (result) {
+                //        console.log(result);
+                //    },
+                //    error: function () {
+                //        console.log("请求失败");
+                //    }
+                //})
+
+                //实现了完全的局部刷新  将cartlinId传给CartSummary方法先处理删除数据库，再将
+                //数据重新查出渲染视图 但是有个问题当下一次单击删除时视图不会有任何变化 必须刷新再删除
+                //才有效果 原因 应该是新返回的视图元素 jQuery无法对其解析绑定事件，必须重新初始化jQuery
+                //使得返回的视图中的a按钮绑定事件 试过用on方法绑定事件 但没用
+                // 最终的解决方案是 将所有的js代码写进分布试图中 这样就每次都新分布试图时也刷新jQuery对象
+                $.ajax({
+                    url: '/Cart/CartSummary',
+                    data: JSON.stringify({ "CartLineID": cartlineID }),
+                    type: 'POST',
+                    contentType: 'application/json;charset=utf-8',
+                    success: function (data) {
+                        $("#tbody").html(data);
+
+                    },
+                    error: function () {
+                        console.log("请求失败");
+                    }
+                })
+            })
+        })
+
+    })
+</script>*@
+

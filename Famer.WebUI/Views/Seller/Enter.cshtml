@@ -1,0 +1,228 @@
+﻿@model Famer.Entity.Model.UserInfo
+@{
+    ViewBag.Title = "助农为乐 - 商家入驻";
+    Layout = "~/Views/Shared/_EnterLayout.cshtml";
+}
+<link href="~/Content/css/入驻表单样式.css" rel="stylesheet" />
+<div id="header">
+    <div class="w">
+        <div id="logo-2018">
+            <a class="zn-seller">
+                <h2 class="zn-title" style="margin: 0">助农为乐</h2>
+                <i class="line"></i>
+                <h2 class="z-s" style="margin: 0">商家入驻</h2>
+            </a>
+        </div>
+        <div class="header-right">
+            <div class="help-area">
+                <a target="_blank">
+                    <i class="icon-help"></i>入驻帮助
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="w">
+    <div class="form-panel">
+        <div class="form-panel-body">
+            <div id="app">
+                @using (Html.BeginForm("Enter", "Seller", FormMethod.Post, new { @class = "el-form form-horizontal", id = "myForm" }))
+                {
+                    <div class="m">
+                        <div class="m-title">
+                            <h4 class="title">入驻联系人信息</h4>
+                        </div>
+                        <div class="m-content part1">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">*联系人姓名</label>
+                                <div class="col-md-9">
+                                    <input class="form-control" style="width: 50%;float: left" name="BossName" placeholder="请输入联系人姓名" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">*联系人手机</label>
+                                <div class="col-md-9">
+                                    <input class="form-control" name="Phone" style="width: 50%;float: left" placeholder="输入联系人手机号" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">*联系人电子邮箱</label>
+                                <div class="col-md-9">
+                                    <p class="form-control-static email-tip">@Model.Email</p>
+                                </div>
+                                <div class="col-md-6 col-md-offset-3 form-describe-text">
+                                    <span>
+                                        入驻过程中用于接收助农为乐审核结果、开店账号密码信息，请务必仔细确认。
+                                        <br>
+                                        该邮箱已经绑定您注册的普通用户，在此继续绑定您的店铺。
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">*联系人身份证号</label>
+                                <div class="col-md-9">
+                                    <input class="form-control" name="IDcard" style="width: 50%;float: left" placeholder="输入联系人身份证号" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">*联系人地址</label>
+                                <div class="col-md-9">
+                                    <input class="form-control" name="Address" style="width: 50%;float: left" placeholder="输入联系人地址" />
+                                </div>
+                                <div class="col-md-6 col-md-offset-3 form-describe-text">
+                                    <span>作为店铺显示地址，格式可选为XX省XX市XX县/区。</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">*店铺登录密码</label>
+                                <div class="col-md-9">
+                                    <input type="password" name="Password" class="form-control" style="width: 50%;float: left" placeholder="输入登录密码" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">*确认登录密码</label>
+                                <div class="col-md-9">
+                                    <input type="password" class="form-control" name="Repassword" style="width: 50%;float: left" placeholder="确认登录密码" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">*店铺名字</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="ShopName" style="width: 50%;float: left" placeholder="输入您的店铺名字" />
+                                </div>
+                                <div class="col-md-6 col-md-offset-3 form-describe-text">
+                                    <span>店铺命名应当不包含敏感词汇，否则入驻将不会成功。</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="btn btn-info" id="part1-btn" style="margin-left: 400px">下一步，缴费入驻</div>
+                            </div>
+                        </div>
+                        <div class="m-content part2" style="display: none">
+                            <div class="form-group">
+                                <h3 style="margin-left: 135px;">请扫描以下二维码完成入驻</h3>
+                            </div>
+                            <div class="form-group" style="padding-left: 300px">
+                                <img src="~/Images/二维码.jpg" />
+                            </div>
+                            <div class="form-group">
+                                <button class="col-md-3 col-md-offset-4 btn btn-info" type="submit">确认入驻</button>
+                            </div>
+                        </div>
+                    </div>
+                  }
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#part1-btn").click(function () {
+            if ($("#myForm").data('bootstrapValidator').isValid()) {
+                $(".part1").hide();
+                $(".part2").show();
+            }
+            else {
+                $('#myForm').bootstrapValidator('validate');
+            }
+        });
+
+        //客户端登录验证
+        $(".el-form").bootstrapValidator({
+            message:'This value is not valid',
+            feedbackIcons:{
+                valid:'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields:{
+                BossName:{
+                    validators:{
+                        notEmpty:{
+                            message:"联系人姓名不能为空"
+                        },
+                        stringLength:{
+                            min:2,
+                            max:15,
+                            message:"姓名长度不符合规定"
+                        },
+                        regexp:{
+                            //匹配中文和英文
+                            regexp:/^[\u4e00-\u9fa5]+$/,
+                            message:"姓名只能是由中文字符组成"
+                        }
+                    }
+                },
+                Phone:{
+                    validators:{
+                        notEmpty:{
+                            message:"手机号码不能为空"
+                        },
+                        regexp:{
+                            regexp:/^1[0-9]{10}$/,
+                            message:"手机号码格式不对，应该为以1开头的11位数字"
+                        }
+                    }
+                },
+                IDcard:{
+                    validators:{
+                        notEmpty:{
+                            message:"身份证号不能为空"
+                        },
+                        regexp:{
+                            // 身份证格式验证
+                            regexp:/^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^((1[1-5])|(2[1-3])|(3[1-7])|(4[1-6])|(5[0-4])|(6[1-5])|71|(8[12])|91)\d{4}((19\d{2}(0[13-9]|1[012])(0[1-9]|[12]\d|30))|(19\d{2}(0[13578]|1[02])31)|(19\d{2}02(0[1-9]|1\d|2[0-8]))|(19([13579][26]|[2468][048]|0[48])0229))((\d{4})|\d{3}[Xx])$)$/,
+                            message:"身份证格式错误"
+                        }
+                    }
+                },
+                Address:{
+                    validators:{
+                        notEmpty:{
+                            message:"地址不能为空"
+                        },
+                        regexp:{
+                            regexp:/^[\u4e00-\u9fa5]+$/,
+                            message:"地址格式不正确"
+                        }
+                    }
+                },
+                Password:{
+                    validators:{
+                        notEmpty:{
+                            message:"密码不能为空"
+                        },
+                        stringLength:{
+                            min: 8,
+                            max: 16,
+                            message:"密码长度必须是8到16个数字、字母的组合"
+                        },
+                        regexp:{
+                            regexp:/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z.]{8,16}$/,
+                            message:"密码强度太弱"
+                        }
+                    }
+                },
+                Repassword:{
+                    validators:{
+                        notEmpty:{
+                            message:"确认密码不能为空"
+                        },
+                        identical:{
+                            field:"Password",
+                            message:"两次输入的密码不一致"
+                        }
+                    }
+                },
+                ShopName:{
+                    validators:{
+                        notEmpty:{
+                            message:"店铺名字不能为空"
+                        },
+
+                    }
+                }
+            }
+        })
+    })
+</script>

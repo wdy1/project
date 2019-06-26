@@ -1,0 +1,106 @@
+﻿@model Famer.Entity.Model.UserInfo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>助农为乐 - 商家后台</title>
+    <style type="text/css">
+        .wb-center {
+            width: 1000px;
+            margin: 0 auto;
+            margin-top: 80px;
+        }
+
+        .zn-seller {
+            display: block;
+            margin-left: 130px;
+            text-decoration: none;
+            cursor: pointer;
+            position: relative;
+            width: 242px;
+            height: 40px;
+        }
+
+            .zn-seller .zn-title {
+                position: absolute;
+                left: 0;
+                top: 5px;
+                font-family: 华文隶书;
+                font-size: 32px;
+                color: #e21214;
+            }
+
+            .zn-seller .z-s {
+                position: absolute;
+                right: 0;
+                top: 10px;
+                color: #777;
+                font-weight: 600;
+            }
+
+            .zn-seller i {
+                height: 100%;
+                width: 1px;
+                background-color: #777;
+                position: absolute;
+                right: 105px;
+                top: 25px;
+            }
+
+        .wb-center .wb-per {
+            width: 374px;
+            margin: 0 auto;
+            margin-top: 72px;
+        }
+
+        .wb-center .wb-erinfo {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .wb-center .wb-erchange {
+            display: block;
+            text-align: center;
+            margin-top: 24px;
+            box-sizing: content-box;
+            padding: 25px 100px;
+            color: #797979;
+            border: 2px solid #797979;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .wb-center .wb-per .wb-erchange:hover {
+            background-color: #797979;
+            color: #eee;
+        }
+
+        .wb-center .wb-per .wb-fr {
+            float: right;
+            display: block;
+            margin-top: 30px;
+            color: #ff0000;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="wb-center">
+        <a class="zn-seller">
+            <h2 class="zn-title">助农为乐</h2>
+            <i class="line"></i>
+            <h2 class="z-s">商家后台</h2>
+        </a>
+        <div class="wb-per">
+            <p class="wb-erinfo">您当前登录账号：@Model.UserName，非商家账号，接下来您可能要：</p>
+            <a class="wb-erchange" href="@Url.Action("Login")">切换商家账号</a>
+            <a class="wb-fr" href="@Url.Action("Enter")">入驻为助农商家 ></a>
+        </div>
+    </div>
+</body>
+</html>

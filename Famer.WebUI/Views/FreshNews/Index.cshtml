@@ -1,0 +1,349 @@
+﻿@model Famer.WebUI.Models.FreshNewsViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/css/FreshNews.css" rel="stylesheet" />
+<link href="~/Content/css/优选一百样式.css" rel="stylesheet" />
+<div class="index">
+    <div class="h11" style="border-top: 1px solid #ddd"></div>
+    <div class="youxuan">
+        <div class="zixuntopkuang grid_c1">
+            <! -- 左边 -->
+            <div class="fx1 a1" style="width: 380px">
+                <div class="fx1 imgmore pos-rel">
+                    <div class="adv-public article-index ">
+                        <div id="myCarousel" class="carousel slide">
+                            <!-- 轮播（Carousel）指标 -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </ol>
+                            <!-- 轮播（Carousel）项目 -->
+                            <div class="carousel-inner">
+                                @foreach (var item in Model.lb)
+                                {
+                                    <div class="item active">
+                                        <a href="#" target="_blank">
+                                            <img src="@item.Image" alt="First slide">
+                                            <div class="carousel-caption">
+                                                <p class="biaoti">@item.Title</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                }                                
+                            </div>
+                            <!-- 轮播（Carousel）导航 -->
+                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear h10"></div>
+                <ul class="fx1 imgmore pos-rel" style="padding: 0">
+                    @foreach (var item in Model.lbzx)
+                    {
+                        <li class="img-two">
+                            <a href="@Url.Action("SellerDetails","FreshNews",new { id=item.NewsID})">
+                                <img src="@item.Image" alt="“@item.Title">
+                                <h1 class="text-wid-auto">“@item.Title</h1>
+                            </a>
+                        </li>
+                    }                   
+                </ul>
+            </div>
+            <div class="fx1" style="width: 350px;margin-left: 30px;border-top: 1px solid #ddd">
+                <div class="put-tit-new">
+                    <a target="_blank" style="border-top: 2px solid #df2526" class="fx1 col" href="优选100.html">
+                        <h1 class="ziti">推荐导读</h1>
+                    </a>
+                </div>
+                <div class="clear"></div>
+                <ul class="xunxiliebiao">
+                    @foreach (var iteml in Model.tjdd)
+                    {
+                        <li class="list-catname clearfix all">
+                            <a class="tit  text-wid-auto" href="@Url.Action("SellerDetails","FreshNews",new { id=iteml.NewsID})" target="_blank" title="@iteml.Title">@iteml.Title</a>
+                        </li>
+                    }
+                </ul>
+                <div class="clear h10"></div>
+                <ul class="xunxiliebiao">
+                    @foreach (var iteml in Model.tjdd1)
+                    {
+                        <li class="list-catname clearfix all">
+                            <a class="tit  text-wid-auto" href="@Url.Action("SellerDetails","FreshNews",new { id=iteml.NewsID})" target="_blank" title="@iteml.Title">@iteml.Title</a>
+                        </li>
+                    }
+                </ul>
+                 </div>
+            <div class="fx1" style="width: 350px;margin-left: 30px;border-top: 1px solid #ddd">
+                <div class="put-tit-new">
+                    <a target="_blank" style="border-top: 2px solid #df2526" class="fx1 col" href="优选100.html">
+                        <h1 class="ziti">技术专区</h1>
+                    </a>
+                </div>
+                <div class="clear"></div>
+                <ul class="xunxiliebiao">
+                    @foreach (var item in Model.jszq)
+                    {
+                        <li class="list-catname clearfix all">
+                            <a class="tit  text-wid-auto" href="@Url.Action("SellerDetails","FreshNews",new { id=item.NewsID})" target="_blank" title="@item.Title">@item.Title</a>
+                        </li>
+                    }
+                </ul>
+                <div class="clear h10"></div>
+                <ul class="xunxiliebiao">
+                    @foreach (var item in Model.jszq1)
+                    {
+                        <li class="list-catname clearfix all">
+                            <a class="tit  text-wid-auto" href="@Url.Action("SellerDetails","FreshNews",new { id=item.NewsID})" target="_blank" title="@item.Title">@item.Title</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="zixunbg1"></div>
+            <div class="zixunbg2"></div>
+        </div>
+    </div>
+    <div class="youxuan">
+        <div class="zixunsize grid_c1">
+            <div class="youxuan-title">
+                <div class="titlemid">
+                    <h3 class="mainer">
+                        鲜
+                        <i>/</i>
+                        活
+                        <i>/</i>
+                        资
+                        <i>/</i>
+                        讯
+                    </h3>
+                    <p class="title-sup">每期鲜味 精心为你</p>
+                </div>
+            </div>
+            <div class="fx1" style="width: 770px">
+                <div class="pub-tit-new">
+                    <a target="_blank" class="fx1" style="border-top: 2px solid #e90d00" href="优选100.html">
+                        <h1 class="xxzx">新鲜资讯</h1>
+                    </a>
+                    <a target="_blank" class="fxr" href="优选100.html">更多>></a>
+                    <ul class="fxr sub-list">
+                        <li class="fx2">
+                            <a href="优选100.html" target="_blank">生鲜水果</a>
+                        </li>
+                        <li class="fx2">
+                            <a href="优选100.html" target="_blank">|新鲜蔬菜</a>
+                        </li>
+                        <li class="fx2">
+                            <a href="优选100.html" target="_blank">|畜牧水厂</a>
+                        </li>
+                        <li class="fx2">
+                            <a href="优选100.html" target="_blank">|米面粮油</a>
+                        </li>
+                        <li class="fx2">
+                            <a href="优选100.html" target="_blank">|花卉苗木</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+                <ul class="img-list-index">
+                    @foreach (var item in Model.xxzx)
+                    {
+                        <li class="pos-rel">
+                            <a class="img-1 pos-abs" href="@Url.Action("SellerDetails","FreshNews",new { id=item.NewsID})" target="_blank">
+                                <img class="xxzximg" src="@item.Image" alt="@item.Title">
+                            </a>
+                            <div class="con-text">
+                                <a class="type-cat" href="@Url.Action("SellerDetails","FreshNews",new { id=item.NewsID})" target="_blank">@item.Type</a>
+                                <div class="clealine"></div>
+                                <h2 class="min">
+                                    <a class="text-wid" href="@Url.Action("SellerDetails","FreshNews",new { id=item.NewsID})" target="_blank" title="@item.Title">@item.Title</a>
+                                </h2>
+                                <div class="clear"></div>
+                                <div class="text-infor min">
+                                    @item.Introduction &nbsp；&nbsp;[<a href="@Url.Action("SellerDetails","FreshNews",new { id=item.NewsID})" target="_blank">详细>>]</a>
+                                </div>
+                                <div class="clea"></div>
+                                <span class="fx1 font-gray">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <i class="iconfont-comm fs-12">*</i>
+                                    &nbsp;
+                                </span>
+                                
+                                
+                            </div>
+                        </li>
+                    }
+                </ul>
+                <div class="m-more cur-poin">
+                    <a class="box-shadow btn-mid fs-16 font-gray" href="优选100.html" target="_blank">更多信息中心>></a>
+                </div>
+            </div>
+            <div class="fx3" style="width: 305px">
+                <div class="pub-tit-new">
+                    <a target="_blank" style="border-top: 2px solid #e90d00" class="fx1 col-" href="优选100.html">
+                        <h1 class="xxzx">农耕文化</h1>
+                    </a>
+                    <a target="_blank" class="fxr" href="优选100.html">更多>></a>
+                </div>
+                <div class="clear h5"></div>
+                <div class="imgmore pos-rel">
+                    <div class="lunbo2">
+                        <div class="adv-public lunbo2-size ">
+                            <div id="myCarousel2" class="carousel slide">
+                                <!-- 轮播（Carousel）指标 -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+                                    <li data-target="#myCarousel2" data-slide-to="1"></li>
+                                    <li data-target="#myCarousel2" data-slide-to="2"></li>
+                                </ol>
+                                <!-- 轮播（Carousel）项目 -->
+                                <div class="carousel-inner"> 
+                                    @foreach (var item in Model.ngwh)
+                                    {
+                                    <div class="item active">
+                                        <a href="@Url.Action("SellerDetails","FreshNews",new { id=item.NewsID})" target="_blank">
+                                            <img src="@item.Image" alt="First slide">
+                                            <div class="carousel-caption">
+                                                <p class="biaoti"></p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    }                                   
+                                </div>
+                                <!-- 轮播（Carousel）导航 -->
+                                <a class="left carousel-control" href="#myCarousel2" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#myCarousel2" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="lunbo2-liebiao">
+                        @foreach (var item in Model.ngwh1)
+                        {
+                        <li class="list-catname">
+                            <a class="titt" href="@Url.Action("SellerDetails","FreshNews",new { id=item.NewsID})" target="_blank" title="@item.ClassName">@item.ClassName|</a>
+                            <a class="title" href="@Url.Action("SellerDetails","FreshNews",new { id=item.NewsID})" target="_blank" title="@item.Title">@item.Title</a>
+                        </li>
+                        }                    
+                    </ul>
+                </div>
+
+            </div>
+            <div class="fx3" style="width: 305px">
+                <div class="clear h5"></div>
+                <div class="pub-tit-new">
+                    <a target="_blank" style="border-top: 2px solid #e90d00" class="fx1 col-" href="优选100.html">
+                        <h1 class="xxzx">农业展会</h1>
+                    </a>
+                    <a target="_blank" class="fxr" href="优选100.html">更多>></a>
+                </div>
+                <ul class="img-123">
+                    <div class="clear h10"></div>
+                    @foreach (var item in Model.nyzh1)
+                    {
+                    <li class="img-three rad100a">
+                        <a href="优选100.html">
+                            <img class="img-3" src="@item.Image " alt="@item.Title">
+                            <h1 class="text-wid-auto">@item.Title</h1>
+                        </a>
+                    </li>
+                    }                   
+                </ul>
+                <div class="clear h10"></div>
+                <ul class="lunbo2-liebiao">
+                    @foreach (var item in Model.nyzh)
+                    {
+                        <li class="list-catname">
+                            <a class="titt" href="优选100.html" target="_blank" title="@item.ClassName">@item.
+                            |</a>
+                            <a class="title" href="优选100.html" target="_blank" title="@item.Title">@item.
+                            </a>
+                        </li>
+                    }                  
+                </ul>
+            </div>
+            <div class="fx3" style="width: 305px">
+                <div class="clear h10"></div>
+                <div class="pub-tit-new">
+                    <a target="_blank" style="border-top: 2px solid #e90d00" class="fx1 col-" href="优选100.html">
+                        <h1 class="xxzx">我的老家</h1>
+                    </a>
+                    <a target="_blank" class="fxr" href="优选100.html">更多>></a>
+                </div>
+                <div class="wdlj">
+                    <div class="imgmore pos-rel">
+                        <div class="lunbo2">
+                            <div class="adv-public lunbo2-size ">
+                                <div id="myCarousel3" class="carousel slide">
+                                    <!-- 轮播（Carousel）指标 -->
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#myCarousel3" data-slide-to="0" class="active"></li>
+                                        <li data-target="#myCarousel3" data-slide-to="1"></li>
+                                        <li data-target="#myCarousel3" data-slide-to="2"></li>
+                                    </ol>
+                                    <!-- 轮播（Carousel）项目 -->
+                                    <div class="carousel-inner">
+                                        @foreach (var item in Model.wdlj)
+                                        {
+                                        <div class="item active">
+                                            <a href="@Url.Action("SellerDetails","FreshNews",new { id=item.NewsID})" target="_blank">
+                                                <img src="@item.Image" alt="First slide">
+                                                <div class="carousel-caption">
+                                                    <p class="biaoti">@item.Title</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        }                                                                             
+                                    </div>
+                                    <!-- 轮播（Carousel）导航 -->
+                                    <a class="left carousel-control" href="#myCarousel3" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#myCarousel3" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fx3" style="width: 305px">
+                <div class="clear h10"></div>
+                <div class="pub-tit-new">
+                    <a target="_blank" style="border-top: 2px solid #e90d00" class="fx1 col-" href="优选100.html">
+                        <h1 class="xxzx">各具特色</h1>
+                    </a>
+                    <a target="_blank" class="fxr" href="优选100.html">更多>></a>
+                </div>
+                <ul class="lunbo2-liebiao">
+                    @foreach (var item in Model.gjts)
+                    {
+                        <li class="list-catname">
+                            <a class="titt" href="@Url.Action("SellerDetails","FreshNews",new { id=item.NewsID})l" target="_blank" title="@item.ClassName">@item.ClassName|</a>
+                            <a class="title" href="@Url.Action("SellerDetails","FreshNews",new { id=item.NewsID})" target="_blank" title="@item.Title">@item.Title</a>
+                        </li>
+                    }                   
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

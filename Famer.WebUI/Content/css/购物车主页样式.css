@@ -1,0 +1,132 @@
+﻿a.submit-btn{
+    display: block;
+    position: relative;
+    width: 94px;
+    height: 52px;
+    line-height: 52px;
+    color: #fff;
+    text-align: center;
+    font-family: "microsoft yahei";
+    overflow: hidden;
+    background: #e54346;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+.cart-floatbar .cart-toolbar{
+    border: 1px solid #f0f0f0;
+    position: relative;
+    background: #fff;
+    box-sizing: content-box;
+}
+.cart-floatbar .cart-toolbar .cart-toolbar-wrap{
+    width: 1028px;
+    margin: 0 auto;
+    position: relative;
+}
+.cart-floatbar .cart-toolbar-wrap .toolbar-right{
+    position: absolute;
+    height: 52px;
+    right: 0;
+    top: -1px;
+    width: 610px;
+}
+.cart-floatbar .cart-wrap .cart-toolbar-wrap .toolbar-right .comm-right{
+    float: right;
+    width: 650px;
+}
+.cart-floatbar .toolbar-right .btn-area{
+    float: right;
+}
+.cart-floatbar .toolbar-right .price-sum{
+    float: right;
+    height: 43px;
+    line-height: 20px;
+    margin: 7px 20px 0 10px;
+    width: auto;
+    color: #666;
+    position: relative;
+}
+.cart-floatbar .toolbar-right .price-sum .txt{
+    width: 50px;
+    float: left;
+    white-space: nowrap;
+    text-align: right;
+    color: #999;
+}
+.cart-floatbar .toolbar-right .price-sum .right-price{
+    display: inline-block;
+    text-align: right;
+    font-family: Verdana;
+    font-size: 16px;
+    color: #E2231A;
+    font-weight: 700;
+}
+em{
+    font-style: normal;
+}
+.cart-floatbar .toolbar-right .price-sum .price-tips{
+    display: inline-block;
+    height: 18px;
+    width: 12px;
+    vertical-align: text-bottom;
+    background:url("../../Images/price-tips.png") 0 0 no-repeat;
+    margin-left: 5px;
+}
+.cart-floatbar .toolbar-right .amount-sum{
+    float: right;
+    color: #999;
+    height: 44px;
+    line-height: 20px;
+    margin: 7px 0 0;
+}
+.cart-floatbar .toolbar-right .amount-sum em{
+    color: #E2231A;
+    font-family: Verdana;
+    font-weight: 700;
+    margin: 0 3px;
+}
+
+
+.cart-goods{
+    width: 300px;
+    float: left;
+    padding: 0px 0 10px;
+    box-sizing: content-box;
+}
+.cart-goods-item{
+    display: block;
+    line-height: 20px;
+}
+.cart-goods .g-img{
+    float: left;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    padding: 0;
+    margin-right: 10px;
+    background: #fff;
+    overflow: hidden;
+}
+.cart-goods .g-message .g-name{
+    height: 40px;
+    line-height: 20px;
+    overflow: hidden;
+}
+.cart-goods .g-message .g-name a{
+    text-decoration: none;
+    color: #333;
+
+}
+.cart-goods .g-message .g-name a:hover{
+    color: red;
+}
+.cart-goods .g-message .g-name em{
+    display: inline-block;
+    width: 48px;
+    height: 20px;
+    background: url("../../Images/fresh-icon.png") no-repeat;
+    vertical-align: middle;
+    overflow: hidden;
+    margin-right: 3px;
+}

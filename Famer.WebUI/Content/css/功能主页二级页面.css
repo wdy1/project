@@ -1,0 +1,335 @@
+﻿.selector{
+    background: #fff;
+    border-top: 1px solid #ddd;
+    margin-bottom: 10px;
+    height: 226px;
+    margin-top: 45px;
+}
+.Z-search{
+    width: 1360px;
+    margin: 0 auto;
+}
+.z-main2{
+    margin-bottom: 10px;
+    height: 1500px;
+}
+.z-main2 .m-list{
+    float: right;
+    width: 100%;
+}
+.z-main2 .m-list .ml-wrap{
+    box-sizing: content-box;
+    position: relative;
+    margin-left: 190px;
+    padding-bottom: 30px;
+}
+.z-main2 .ml-wrap .filter{
+    position: relative;
+    z-index: 4;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    height: 77px;
+}
+.z-main2 .m-list .ml-wrap .goods-list{
+    margin-bottom: 20px;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+.z-main2 .goods-list .gl-wrap{
+    width: 1250px;
+    list-style: none;
+}
+.z-main2 .goods-list .gl-wrap .gl-item{
+    margin-right: 10px;
+    width: 240px;
+    height: 474px;
+    float: left;
+    position: relative;
+    z-index: 1;
+    margin-top: 10px;
+    display: list-item;
+}
+.gl-wrap li.gl-item .gl-i-wrap{
+    box-sizing: content-box;
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    padding: 38px 9px 10px;
+    left: 0;
+    top: 0;
+    border: 1px solid #fff;
+    transition: border .1s ease;
+}
+.gl-wrap li.gl-item:hover .gl-i-wrap{
+    z-index: 1;
+    border-color: #ddd;
+    box-shadow: 0 0 2px 2px #f8f8f8;
+}
+.goods-list .gl-wrap .gl-item .gl-i-wrap .p-img{
+    height: 220px;
+    padding: 0;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+.p-img a{
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+.gl-wrap .gl-item .gl-i-wrap .p-price{
+    position: relative;
+    line-height: 22px;
+    height: 22px;
+    overflow: hidden;
+    /* 这个宽度的100% 还是220px 即时他的父元素li.gl-i-wrap 宽度为220+9+9+1+1 */
+    width: 100%;
+    margin: 0 0 8px;
+}
+.gl-wrap .gl-item .gl-i-wrap .p-price strong{
+    float: left;
+    margin-right: 10px;
+    color: #e4393c;
+    font-size: 20px;
+    font-family: Verdana;
+    font-weight: 400;
+}
+.gl-wrap .gl-item .gl-i-wrap .p-price strong em{
+    font-style: normal;
+    font-size: 16px;
+}
+.gl-wrap .gl-item .gl-i-wrap .p-price strong i{
+    font-style: normal;
+}
+ul.gl-wrap li.gl-item .gl-i-wrap .p-name{
+    height: 40px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+.gl-i-wrap .p-name a{
+    color: #666;
+    cursor: pointer;
+    text-decoration: none;
+}
+.gl-i-wrap .p-name-type-2 em{
+    display: inline;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    font-style: normal;
+}
+.gl-i-wrap .p-name-type-2 i.p-des{
+    display: inline;
+    font-style: normal;
+    width: 185px;
+    color: #ffaa71;
+    line-height: 20px;
+    height: 20px;
+}
+.goods-list .gl-wrap .gl-item .gl-i-wrap .p-tag{
+    float: left;
+    height: 16px;
+    padding: 0 3px;
+    margin-top: 2px;
+    margin-right: 3px;
+    overflow: hidden;
+    color: #FFF;
+    font: 12px/16px "Helvetica Neue","Hiragino Sans GB";
+    background: #838dc7;
+    border-radius: 2px;
+}
+.skcolor-zn{
+    color: #e4393c;
+}
+.gl-wrap .gl-item .gl-i-wrap .p-commit{
+    width: 100%;
+    height: 18px;
+    margin-top: -3px;
+    margin-bottom: 9px;
+    overflow: hidden;
+}
+.gl-item .gl-i-wrap .p-commit strong{
+    color: #a7a7a7;
+    font-weight: 400;
+}
+.gl-item .gl-i-wrap .p-commit strong a{
+    color: #646fb0;
+    font-family: Verdana;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+.gl-item .gl-i-wrap .p-shop{
+    line-height: 18px;
+    height: 18px;
+    overflow: hidden;
+    margin-top: -3px;
+    margin-bottom: 9px;
+}
+.gl-item .gl-i-wrap .p-shop span{
+    display: inline-block;
+    position: relative;
+    height: 18px;
+}
+.gl-item .gl-i-wrap .p-shop span a{
+    color: #999;
+    text-decoration: none;
+}
+.gl-item .gl-i-wrap .p-shop span .zn-kefu{
+    cursor: pointer;
+    position: absolute;
+    right: -21px;
+    top: 1px;
+    background: url("../../Images/客服图片.png") no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.gl-wrap .gl-item .gl-i-wrap .p-icons{
+    overflow: hidden;
+    zoom: 1;
+    height: 16px;
+    margin-bottom: 12px;
+}
+.goods-icons{
+    box-sizing: content-box;
+    float: left;
+    height: 16px;
+    line-height: 16px;
+    padding: 0 3px;
+    margin-right: 3px;
+    overflow: hidden;
+    text-align: center;
+    font-style: normal;
+    font-size: 12px;
+    font-family: "Helvetica Neue","Hiragino Sans GB",simsun,serif;
+    background: #e23a3a;
+    color: #fff;
+    cursor: default;
+    border-radius: 2px;
+}
+.goods-icons2{
+    box-sizing: content-box;
+    float: left;
+    height: 14px;
+    line-height: 14px;
+    padding: 0 3px;
+    border: 1px solid #e23a3a;
+    margin-right: 3px;
+    overflow: hidden;
+    text-align: center;
+    font-style: normal;
+    font-size: 12px;
+    font-family: "Helvetica Neue","Hiragino Sans GB",simsun,serif;
+    border-radius: 2px;
+    color: #e23a3a;
+}
+.gl-wrap .gl-item .gl-i-wrap .p-operate{
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.gl-wrap .gl-item .gl-i-wrap .p-operate .p-o-btn{
+    box-sizing: content-box;
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid #ddd;
+    padding: 0 3px 0 24px;
+    position: relative;
+    background: #fff;
+    color: #e4393c;
+    width: 67px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+.gl-wrap .gl-item .gl-i-wrap .p-operate .p-o-btn:hover{
+    border: 1px solid #e4393c;
+}
+.gl-wrap .gl-item .gl-i-wrap .p-operate i{
+    position: absolute;
+    display: block;
+    font-style: normal;
+    left: 4px;
+    top: 3px;
+    width: 18px;
+    height: 18px;
+    background: url("../../Images/search.ele.png") no-repeat 0 -272px;
+}
+#z-main .m-aside{
+    float: right;
+    width: 180px;
+    margin-right: -180px;
+    position: relative;
+}
+#z-main .m-aside .aside-bar{
+    background: #fff;
+}
+#z-main .m-aside .aside-bar .jx-goods{
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    position: relative;
+}
+#z-main .m-aside .aside-bar .jx-goods .m-title{
+    box-sizing: content-box;
+    line-height: 36px;
+    padding-left: 10px;
+    overflow: hidden;
+    zoom: 1;
+    margin-bottom: 10px;
+}
+.aside-bar .jx-goods .m-title h3{
+    font-family: "microsoft yahei";
+    font-size: 14px;
+}
+.aside-bar .jx-goods .m-content{
+    overflow: hidden;
+    zoom: 1;
+}
+.aside-bar .jx-goods .m-content li{
+    box-sizing: content-box;
+    padding-left: 9px;
+    margin-bottom: 20px;
+    padding-right: 9px;
+    display: list-item;
+}
+.aside-bar .jx-goods .m-content li .p-img{
+    height: 160px;
+    padding: 0;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.aside-bar .jx-goods .m-content li img{
+    border: 0;
+    vertical-align: middle;
+}
+.aside-bar .jx-goods .m-content .p-price{
+    box-sizing: content-box;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    padding: 0 10px;
+}
+.aside-bar .p-price strong{
+    font-size: 14px;
+    color: #e4393c;
+    font-weight: 400;
+    font-family: Verdana;
+}
+.aside-bar em{
+    font-style: normal;
+}
+.aside-bar .jx-goods .m-content .p-price i{
+    font-style: normal;
+}
+.aside-bar .jx-goods .m-content .p-name{
+    box-sizing: content-box;
+    line-height: 18px;
+    height: 36px;
+    overflow: hidden;
+    padding: 0 10px;
+}
+.aside-bar .jx-goods .m-content .p-name a{
+    text-decoration: none;
+}

@@ -1,0 +1,602 @@
+﻿.lunbobox {
+    position: relative;
+    overflow: hidden;
+}
+
+.lunboboxsize {
+    position: relative;
+    height: 536px;
+}
+
+.background-1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 400px;
+    background: #0b0c0c url(../../Images/优选100/background.jpg)
+}
+
+.lunboboxposition {
+    position: relative;
+    z-index: 2;
+}
+
+.grid_c1 {
+    height: 108px;
+    width: 1190px;
+}
+
+.boxtop {
+    position: relative;
+    height: 108px;
+}
+
+.logobox {
+    position: absolute;
+    left: 418px;
+    top: 0;
+    width: 334px;
+    height: 168px;
+    padding-top: 60px;
+}
+
+.logoboder {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    margin-left: -30px;
+    width: 60px;
+    height: 27px;
+    color: rgba(37,37,37,.01);
+    background-image: url("../../Images/优选100/logomid.png");
+}
+
+.logofontsize {
+    font-size: 14px;
+    color: #ddd;
+    text-align: center;
+}
+
+.boxtopcontent {
+    overflow: hidden;
+}
+
+.grid_c1 {
+    margin: 0 auto;
+    width: 1190px;
+}
+
+.logo-1 {
+    position: relative;
+    float: left;
+    margin-right: 32px;
+    width: 108px;
+    height: 108px;
+    padding: 33px 0 33px 50px;
+}
+
+li {
+    list-style: none;
+}
+
+.logo-position {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -14px;
+    font-size: 30px;
+}
+
+.logo-y {
+    font-family: icomoon !important;
+    spesk: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+.logo-1-right {
+    display: block;
+    color: #909090;
+    width: 30px;
+    font-size: 14px;
+}
+
+.logo-2 {
+    position: relative;
+    float: left;
+    width: 68px;
+    padding: 33px 0 33px 50px;
+}
+
+.logo-2-size {
+    margin-right: 334px;
+}
+
+.lunbo {
+    width: 1190px;
+    height: 400px;
+    transform-style: perserve-3d;
+    margin: 0 auto;
+    position: relative;
+}
+
+    .lunbo img {
+        width: 595px;
+        position: absolute;
+        top: 75px;
+        transition: all .3s linear;
+    }
+
+    .lunbo:hover .btn {
+        opacity: 1;
+    }
+
+.front {
+    left: 0;
+    height: 335px;
+    margin-top: -9px;
+}
+
+.back {
+    left: 595px;
+    height: 335px;
+    margin-top: -9px;
+}
+
+.activeh {
+    left: 297px;
+    margin-top: 5px;
+    transform: scale(1.7);
+    z-index: 10;
+}
+
+.btns .btn {
+    width: 60px;
+    height: 327px;
+    display: block;
+    position: absolute;
+    background-color: transparent;
+    font-size: 50px;
+    font-family: "微软雅黑";
+    color: rgba(255,255,255,.5);
+    line-height: 55px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity .3s linear;
+}
+
+    .btns .btn:hover {
+        background-color: transparent;
+    }
+
+    .btns .btn:first-child {
+        top: 75px;
+    }
+
+    .btns .btn:last-child {
+        top: 75px;
+        right: 0;
+    }
+
+.zuoxia {
+    left: -228px;
+    top: 244px;
+    width: 402px;
+    height: 286px;
+    background-position: 0 0;
+    position: absolute;
+    background-image: url("../../Images/优选100/zuoxia.png");
+    z-index: -1000;
+    background-repeat: no-repeat;
+}
+
+.youxia {
+    right: -63px;
+    top: 418px;
+    width: 98px;
+    height: 117px;
+    background-position: -402px 0;
+    position: absolute;
+    background-image: url("../../Images/优选100/zuoxia.png");
+    background-repeat: no-repeat;
+    z-index: -1000;
+}
+
+/*优选合集*/
+.youxuan-more {
+    padding-top: 1px;
+    min-height: 1000px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.more-gradient {
+    background: linear-gradient(180deg,#fefefe 0,#f4f4fa);
+}
+
+.more-inner {
+    position: relative;
+    padding-bottom: 65px;
+}
+
+.more-body {
+    position: relative;
+    z-index: 2;
+}
+
+.tab {
+    margin: 0;
+    padding: 0;
+}
+
+.tab-head-item {
+    box-sizing: content-box;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 50px;
+    width: 40px;
+    padding: 10px 0 10px 50px;
+    font-size: 16px;
+    color: #909090;
+    border-bottom: 4px solid transparent;
+    cursor: pointer;
+}
+
+.tab-head {
+    text-align: center;
+}
+
+.tab-head-item-inner {
+    display: block;
+    height: 45px;
+    overflow: hidden;
+}
+
+.mod-iconfont {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -20px;
+    font-size: 40px;
+}
+
+.mod-iconfont {
+    font-family: icomoon !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+.tab-head-txt {
+    display: inline-block;
+}
+
+em, i {
+    font-style: normal;
+}
+
+.mod-ver {
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+    font-size: 0;
+}
+
+.icon-fresh-shuiguo:before {
+    content: "\E907";
+    color: #909090;
+}
+
+.tab-body {
+    margin-left: -20px;
+    width: 1230px;
+    max-height: 800px;
+    background: #fff;
+    box-shadow: 0 1px 8px rgba(0,0,0,05);
+    border-top: 1px solid #f2f2f2;
+}
+
+.tab-body-item {
+    padding: 30px 0 0 9px;
+    overflow:hidden;
+}
+
+.goods-item {
+    display: inline-block;
+    box-sizing: content-box;
+    float: left;
+    margin: 0 11px 30px;
+    padding: 30px 20px 0;
+    width: 180px;
+    height: 320px;
+    font-size: 14px;
+    transition: all .25s ease-in-out;
+}
+
+    .goods-item:hover {
+        transform: translateY(-10px);
+    }
+
+    .goods-item img {
+        margin: 0 auto 20px;
+        width: 180px;
+        height: 180px;
+    }
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+.goods-item-tag {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 3px;
+    color: #b49966;
+    white-space: nowrap;
+}
+
+.goods-item-name {
+    margin-bottom: 16px;
+    height: 42px;
+    color: #222;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.goods-item-priceg {
+    position: relative;
+    height: 20px;
+    font-size: 0;
+}
+
+.goods-item-price {
+    display: inline-block;
+    margin-right: 3px;
+    font-size: 20px;
+    line-height: 1;
+    color: #ff541f;
+}
+
+.goods-item-g {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1;
+    color: #909090;
+}
+
+.goods-item-plus {
+    position: absolute;
+    right: 8px;
+    bottom: -4px;
+}
+
+.goods-item-plus-price {
+    display: inline-block;
+    font-size: 16px;
+    color: #222222;
+}
+
+em {
+    font-style: normal;
+}
+
+.goods-item-plus-icon {
+    display: inline-block;
+    width: 30px;
+    height: 11px;
+}
+
+.ico-plus {
+    background-position: -21px -41px;
+    background-image: url("../../Images/优选100/top100.png");
+    background-repeat: no-repeat;
+}
+
+.more-bg1 {
+    position: absolute;
+    top: 40px;
+    left: -405px;
+    width: 570px;
+    height: 507px;
+    background: url("../../Images/优选100/more_bg1.png");
+}
+
+.more-bg2 {
+    position: absolute;
+    bottom: -950px;
+    left: -85px;
+    width: 136px;
+    height: 238px;
+    background: url("../../Images/优选100/more_bg2.png");
+}
+
+.more-bg3 {
+    position: absolute;
+    bottom: -980px;
+    right: -250px;
+    width: 963px;
+    height: 465px;
+    background: url("../../Images/优选100/more_bg3.png");
+}
+
+/*本期优选*/
+.youxuan {
+    position: relative;
+    overflow: hidden;
+}
+
+.youxuansize {
+    position: relative;
+    margin-bottom: 50px;
+    padding-top: 1px;
+    min-height: 806px;
+}
+
+.youxuan-title {
+    margin: 36px 0;
+    height: 60px;
+    background: url("../../Images/优选100/youxuan-title_bg.png") 0 0 no-repeat;
+}
+
+.titlemid {
+    margin: 0 auto;
+    width: 284px;
+    text-align: center;
+}
+
+.mainer {
+    height: 42px;
+    line-height: 42px;
+    font-size: 28px;
+    font-weight: 400;
+    color: #222;
+    overflow: hidden;
+}
+
+.title-sup {
+    height: 21px;
+    font-size: 14px;
+    color: #909090;
+    font-weight: 400;
+    overflow: hidden;
+}
+
+.week-news-all {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+}
+
+.week-newsdata {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    margin-left: -80px;
+    width: 160px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 16px;
+    color: #222;
+    background: #fff;
+}
+
+.week-news {
+    padding: 45px 30px 0;
+    background: #fff;
+}
+
+.news-item {
+    float: left;
+    position: relative;
+    margin-bottom: 30px;
+    width: 565px;
+    height: 270px;
+    transition: all .25s ease-in-out;
+}
+
+a {
+    color: #232321;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+.news-item-image {
+    position: absolute;
+    z-index: 2;
+    left: -270px;
+    top: 50%;
+    margin-top: -135px;
+    width: 240px;
+    height: 240px;
+}
+
+.news-item-info {
+    height: 158px;
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    padding: 24px 22px 0 -1px;
+    width: 250px;
+    background: #f6f6fb;
+}
+
+.news-item-promote {
+    position: absolute;
+    top: -65px;
+    left: -40px;
+    font-size: 18px;
+    color: #b59a69;
+    margin: 15px 10px 10px;
+}
+
+.news-item-promote-text1 {
+    float: left;
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+.news-item-promote-text2 {
+    float: left;
+    position: relative;
+    padding-left: 10px;
+    max-width: 260px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.news-item-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    font-weight: 700;
+    color: #222222;
+    white-space: normal;
+    margin: 15px 10px 10px;
+}
+
+.youxuan-zuoxia {
+    position: absolute;
+    z-index: 3;
+    left: -76px;
+    bottom: -128px;
+    width: 150px;
+    height: 330px;
+    background: url("../../Images/优选100/youxuan-zuoxia.png");
+}
+
+.youxuan-youshang {
+    position: absolute;
+    right: -265px;
+    top: 100px;
+    width: 357px;
+    height: 426px;
+    background: url("../../Images/优选100/youxuan-youxia.png");
+}
+
+.goods-item-desc {
+    overflow: hidden;
+    font-size: 14px;
+    color: #909090;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    margin: 20px 10px 30px;
+}

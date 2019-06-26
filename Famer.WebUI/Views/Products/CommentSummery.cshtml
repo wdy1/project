@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Famer.Entity.Model.Comment>
+
+@if(Model==null || Model.Sum(e=>e.CommentID)==0)
+{
+    <div>
+        还没有人评论嗷，铁汁
+    </div>
+}
+else
+{
+    foreach (var item in Model)
+    {
+        <div id="showcom" class="comment-show-con clearfix">
+            <div class="comment-show-con-img pull-left">
+                <img src="@Url.Action("GetImage","User",new { UserId=item.User_Id})" />
+            </div>
+            <div class="comment-show-con-text pull-left clearfix">
+                <div class="pl-content">
+                    <a class="comment-username">@item.UserInfo.UserName：</a>
+                    <span class="comment-text">@item.Com_Content</span>
+                </div>
+                <div class="comment-oper">
+                    <span class="comment-oper-left pull-left comment-time">@item.Com_Time</span>
+                    <div class="pull-right comment-oper-right"></div>
+                </div>
+            </div>
+        </div>
+        
+    }
+   
+    
+}
+

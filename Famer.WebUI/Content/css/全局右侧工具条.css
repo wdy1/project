@@ -1,0 +1,15 @@
+﻿.z-globe-toolbar .zn-toolbar-wrap{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99990;
+    width: 0;
+    height: 100%;
+}
+.zn-toolbar{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border-right: 6px solid #7a6e6e;
+}

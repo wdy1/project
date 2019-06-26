@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Famer.Entity.Model.CartLine>
+
+@if (Model == null || Model.Sum(e=>e.CartLineID)==0)
+{
+    <div>啥也没有买，你看个锤子的购物车？</div>
+}
+else
+{
+    foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-center col-md-1"><input data-id="@item.CartLineID" type="checkbox" name="checked" value="@item.Price" data-num="@item.Num" /></td>
+            <td>
+                <div class="cell cart-goods">
+                    <div class="cart-goods-item">
+                        <div class="g-img">
+                            <a href="#" target="_blank" class="thumbnail">
+                                <img src="@item.Image" />
+                            </a>
+                        </div>
+                        <div class="g-message">
+                            <div class="g-name">
+                                <a href="#" target="_blank">
+                                    <em class="fresh-icon"></em>
+                                    @item.ProductDes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td class="col-md-3">@item.Products.ProductName</td>
+            <td class="col-md-2">@item.Num</td>
+            <td>￥@item.Price</td>
+            <td><a id="@item.CartLineID" data-num="@item.Num" data-price="@item.Price" class="btn btn-delete">删除</a></td>
+        </tr>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var total = 0;
+                var sum = 0;
+                //视觉感官
+                $("input[type='checkbox']").each(function (index) {
+                    _this = $(this);
+                    $(this).on("click", function () {
+                        if ($(this).is(":checked")) {
+                            $("[data-toggle='popover']").popover('hide');
+                            total += parseFloat($(this).val(), 10) * parseInt($(this).attr("data-num"), 10);
+                            sum += parseInt($(this).attr("data-num"), 10);
+                        } else {
+                            total -= parseFloat($(this).val(), 10) * parseInt($(this).attr("data-num"), 10);
+                            sum -= parseInt($(this).attr("data-num"), 10)
+                        }
+                        $("#Total").text(total.toFixed(2));
+                        $("#Sum").text(sum);
+                    })
+                });
+                $("a[class*='btn-delete']").each(function (index) {
+                    $(this).click(function () {
+                        var s = sum - parseInt($(this).attr("data-num"), 10);
+                        sum = s > 0 ? s : 0;
+                        var t = total - parseFloat($(this).attr("data-price"), 10) * parseInt($(this).attr("data-num"), 10);
+                        total = t > 0 ? t : 0;
+                        $("#Sum").text(sum);
+                        $("#Total").text(total);
+                        //Bug彻底改完。。
+                    })
+                });
+
+                $("[data-toggle='tooltip']").tooltip();
+
+                var deletes = $('a[class*="btn-delete"]');
+                $(deletes).each(function (i) {
+                    $(this).on("click", function () {
+                        var cartlineID = parseInt($(this).attr("id"), 10);
+
+                        $.ajax({
+                            url: '/Cart/CartSummary',
+                            data: JSON.stringify({ "CartLineID": cartlineID }),
+                            type: 'POST',
+                            contentType: 'application/json;charset=utf-8',
+                            success: function (data) {
+                                $("#tbody").html(data);
+                                
+                            },
+                            error: function () {
+                                console.log("请求失败");
+                            }
+                        })
+                    })
+                })
+
+            })
+        </script>
+    }
+}
+

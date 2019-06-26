@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/功能主页导航栏.css" rel="stylesheet" />
+    <script src="~/scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/scripts/bootstrap.min.js"></script>
+    <script src="~/scripts/bootstrapValidator.js"></script>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="top-wrapper">
+        <div class="top-content">
+            <ul class="content-left">
+                <li id="service-home">
+                    <i class="glyphicon glyphicon-home"></i>
+                    <a href="#" target="_blank">商家入驻</a>
+                </li>
+            </ul>
+            <ul class="content-right">
+                @Html.Action("LoginSummary", "Home")
+                <li class="spacer"></li>
+                <li class="fore2">
+                    <div class="dt">
+                        <a target="_blank">我的订单</a>
+                    </div>
+                </li>
+                <li class="spacer"></li>
+                <li class="fore3 dropdown" id="myfamer">
+                    <div class="dt cw-icon">
+                        <a target="_blank" href="#">我的农场</a>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                    </div>
+                    <div class="dd dropdown-layer">
+                        <div class="dd-spacer"></div>
+                        <div class="myfmlist1">
+                            <div class="fore1">
+                                <div class="item">
+                                    <a href="#">待处理订单<span class="num-unfinishedorder"></span></a>
+                                </div>
+                                <div class="item">
+                                    <a href="#">返修退换货</a>
+                                </div>
+                                <div class="item">
+                                    <a href="#">降价商品<span class="num-reduction"></span></a>
+                                </div>
+                            </div>
+                            <div class="fore2">
+                                <div class="item">
+                                    <a href="#" target="_blank">消息<span class="num-tip"></span> </a>
+                                </div>
+                                <div class="item">
+                                    <a href="#" target="_blank">我的问答<span class="num-consultation"></span></a>
+                                </div>
+                                <div class="item">
+                                    <a href="#" target="_blank">我的关注</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="myfmlist2">
+                            <div class="fore1">
+                                <div class="item">
+                                    <a href="#">我的积分</a>
+                                </div>
+                                <div class="item">
+                                    <a href="#">我的白条</a>
+                                </div>
+                            </div>
+                            <div class="fore2">
+                                <div class="item">
+                                    <a href="#">我的优惠券<span class="num-ticket"></span></a>
+                                </div>
+                                <div class="item">
+                                    <a href="#">我的理财</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="spacer"></li>
+                <li class="fore4" id="mymember">
+                    <div class="dt">
+                        <a target="_blank" href="#">我的会员</a>
+                    </div>
+                </li>
+                <li class="spacer"></li>
+                <li class="fore5 dropdown" id="enterprise">
+                    <div class="dt cw-icon">
+                        <a href="#" target="_blank">企业采购</a>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                    </div>
+                    <div class="dd dropdown-layer">
+                        <div class="dd-spacer"></div>
+                        <div class="dd-inner" id="ent-main">
+                            <div class="item">
+                                <a href="#" target="_blank">企业购</a>
+                            </div>
+                            <div class="item">
+                                <a href="#" target="_blank">商用产品馆</a>
+                            </div>
+                            <div class="item">
+                                <a href="#" target="_blank">工业品</a>
+                            </div>
+                            <div class="item">
+                                <a href="#" target="_blank">礼卡品</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="spacer"></li>
+                <li class="fore6 dropdown" id="serve">
+                    <div class="dt cw-icon">
+                        客服服务
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-layer dd">
+                        <div class="dd-spacer"></div>
+                        <div class="item-client">客户</div>
+                        <div class="item">
+                            <a href="#" target="_blank">帮助中心</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">售后服务</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">在线客服</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">意见建议</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">电话客服</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">客服邮箱</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">金融资讯</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">全球售客服</a>
+                        </div>
+                        <div class="item-business">商户</div>
+                        <div class="item">
+                            <a href="#" target="_blank">合作招商</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">学习中心</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">商家后台</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">工作台</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">商家帮助</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">规则平台</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="spacer"></li>
+                <li class="fore7 dropdown" id="navs">
+                    <div class="dt cw-icon">
+                        网站导航
+                        <i class="glyphicon glyphicon-send"></i>
+                    </div>
+                    <div class="dd dropdown-layer">
+                        <div class="dd-spacer"></div>
+                        <!-- 网站导航部分代码 -->
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+     @RenderBody()
+</body>
+</html>

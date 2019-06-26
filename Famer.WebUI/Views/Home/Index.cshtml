@@ -1,0 +1,658 @@
+﻿@model Famer.WebUI.Models.HomeViewModel
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "助农为乐 -恭喜LPL获得S8全球总冠军";
+}
+<div class="mod-container">
+    <!-- 左侧导航 -->
+    <div class="fresh-fs-nav">
+        <div class="tab">
+            <div class="tab-head">
+                <div class="tab-head-item">
+                    <div class="item1 tab-head-item-inner">
+                        <div class="item-icon"></div>
+                        <a href="#" class="item-title">新鲜瓜果</a>
+                        <div class="item-children">
+                            <a target="_blank" href="@Url.Action("Index","Products",new { ProductId=42})" class="item-children-item">柚子</a>
+                            <a target="_blank" href="#" class="item-children-item">榴莲</a>
+                            <a target="_blank" href="@Url.Action("Index","Products",new { ProductId=126})" class="item-children-item">车厘子</a>
+                        </div>
+                    </div>
+                    <!-- 一种很死板的方法 要使得鼠标悬停在产品分页上是不消失 必须将主体部分写在与导航同一父元素内 因为jQuery判断的是tab-head-item-->
+                    <div class="tab-body-item b-1 hide">
+                        <a class="body-title" href="#">热销水果</a>
+                        <a target="_blank" class="body-goods" href=@Url.Action("Index","Products",new {ProductId=30 })>苹果</a>
+                        <a class="body-goods">葡萄/提子</a>
+                        <a class="body-goods">奇异果/猕猴桃</a>
+                        <a target="_blank" class="body-goods" href="@Url.Action("Index","Products",new { ProductId=41})">甜橙</a>
+                        <a target="_blank" class="body-goods" href="@Url.Action("Index","Products",new { ProductId=31})">梨</a>
+                        <a class="body-goods">蓝莓</a>
+                        <a class="body-goods">柠檬</a>
+                        <a class="body-goods">百香果</a>
+                        <a class="body-goods">山楂</a>
+                        <a class="body-goods">雪莲果</a>
+                        <a class="body-goods">核桃</a>
+                        <a class="body-goods">板栗</a>
+                        <a class="body-goods">人参果</a><br>
+                        <a class="body-goods" style="margin-left: 76px">西柚</a>
+                        <a class="body-goods pop pop-1">水果礼盒</a>
+                        <br>
+                        <div class="body-item-inner" style="margin-top: 12px">
+                            <a class="body-title" href="#">时令水果</a>
+                            <a class="body-goods">冬枣</a>
+                            <a class="body-goods">车厘子/樱桃</a>
+                            <a class="body-goods">水蜜桃</a>
+                            <a class="body-goods">杏</a>
+                            <a class="body-goods">李子</a>
+                            <a class="body-goods">香瓜</a>
+                            <a class="body-goods">哈密瓜</a>
+                            <a class="body-goods">西瓜</a>
+                            <a class="body-goods">枇杷</a>
+                            <a class="body-goods">杨梅</a>
+                            <a class="body-goods">草莓</a>
+                            <a class="body-goods">柑橘</a>
+                            <a class="body-goods">石榴</a>
+                            <br>
+                            <a class="body-goods" style="margin-left: 76px">甘蔗</a>
+                            <a class="body-goods">柿子</a>
+                            <a class="body-goods">鲜槟榔</a>
+                            <a class="body-goods pop pop-2">无花果</a>
+                        </div>
+                        <div class="body-item-inner" style="margin-top: 12px">
+                            <a class="body-title" href="#">热带鲜果</a>
+                            <a class="body-goods" target="_blank" href="@Url.Action("Index","Products",new { ProductId=151})">芒果</a>
+                            <a class="body-goods">菠萝/凤梨</a>
+                            <a class="body-goods">榴莲</a>
+                            <a class="body-goods">香蕉</a>
+                            <a class="body-goods">山竹</a>
+                            <a class="body-goods">木瓜</a>
+                            <a class="body-goods">龙眼</a>
+                            <a class="body-goods">释迦</a>
+                            <a class="body-goods">火龙果</a>
+                            <a class="body-goods">牛油果</a>
+                            <a class="body-goods" target="_blank" href="@Url.Action("Index","Products",new { ProductId=150})">椰子</a>
+                            <a class="body-goods">菠萝蜜</a>
+                            <a class="body-goods">龙宫果</a>
+                            <br>
+                            <a class="body-goods" style="margin-left: 76px">火参果</a>
+                            <a class="body-goods">杨桃</a>
+                            <a class="body-goods">红毛丹</a>
+                            <a class="body-goods pop pop-3">番石榴/芭乐</a>
+                        </div>
+                        <div class="body-item-inner" style="margin-top: 12px">
+                            <a class="body-title" href="#">知名品牌</a>
+                            <a class="body-goods">佳沛</a>
+                            <a class="body-goods">都乐</a>
+                            <a class="body-goods">佳农</a>
+                            <a class="body-goods">怡颗莓</a>
+                            <a class="body-goods">宏辉果蔬</a>
+                            <a class="body-goods">新奇士</a>
+                            <a class="body-goods">爱奇果</a>
+                            <a class="body-goods pop pop-4">珍享</a>
+                        </div>
+                        <div class="body-item-inner" style="margin-top: 2px">
+                            <a class="body-title" href="#">地标水果</a>
+                            <a class="body-goods">山东网纹瓜</a>
+                            <a class="body-goods">白色芒果</a>
+                            <a class="body-goods">洛川苹果</a>
+                            <a class="body-goods">新疆哈密瓜</a>
+                            <a class="body-goods">阿克苏苹果</a>
+                            <a class="body-goods">烟台红富士</a>
+                            <a class="body-goods">蒙自石榴</a>
+                            <a class="body-goods">沾化冬枣</a>
+                            <a class="body-goods">东北姑娘果</a>
+                            <br>
+                            <a class="body-goods" style="margin-left: 76px">西峡猕猴桃</a>
+                            <a class="body-goods">美国车厘子</a>
+                            <a class="body-goods">台湾凤梨</a>
+                            <a class="body-goods pop pop-5">赣南脐橙</a>
+                        </div>
+                        <div class="body-item-inner" style="margin-top: 12px">
+                            <a class="body-title">奇特水果</a>
+                            <a class="body-goods">红心猕猴桃</a>
+                            <a class="body-goods">丑苹果</a>
+                            <a class="body-goods">黄心西瓜</a>
+                            <a class="body-goods">蛇皮果</a>
+                            <a class="body-goods">鲜核桃</a>
+                            <a class="body-goods">秋月梨</a>
+                            <a class="body-goods">有机水果</a>
+                            <a class="body-goods">软籽石榴</a>
+                            <a class="body-goods">鲜果礼盒</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-head-item">
+                    <div class="item2 tab-head-item-inner">
+                        <div class="item-icon"></div>
+                        <a class="item-title">时鲜蔬菜</a>
+                        <div class="item-children">
+                            <a class="item-children-item" href="#">香菇</a>
+                            <a class="item-children-item" href="#">黄瓜</a>
+                            <a class="item-children-item" href="#">大白菜</a>
+                        </div>
+                    </div>
+                    <div class="tab-body-item b-2 hide">
+                        <a class="body-title title-3-word" href="#">叶菜类</a>
+                        <a class="body-goods">生菜</a>
+                        <a class="body-goods">菜心</a>
+                        <a class="body-goods">西兰花</a>
+                        <a class="body-goods">菠菜</a>
+                        <a class="body-goods">上海青/油菜</a>
+                        <a class="body-goods">芥蓝</a>
+                        <a class="body-goods">白菜</a>
+                        <a class="body-goods">甘蓝/卷心菜</a>
+                        <a class="body-goods">芹菜</a>
+                        <a class="body-goods">韭菜</a>
+                        <a class="body-goods">香菜</a>
+                        <a class="body-goods">茴香</a>
+                        <a class="body-goods">茼蒿</a>
+                        <br>
+                        <a class="body-goods" style="margin-left: 76px">芝麻菜</a>
+                        <a class="body-goods pop pop-6">更多</a>
+                        <div class="body-item-inner" style="margin-top: 12px">
+                            <a class="body-title title-3-word" href="#">根茎类</a>
+                            <a class="body-goods" href="@Url.Action("Index","Products",new { ProductId=140})">山药</a>
+                            <a class="body-goods">萝卜</a>
+                            <a class="body-goods">地瓜/红薯</a>
+                            <a class="body-goods">土豆/洋芋</a>
+                            <a class="body-goods">芋头</a>
+                            <a class="body-goods">莲藕</a>
+                            <a class="body-goods">百合</a>
+                            <a class="body-goods">芦笋</a>
+                            <a class="body-goods pop pop-7">更多</a>
+                        </div>
+                        <div class="body-item-inner" style="margin-top: 12px">
+                            <a class="body-title title-3-word" href="#">鲜菌菇</a>
+                            <a class="body-goods">香菇</a>
+                            <a class="body-goods">松茸</a>
+                            <a class="body-goods">牛肝菌</a>
+                            <a class="body-goods">平菇</a>
+                            <a class="body-goods">木耳/银耳</a>
+                            <a class="body-goods">杏鲍菇</a>
+                            <a class="body-goods pop pop-8">更多</a>
+                        </div>
+                        <div class="body-item-inner" style="margin-top: 12px">
+                            <a class="body-title" href="#">茄果瓜类</a>
+                            <a class="body-goods">茄子</a>
+                            <a class="body-goods">黄瓜</a>
+                            <a class="body-goods">茄子</a>
+                            <a class="body-goods">南瓜</a>
+                            <a class="body-goods">四季豆</a>
+                            <a class="body-goods">苦瓜</a>
+                            <a class="body-goods">西红柿</a>
+                            <a class="body-goods">豇豆</a>
+                            <a class="body-goods">板栗</a>
+                            <a class="body-goods">豌豆</a>
+                            <a class="body-goods">荷兰豆</a>
+                            <a class="body-goods pop pop-9">毛豆</a>
+                        </div>
+                        <div class="body-item-inner" style="margin-top: 12px">
+                            <a class="body-title">葱姜蒜椒</a>
+                            <a class="body-goods">葱</a>
+                            <a class="body-goods">姜</a>
+                            <a class="body-goods">蒜</a>
+                            <a class="body-goods">椒</a>
+                            <a class="body-goods pop pop-10">香料</a>
+                        </div>
+                        <div class="body-item-inner" style="margin-top: 12px">
+                            <a class="body-title" href="#">半加工菜</a>
+                            <a class="body-goods">泡菜</a>
+                            <a class="body-goods">豆制品</a>
+                            <a class="body-goods">沙拉菜</a>
+                            <a class="body-goods">酸菜</a>
+                            <a class="body-goods pop pop-11">方便火锅</a>
+                        </div>
+                        <div class="body-item-inner" style="margin-top: 12px">
+                            <a class="body-title" href="#">奇特蔬菜</a>
+                            <a class="body-goods">水培蔬菜</a>
+                            <a class="body-goods">富硒地瓜</a>
+                            <a class="body-goods">冰草</a>
+                            <a class="body-goods">紫苏</a>
+                            <a class="body-goods">薄荷</a>
+                            <a class="body-goods">荠菜</a>
+                            <a class="body-goods">香椿</a>
+                            <a class="body-goods">有机蔬菜</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-head-item">
+                    <div class="item3 tab-head-item-inner">
+                        <div class="item-icon"></div>
+                        <a class="item-title">肉类蛋品</a>
+                        <div class="item-children">
+                            <a class="item-children-item" target="_blank" href="#">猪肉</a>
+                            <a target="_blank" class="item-children-item" href="@Url.Action("Index","Products",new { ProductId=143})">牛排</a>
+                            <a class="item-children-item" href="#">奶制品</a>
+                        </div>
+                    </div>
+                    <div class="tab-body-item b-3 hide">
+                        <a class="body-title title-2-word" href="#">猪肉</a>
+                        <a class="body-goods">肋排</a>
+                        <a class="body-goods" target="_blank" href="@Url.Action("Index","Products",new { ProductId=94})">猪蹄</a>
+                        <a class="body-goods">五花肉</a>
+                        <a target="_blank" class="body-goods" href="@Url.Action("Index","Products",new { ProductId=153})">汤骨/棒骨</a>
+                        <a target="_blank" class="body-goods" href="@Url.Action("Index","Products",new { ProductId=94})">猪肘</a>
+                        <a class="body-goods">梅花肉片</a>
+                        <a class="body-goods">里脊</a>
+                        <a class="body-goods">猪肉馅</a>
+                        <a class="body-goods">猪排/猪扒</a>
+                        <a class="body-goods">脊骨</a>
+                        <a class="body-goods pop pop-12">猪腿肉</a>
+                        <div class="body-item-inner" style="margin-top: 2px">
+                            <a class="body-title title-2-word" href="#">牛肉</a>
+                            <a class="body-goods" target="_blank" href="@Url.Action("Index","Products",new { ProductId=143})">牛排</a>
+                            <a class="body-goods">牛腩</a>
+                            <a class="body-goods">牛腱子</a>
+                            <a class="body-goods">牛里脊</a>
+                            <a class="body-goods">牛肉片/卷</a>
+                            <a class="body-goods">牛尾</a>
+                            <a class="body-goods">牛肋条</a>
+                            <a class="body-goods">牛蹄筋</a>
+                            <a class="body-goods">牛肉串</a>
+                            <a class="body-goods">牛骨</a>
+                            <a class="body-goods pop pop-13">筋头巴脑</a>
+                        </div>
+                        <div class="body-item-inner" style="margin-top: 2px">
+                            <a class="body-title title-2-word" href="#">羊肉</a>
+                            <a class="body-goods">羊肋排</a>
+                            <a class="body-goods">羊肉片/卷</a>
+                            <a class="body-goods">羊腿</a>
+                            <a class="body-goods">羊蝎子</a>
+                            <a class="body-goods">羊肉块</a>
+                            <a class="body-goods">羊肉串</a>
+                            <a class="body-goods">整羊</a>
+                            <a class="body-goods">羊杂</a>
+                            <a class="body-goods">西式羊排</a>
+                            <a class="body-goods pop pop-14">羊肉馅</a>
+                        </div>
+                        <div class="body-item-inner" style="margin-top: 2px">
+                            <a class="body-title title-2-word">鸡肉</a>
+                            <a class="body-goods">鸡翅</a>
+                            <a class="body-goods">整鸡</a>
+                            <a class="body-goods">鸡胸肉</a>
+                            <a class="body-goods">鸡爪</a>
+                            <a class="body-goods">鸡腿</a>
+                            <a class="body-goods">鸡肉块</a>
+                            <a class="body-goods">鸡胗/鸡肫</a>
+                            <a class="body-goods">鸡排</a>
+                            <a class="body-goods">鸡柳</a>
+                            <a class="body-goods">柴鸡</a>
+                            <a class="body-goods">老母鸡</a>
+                            <a class="body-goods pop pop-15">大公鸡</a>
+                        </div>
+                        <div class="body-item-inner" style="margin-top: 2px">
+                            <a class="body-title title-2-word" href="#">鸭肉</a>
+                            <a class="body-goods">鸭腿</a>
+                            <a class="body-goods">鸭胸</a>
+                            <a class="body-goods">鸭胗/鸭肫</a>
+                            <a class="body-goods">鸭掌</a>
+                            <a class="body-goods">鸭脖</a>
+                            <a class="body-goods">鸭舌</a>
+                            <a class="body-goods">鸭翅</a>
+                            <a class="body-goods pop pop-16">老鸭</a>
+                        </div>
+                        <div class="body-item-inner" style="margin-top: 2px">
+                            <a class="body-title title-2-word" href="#">蛋类</a>
+                            <a class="body-goods">鸡蛋</a>
+                            <a class="body-goods">鸭蛋</a>
+                            <a class="body-goods">鸽子蛋</a>
+                            <a class="body-goods">鹅蛋</a>
+                            <a class="body-goods">鹌鹑蛋</a>
+                            <a class="body-goods">喜蛋</a>
+                            <a class="body-goods">咸蛋</a>
+                            <a class="body-goods">松花蛋/皮蛋</a>
+                            <a class="body-goods pop pop-17">咸蛋黄</a>
+                        </div>
+                        <div class="body-item-inner" style="margin-top: 2px">
+                            <a class="body-title">地标产品</a>
+                            <a class="body-goods">内蒙古牛羊肉</a>
+                            <a class="body-goods">宁夏牛肉</a>
+                            <a class="body-goods">北京油鸡</a>
+                            <a class="body-goods">台湾烤肠</a>
+                            <a class="body-goods">白洋淀咸鸭蛋</a>
+                            <a class="body-goods">高邮咸鸭蛋</a>
+                            <a class="body-goods">辛集烤鸭蛋</a>
+                            <a class="body-goods">宣威火腿</a>
+                            <br>
+                            <a class="body-goods pop pop-18" style="margin-left: 76px">哈尔滨红肠</a>
+                        </div>
+                        <div class="body-item-inner" style="margin-top: 12px">
+                            <a class="body-title title-3-word" href="#">新奇特</a>
+                            <a class="body-goods">知了猴</a>
+                            <a class="body-goods">蚕蛹</a>
+                            <a class="body-goods">火鸡</a>
+                            <a class="body-goods">野鸡</a>
+                            <a class="body-goods">年肉礼盒</a>
+                            <a class="body-goods">鸡胚蛋</a>
+                            <a class="body-goods">乌鸡蛋</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-head-item">
+                    <div class="item4 tab-head-item-inner">
+                        <div class="item-icon"></div>
+                        <a class="item-title">海鲜水产</a>
+                        <div class="item-children">
+                            <a class="item-children-item" href="#">金枪鱼</a>
+                            <a class="item-children-item" href="#">贝类</a>
+                            <a class="item-children-item" href="@Url.Action("Index","Products",new { ProductId=127})">大闸蟹</a>
+                        </div>
+                    </div>
+                    <div class="tab-body-item b-4 hide">
+                        <!--产品-->
+                    </div>
+                </div>
+                <div class="tab-head-item">
+                    <div class="item5 tab-head-item-inner">
+                        <div class="item-icon"></div>
+                        <a class="item-title" href="#">五谷杂粮</a>
+                        <div class="item-children">
+                            <a class="item-children-item" href="#">玉米</a>
+                            <a class="item-children-item" href="#">燕麦</a>
+                            <a class="item-children-item" href="#">油菜籽</a>
+                        </div>
+                    </div>
+                    <div class="tab-body-item b-5 hide">
+                        <!--产品-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 轮播图 -->
+    <div class="fresh-fs-carousel">
+        <!-- 将轮播图包含在一个div中 可以使得当鼠标悬停在左侧导航栏时 图片边框被该div边框覆盖-->
+        <div class="carousel slide" id="myCarousel" data-ride="carousel" data-interval="3500">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active indicators-btn"></li>
+                <li data-target="#myCarousel" data-slide-to="1" class="indicators-btn"></li>
+                <li data-target="#myCarousel" data-slide-to="2" class="indicators-btn"></li>
+                <li data-target="#myCarousel" data-slide-to="3" class="indicators-btn"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <a href="#"><img src="~/Images/功能主页轮播图/功能主页轮播图8.jpg" /></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="~/Images/功能主页轮播图/功能主页轮播图7.jpg" /></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="~/Images/功能主页轮播图/功能主页轮播图3.jpg" /></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="~/Images/功能主页轮播图/功能主页轮播图6.jpg" /></a>
+                </div>
+            </div>
+            <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <!-- 头条 -->
+    <div class="fresh-fs-side">
+        <div class="fresh-fs-side-inner">
+            <div class="fresh-fs-side-title">
+                <em>助农</em>头条
+            </div>
+            <a class="fresh-toutiao-item" href="#">精挑细选100分营养美味</a>
+            <a class="fresh-toutiao-item" href="#">0元试吃 全新上线 抓紧尝鲜</a>
+            <a class="fresh-toutiao-item" href="#">精挑细选100分营养美味</a>
+        </div>
+        <a class="fresh-fs-side-act" href="#">
+            <img src="~/Images/功能主页9.png" />
+        </a>
+    </div>
+    <div class="fresh-fs-bg1"></div>
+    <div class="fresh-fs-shadow"></div>
+</div>
+<!--  类别楼层 -->
+<div class="fresh-service">
+    <div class="mod-service-item">
+        <i class="xuan xuan-anquan"></i>
+        <div class="mod-service-title">
+            <h3>食品安全</h3>
+            <p>精选材质 严格质检</p>
+        </div>
+    </div>
+    <div class="mod-service-item">
+        <i class="xuan xuan-huiliuqujinkoushipin" style="display: inline-block"></i>
+        <div class="mod-service-title">
+            <h3>食品安全</h3>
+            <p>精选材质 严格质检</p>
+        </div>
+    </div>
+    <div class="mod-service-item">
+        <i class="xuan xuan-shuye"></i>
+        <div class="mod-service-title">
+            <h3>食品安全</h3>
+            <p>精选材质 严格质检</p>
+        </div>
+    </div>
+    <div class="mod-service-item">
+        <i class="xuan xuan-chandizhicai" style="color: #222"></i>
+        <div class="mod-service-title">
+            <h3>食品安全</h3>
+            <p>精选材质 严格质检</p>
+        </div>
+    </div>
+    <div class="mod-service-item">
+        <i class="xuan xuan-49"></i>
+        <div class="mod-service-title">
+            <h3>食品安全</h3>
+            <p>精选材质 严格质检</p>
+        </div>
+    </div>
+</div>
+<!--  移动展示区 -->
+<div class="fresh-seckill">
+    <div class="fresh-seckill-bg-left"></div>
+    <div class="fresh-seckill-bg-right"></div>
+    <div class="fresh-seckill-tab">
+        <div class="tab-head">
+            <a class="tab-head-item a" href="#zaoshi" data-toggle="tab">
+                <div class="xuan xuan-taiyang"></div>
+                <div class="title">早市抢鲜</div>
+                <div class="tip">17:00 结束</div>
+            </a>
+            <a class="tab-head-item" href="#wushi" data-toggle="tab">
+                <div class="xuan xuan-iconset0451"></div>
+                <div class="title">午市预告</div>
+                <div class="tip">17:00 - 22:00</div>
+            </a>
+            <a class="tab-head-item" href="#wanshi" data-toggle="tab">
+                <div class="xuan xuan-lkingboyewanyueliang"></div>
+                <div class="title">晚市预告</div>
+                <div class="tip">22:00 开始</div>
+            </a>
+        </div>
+        <div class="tab-body tab-content">
+            <div class="tab-pane fade in active" style="line-height: 1.5" id="zaoshi">
+                <div class="fresh-seckill-goods">
+                    <!-- 轮播产品 -->
+                    <div id="myCarousel2" class="carousel slide slider">
+                        <div class="carousel-inner slider-list" style="overflow: hidden;">
+                            <div class="item active">
+                                @foreach (var item in Model.Mor)
+                                {
+                                    <div class="slider-item goods-item">
+                                        <a class="goods-item-link" href="@Url.Action("Details","Products",new { ListId=item.ListID,ProductId=item.Product_Id})" target="_blank">
+                                            <div class="goods-item-price">
+                                                <span class="goods-item-price-zn">¥@item.Price</span>
+                                                <span class="goods-item-price-m">¥75.50</span>
+                                            </div>
+                                            <img src="@item.Image" width="180" height="180" class="goods-item-img" />
+                                            <p class="goods-item-name">@item.ProductDes</p>
+                                            <div class="goods-item-progress">
+                                                <p class="goods-item-progress-text">好评率98%</p>
+                                                <div class="goods-item-progress-line">
+                                                    <i style="width: 98%"></i>
+                                                </div>
+                                            </div>
+                                            <p class="goods-item-btn">立即抢购</p>
+                                        </a>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" style="line-height: 1.5" id="wushi">
+                <div class="fresh-seckill-goods">
+                    <!-- 轮播产品 -->
+                    <div id="myCarousel3" class="carousel slide slider">
+                        <div class="carousel-inner slider-list" style="overflow: hidden;">
+                            @foreach (var item in Model.Noon)
+                            {
+                                <div class="slider-item goods-item">
+                                    <a class="goods-item-link" href="@Url.Action("Details","Products",new { ListId=item.ListID,ProductId=item.Product_Id})" target="_blank">
+                                        <div class="goods-item-price">
+                                            <span class="goods-item-price-zn">¥@item.Price</span>
+                                            <span class="goods-item-price-m">¥75.50</span>
+                                        </div>
+                                        <img src="@item.Image" width="180" height="180" class="goods-item-img" />
+                                        <p class="goods-item-name">@item.ProductDes</p>
+                                        <div class="goods-item-progress">
+                                            <p class="goods-item-progress-text">好评率98%</p>
+                                            <div class="goods-item-progress-line">
+                                                <i style="width: 98%"></i>
+                                            </div>
+                                        </div>
+                                        <p class="goods-item-btn">立即抢购</p>
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" style="line-height: 1.5" id="wanshi">
+                <div class="fresh-seckill-goods">
+                    <!-- 轮播产品 -->
+                    <div id="myCarousel4" class="carousel slide slider">
+                        <div class="carousel-inner slider-list" style="overflow: hidden;">
+                            <div class="item active">
+                                @foreach (var item in Model.Even)
+                                {
+                                    <div class="slider-item goods-item">
+                                        <a class="goods-item-link" href="@Url.Action("Details","Products",new { ListId=item.ListID,ProductId=item.Product_Id})" target="_blank">
+                                            <div class="goods-item-price">
+                                                <span class="goods-item-price-zn">¥@item.Price</span>
+                                                <span class="goods-item-price-m">¥75.50</span>
+                                            </div>
+                                            <img src="@item.Image" width="180" height="180" class="goods-item-img" />
+                                            <p class="goods-item-name">@item.ProductDes</p>
+                                            <div class="goods-item-progress">
+                                                <p class="goods-item-progress-text">好评率98%</p>
+                                                <div class="goods-item-progress-line">
+                                                    <i style="width: 98%"></i>
+                                                </div>
+                                            </div>
+                                            <p class="goods-item-btn">立即抢购</p>
+                                        </a>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 特色购 -->
+<div class="z-floor" id="fresh-unique-1" style="line-height: 1.5">
+    <div>
+        <div class="unique-1-bg"></div>
+        <div class="fresh-unique-1-inner">
+            <div class="fresh-mod-head">
+                <div class="fresh-mod-head-inner">
+                    <h3 class="fresh-mod-head-title">特<i>/</i>色<i>/</i>购</h3>
+                    <p class="fresh-mod-head-subtitle">FEATURED FRESH</p>
+                </div>
+            </div>
+            <div class="fresh-unique-top100">
+                <div class="fresh-top100-head">
+                    <div class="fresh-top100-head-inner clearfix">
+                        <!-- 这段文字 其实被缩进到看不见 -->
+                        <h4 class="fresh-top100-head-title">助农为乐-优选</h4>
+                        <p class="fresh-top100-head-subtitle">精挑细选100分健康美味</p>
+                    </div>
+                </div>
+                <div class="fresh-top100-goods clearfix">
+                    <a class="fresh-goods-item" href=#">
+                        <div class="top100-goods-item-img">
+                            <img src="~/Images/特色购4/优选1.png" width="220" height="220" />
+                        </div>
+                        <div class="top100-goods-item-price">
+                            <p class="price-title">¥59.90</p>
+                            <p class="price-subtitle">6个</p>
+                        </div>
+                        <div class="top100-goods-item-info">
+                            <p class="info-title">轻呷一口 汁水四溢 甘甜沁肺</p>
+                            <i class="info-line"></i>
+                            <p class="info-name">新西兰进口爱妃（envy）苹果</p>
+                            <p class="info-des">爱不释手的宝石果皮 妃你莫属的浓甜滋味</p>
+                        </div>
+                    </a>
+                    <a class="fresh-goods-item" href="#">
+                        <div class="top100-goods-item-img">
+                            <img src="~/Images/特色购4/优选2.png" width="220" height="220" />
+                        </div>
+                        <div class="top100-goods-item-price">
+                            <p class="price-title">¥75.00</p>
+                            <p class="price-subtitle">500g</p>
+                        </div>
+                        <div class="top100-goods-item-info">
+                            <p class="info-title">肥而不腻 鲜而不膻</p>
+                            <i class="info-line"></i>
+                            <p class="info-name">草原宏宝 羔羊寸排</p>
+                            <p class="info-des">肥瘦相间的羔羊排 鲜味诱人</p>
+                        </div>
+                    </a>
+                    <a class="fresh-goods-item" href="#">
+                        <div class="top100-goods-item-img">
+                            <img src="~/Images/特色购4/优选3.png" width="220" height="220" />
+                        </div>
+                        <div class="top100-goods-item-price">
+                            <p class="price-title">¥69.00</p>
+                            <p class="price-subtitle">5片</p>
+                        </div>
+                        <div class="top100-goods-item-info">
+                            <p class="info-title">300天草饲牛肉 原始切割保留天然口感</p>
+                            <i class="info-line"></i>
+                            <p class="info-name">澳洲西冷牛排套餐</p>
+                            <p class="info-des">满屋飘洒的牛肉香气使您久久回味</p>
+                        </div>
+                    </a>
+                    <a class="fresh-goods-item" href="#">
+                        <div class="top100-goods-item-img">
+                            <img src="~/Images/特色购4/优选5.png" width="220" height="220" />
+                        </div>
+                        <div class="top100-goods-item-price">
+                            <p class="price-title">¥129.00</p>
+                            <p class="price-subtitle">2斤</p>
+                        </div>
+                        <div class="top100-goods-item-info">
+                            <p class="info-title">果肉厚实有质感 甜腻多汁</p>
+                            <i class="info-line"></i>
+                            <p class="info-name">美国进口恐龙蛋</p>
+                            <p class="info-des">来自大洋彼岸的“恐龙宝宝”</p>
+                        </div>
+                    </a>
+                </div>
+                <a class="fresh-top100-btn" target="_blank" href="@Url.Action("Index","youxuan100")">
+                    更多优选<i>></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,192 @@
+﻿@using Famer.Entity.Model
+@model Famer.Entity.ViewModel.ProviderViewModel
+@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>供应信息详情页面</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/功能主页搜索栏.css" rel="stylesheet" />
+    <link href="~/Content/css/功能主页导航栏.css" rel="stylesheet" />
+    <link href="~/Content/css/供应信息详情信息.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <div id="footer" style="font-size:40px;color: #00a8c6;clear:both;text-align:center;">
+    </div>
+    <div class="main-nav" style="background:#4CAF50;">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">店铺首页</a></li>
+                <li><a href="#">全部商品</a></li>
+                <li><a href="#">全部供应</a></li>
+                <li><a href="#">好评商品</a></li>
+                <li><a href="#">店家服务</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--位置显示-->
+    <div class="container">
+        <div class="position">
+            <span>你所在的位置为：</span>
+            <span>助农为乐网</span>
+            <span>></span>
+        </div>
+        <div class="main-left">
+            <div class="pro-info clearfix">
+                <!--供应商品的照片-->
+                <div class="pro-info-pic">
+                    <div id="prdGallery" class="gallery">
+                        <!--主照片-->
+                        <div class="main-pic">
+                            <img src="~/Images/3时鲜蔬菜/3叶菜类/小白菜2.jpg" />
+                        </div>
+                        <!--次照片-->
+                        <ul class="thumb clearfix">
+                            <li><img src="~/Images/3时鲜蔬菜/3叶菜类/小白菜2.jpg" /></li>
+                            <li><img src="~/Images/3时鲜蔬菜/3叶菜类/小白菜2.jpg" /></li>
+                            <li><img src="~/Images/3时鲜蔬菜/3叶菜类/小白菜2.jpg" /></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pro-info-txt">                
+                    <div>                    
+                            <div>
+                                <h1>@Model.Sup.Sup_Of_Name</h1>
+                            </div>
+                            <div>
+                                <p>更新时间：@Model.Sup.Sup_Time</p>
+                                <p>发货地：@Model.Sup.Address_Of_Sup</p>
+                                <p>参考价格：@Model.Sup.Sup_Of_Price</p>
+                                <p>参考价中不包含运费，交易前请先使用"立即电话聊"和卖家沟通，确认好运输方式和运费。</p>
+                            </div>
+                            <div>
+                                <p>分类：</p>
+                            </div>
+                            <div>
+                                <span>*了解农产品更多详细信息，和商家电话洽谈生意，请点击立即电话聊。</span><br />
+                                <span>*惠农网为您加密手机号，和商家私密通话，全程保障您的隐私安全。</span>
+                            </div>
+                        <div>
+                            <span>
+                                <button style="width: 105px;display: block; margin: 0 auto;background-color: orange">联系商户</button>
+                                <button style="width: 105px;display: inline-block; margin: 0 auto;background-color: orange">线上订购</button>
+                            </span>
+                        </div>
+                    </div>                 
+                </div>
+            </div>
+            <div class="detail-main">
+                <div class="sss">
+                    <span>
+                        @Ajax.ActionLink("供应详情", "GetDescription", "Provider",new { id = Model.Sup.SupplyID}, new AjaxOptions
+                   {
+                       UpdateTargetId = "com",
+                       InsertionMode = InsertionMode.Replace,
+                       HttpMethod = "get"
+                   })
+                    </span>
+                    <span>
+                       
+                    </span>
+                                       
+                </div>
+                <div id="com" class="comment">         
+                    <table class="table table-striped">
+                        <caption>品牌名称：@Model.Sup.Sup_Of_Name</caption>
+                        <thead>
+                            <tr>
+                                <th>供应商品参数：</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th>商户名：@Model.user.UserName</th>
+                                <th>供应地址：@Model.Sup.Address_Of_Sup @Model.Sup.Sup_Area</th>
+                                <th>联系方式：@Model.Sup.Phone</th>
+                            </tr> 
+                            <tr>
+                                <th>供应种类：@Model.Sup.Sup_Class</th>
+                                <th>更新时间：@Model.Sup.Sup_Time</th>
+                                <th>参考价格：@Model.Sup.Sup_Of_Price</th>
+                            </tr>
+                            <tr>
+                                <th>储藏方法：低温保鲜</th>
+                                <th>包装方式: 包装</th>
+                                <th>同城服务: 同城24小时物流送货上门</th>
+                            </tr>                                                      
+                        </thead>                      
+                    </table>
+                    <p style="text-align:center">@Model.Sup.Sup_Of_Description</p>
+                    <img style="display:block;margin:0 auto" src="~/Images/弄啥勒/广告图片.jpg" />                   
+                    <br />
+                                                
+                </div>
+            </div>
+
+        </div>
+        <div class="main-right">
+            <div class="side-company" id="userinfo">
+                <div class="picture">
+                    <img src="~/Images/弄啥勒/头像.jpg" />
+                </div>
+                <div class="name">
+                    <p style="text-align: center">SuperKim</p>
+                    <p style="text-align: center">种植户</p>
+                    <span>
+                        <a><img src="~/images/弄啥勒/实地认证.png" title="实名认证" height="30" width="30" /></a>
+                        <label>实地认证</label>
+                    </span>
+                    <span>
+                        <a><img src="~/images/弄啥勒/实名认证.png" title="实名认证" height="30" width="30" /></a>
+                        <label>实名认证</label>
+                    </span>
+                </div><br>
+                <button style="width: 105px;display: block; margin: 0 auto;background-color: orange">收藏店铺</button><br>
+                <form>
+                    <fieldset>
+                        <legend></legend>
+                        关键字: <input type="text" size="10"><br><br>
+                        价格: <input type="text" size="3">--<input type="text" size="3"><br>
+                    </fieldset>
+                </form>
+                <br>
+                <button style="width: 105px;display: block; margin: 0 auto;background-color: orange">搜索本店</button>
+            </div>
+
+        </div>
+    </div>
+    <script src="~/scripts/bootstrap.min.js"></script>
+    <script src="~/scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/scripts/jquery.unobtrusive-ajax.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#report").click(function () {
+                var supId = parseInt($("#report").attr("data-list"), 10);
+                var content = $("#content").val() ? $("#content").val() : "";
+                $.ajax({
+                    url: "/Provider/GetComment",
+                    data: JSON.stringify({ "supId": supId, "content": content }),
+                    type: 'post',
+                    contentType: 'application/json;chatset=utf-8',
+                    success: function (data) {
+                        alert("评论成功");
+                        $("#lol").html(data);
+                    },
+                    error: function () {
+                        console.log("请求失败");
+                    }
+                }
+                 )
+            }
+            )
+        }
+        )
+    </script>
+</body>
+</html>

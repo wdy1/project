@@ -1,0 +1,504 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/fonts/iconfont.css" rel="stylesheet" />
+    <link href="~/Content/css/功能主页导航栏.css" rel="stylesheet" />
+    <link href="~/Content/css/主页搜索栏.css" rel="stylesheet" />
+    <link href="~/Content/css/功能主页产品类.css" rel="stylesheet" />
+    <link href="~/Content/css/功能主页轮播图.css" rel="stylesheet" />
+    <link href="~/Content/css/功能主页类别层.css" rel="stylesheet" />
+    <link href="~/Content/css/页脚样式.css" rel="stylesheet" />
+    <script src="~/scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/scripts/bootstrap.min.js"></script>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <!--               头部                  -->
+    <!-- 导航栏 -->
+    <div class="top-wrapper">
+        <div class="top-content">
+            <ul class="content-left">
+                <li id="service-home">
+                    <i class="glyphicon glyphicon-home"></i>
+                    <a href="/Introduced/Index" target="_blank">服务主页</a>
+                </li>
+                <li id="address" class="dropdown">
+                    <div class="dt cw-icon">
+                        <i class="glyphicon glyphicon-map-marker"></i>
+                        <span title="北京" data-id="1">北京</span>
+                    </div>
+                    <div class="dd dropdown-layer">
+                        <div class="dd-spacer"></div>
+                        <div class="ui-areamini-content-wrap" style="left: auto">
+                            <div class="ui-areamini-content">
+                                <div class="ui-areamini-content-list clearfix">
+                                    <div class="item">
+                                        <a data-id="1" class="selected">北京</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="2">上海</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="3">天津</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="4">重庆</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="5">河北</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="6">山西</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="7">河南</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="8">辽宁</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="9">吉林</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="10">黑龙江</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="11">内蒙古</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="12">江苏</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="13">山东</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="14">安徽</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="15">浙江</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="16">福建</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="17">湖北</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="18">湖南</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="19">广东</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="20">广西</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="21">江西</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="22">四川</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="23">海南</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="24">贵州</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="25">云南</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="26">西藏</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="27">
+                                            陕西
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="28">甘肃</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="29">青海</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="30">宁夏</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="31">新疆</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="32">港澳</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="33">台湾</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="34">钓鱼岛</a>
+                                    </div>
+                                    <div class="item">
+                                        <a data-id="35">海外</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="content-right">
+                @Html.Action("LoginSummary", "Home")
+                <li class="spacer"></li>
+                <li class="fore2">
+                    <div class="dt">
+                        <a href="@Url.Action("MyOrder","User")" target="_blank">我的订单</a>
+                    </div>
+                </li>
+                <li class="spacer"></li>
+                <li class="fore3 dropdown" id="myfamer">
+                    <div class="dt cw-icon">
+                        <a target="_blank" href="#">我的农场</a>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                    </div>
+                    <div class="dd dropdown-layer">
+                        <div class="dd-spacer"></div>
+                        <div class="myfmlist1">
+                            <div class="fore1">
+                                <div class="item">
+                                    <a href="#">待处理订单<span class="num-unfinishedorder"></span></a>
+                                </div>
+                                <div class="item">
+                                    <a href="#">返修退换货</a>
+                                </div>
+                                <div class="item">
+                                    <a href="#">降价商品<span class="num-reduction"></span></a>
+                                </div>
+                            </div>
+                            <div class="fore2">
+                                <div class="item">
+                                    <a href="#" target="_blank">消息<span class="num-tip"></span> </a>
+                                </div>
+                                <div class="item">
+                                    <a href="#" target="_blank">我的问答<span class="num-consultation"></span></a>
+                                </div>
+                                <div class="item">
+                                    <a href="#" target="_blank">我的关注</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="myfmlist2">
+                            <div class="fore1">
+                                <div class="item">
+                                    <a href="#">我的积分</a>
+                                </div>
+                                <div class="item">
+                                    <a href="#">我的白条</a>
+                                </div>
+                            </div>
+                            <div class="fore2">
+                                <div class="item">
+                                    <a href="#">我的优惠券<span class="num-ticket"></span></a>
+                                </div>
+                                <div class="item">
+                                    <a href="#">我的理财</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="spacer"></li>
+                <li class="fore4" id="mymember">
+                    <div class="dt">
+                        <a target="_blank" href="#">我的会员</a>
+                    </div>
+                </li>
+                <li class="spacer"></li>
+                <li class="fore5 dropdown" id="enterprise">
+                    <div class="dt cw-icon">
+                        <a href="#" target="_blank">企业采购</a>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                    </div>
+                    <div class="dd dropdown-layer">
+                        <div class="dd-spacer"></div>
+                        <div class="dd-inner" id="ent-main">
+                            <div class="item">
+                                <a href="#" target="_blank">企业购</a>
+                            </div>
+                            <div class="item">
+                                <a href="#" target="_blank">商用产品馆</a>
+                            </div>
+                            <div class="item">
+                                <a href="#" target="_blank">工业品</a>
+                            </div>
+                            <div class="item">
+                                <a href="#" target="_blank">礼卡品</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="spacer"></li>
+                <li class="fore6 dropdown" id="serve">
+                    <div class="dt cw-icon">
+                        客服服务
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-layer dd">
+                        <div class="dd-spacer"></div>
+                        <div class="item-client">客户</div>
+                        <div class="item">
+                            <a href="#" target="_blank">帮助中心</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">售后服务</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">在线客服</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">意见建议</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">电话客服</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">客服邮箱</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">金融资讯</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">全球售客服</a>
+                        </div>
+                        <div class="item-business">商户</div>
+                        <div class="item">
+                            <a href="#" target="_blank">合作招商</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">学习中心</a>
+                        </div>
+                        <div class="item">
+                            <a href="@Url.Action("Index","Seller")" target="_blank">商家后台</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">工作台</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">商家帮助</a>
+                        </div>
+                        <div class="item">
+                            <a href="#" target="_blank">规则平台</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="spacer"></li>
+                <li class="fore7 dropdown" id="navs">
+                    <div class="dt cw-icon">
+                        网站导航
+                        <i class="glyphicon glyphicon-send"></i>
+                    </div>
+                    <div class="dd dropdown-layer">
+                        <div class="dd-spacer"></div>
+                        <!-- 网站导航部分代码 -->
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 搜索栏 -->
+    <div class="header-wrap w" style="height: 112px">
+        <div class="logo-2018">
+            <img src="~/Images/logo.png" />
+            <h2 class="logo-title">助农为乐</h2>
+        </div>
+        <div class="search-2018">
+            <ul class="hide" id="shelper" style="display: none"></ul>
+            @using (Html.BeginForm("Search", "Products", FormMethod.Post, new { @class = "form",id="SearchForm" }))
+            {
+                <input placeholder="搜索商品" name="word" type="text" autocomplete="off" id="key" style="border: 2px solid #111;
+    border-right-width: 40px;" class="text" />
+                <a onclick="document.getElementById('SearchForm').submit();" id="search" style="cursor:pointer"><span class="glyphicon glyphicon-search"></span></a>}
+        </div>
+        @Html.Action("Summary","Cart")
+        <div class="saoma-2018">
+            <a href="@Url.Action("Index","Cart")" class="saoma-link">
+                <i class="glyphicon glyphicon-qrcode"></i>
+                <span class="saoma-text">扫码享受优惠</span>
+            </a>
+            <div class="saoma-photo" id="photo">
+                <div class="saoma-img">
+                    <img src="~/Images/headerqrcode.png" />
+                </div>
+            </div>
+        </div>
+        <div class="hotwords-2018">
+            <a target="_blank" class="highlight" href="#">
+                生鲜11.11
+            </a>
+            <a target="_blank" href="#">
+                火锅
+            </a>
+            <a target="_blank" href="#">
+                柚子
+            </a>
+            <a href="#" target="_blank">
+                牛排
+            </a>
+            <a href="#" target="_blank">
+                奶酪
+            </a>
+            <a href="#" target="_blank">
+                酸奶
+            </a>
+            <a href="#" target="_blank">
+                三文鱼
+            </a>
+            <a target="_blank" href="#">
+                冬枣
+            </a>
+        </div>
+    </div>
+    <!--                     主体内容部分                   -->
+    <!-- 主体导航部分 -->
+    <div class="main-body-nav" id="nav">
+        <div class="introduced">
+            助农为乐产品分类
+        </div>
+        <ul class="total-nav">
+            <li><a href="/Home/Index" class="highlight">助农首页</a> </li>
+            <li><a href="/Requirement/Index">采购大厅</a> </li>
+            <li><a href="/Provider/Index">供应大厅</a> </li>
+            <li><a href="/FreshNews/Index">行业资讯</a> </li>
+            <li><a href="@Url.Action("Index","youxuan100")">优选100</a> </li>
+            <li><a href="/Article/Index">助农学堂</a></li>
+        </ul>
+        <a class="character-assur">
+            <i class="fa fa-diamond"></i>
+            <span>品质保障</span>
+            <i class="glyphicon glyphicon-chevron-right"></i>
+        </a>
+    </div>
+    <!-- 产品分类 -->
+    
+    @RenderBody()
+    
+    <div id="mod-footer" class="mod-footer" style="line-height: 1.5">
+        <!-- 不加clearfix 会发现ul无法拥有高度
+            以后注意当发现浮动的ul无法被里面的块状元素撑起高度时 要清除浮动
+        -->
+        <ul class="mod-footer-service clearfix">
+            <li class="mod-footer-service-item">
+                <div class="mod-footer-item-inner">
+                    <i class="xuan xuan-anquan"></i>
+                    <p class="mod-footer-item-title">食品安全</p>
+                    <p class="mod-footer-item-des">精选生鲜 严格质检</p>
+                </div>
+            </li>
+            <li class="mod-footer-service-item">
+                <div class="mod-footer-item-inner">
+                    <i class="xuan xuan-huiliuqujinkoushipin"></i>
+                    <p class="mod-footer-item-title">全程冷链</p>
+                    <p class="mod-footer-item-des">自营物流 安全可控</p>
+                </div>
+            </li>
+            <li class="mod-footer-service-item">
+                <div class="mod-footer-item-inner">
+                    <i class="xuan xuan-shuye" style="font-weight: 600"></i>
+                    <p class="mod-footer-item-title">鲜活天然</p>
+                    <p class="mod-footer-item-des">绿色生态 助农首选</p>
+                </div>
+            </li>
+            <li class="mod-footer-service-item">
+                <div class="mod-footer-item-inner">
+                    <i class="xuan xuan-chandizhicai" style="font-weight: 600"></i>
+                    <p class="mod-footer-item-title">产地直采</p>
+                    <p class="mod-footer-item-des">限定产源 质量保证</p>
+                </div>
+            </li>
+            <li class="mod-footer-service-item">
+                <div class="mod-footer-item-inner">
+                    <i class="xuan xuan-49"></i>
+                    <p class="mod-footer-item-title">无忧售后</p>
+                    <p class="mod-footer-item-des">优鲜赔 售后通道</p>
+                </div>
+            </li>
+        </ul>
+        <div class="mod-footer-main">
+            <ul class="mod-footer-qrcode" style="padding-left:0">
+                <li class="qrcode-item">
+                    <img src="~/Images/助农二维码.png" width="140" height="140" title="助农为乐服务公众号" />
+                    <div class="qr-item-title">助农为乐服务公众号</div>
+                </li>
+                <li class="qrcode-item">
+                    <img src="~/Images/助农二维码2.png" width="140" height="140" title="助农为乐订阅号" />
+                    <div class="qr-item-title">助农为乐订阅号</div>
+                </li>
+            </ul>
+            <ul class="mod-footer-guide" style="padding-left:0">
+                <li class="mod-footer-guide-item">
+                    <div class="guide-item-title">购物指南</div>
+                    <div class="guide-item-body">
+                        <a class="item-body-item" target="_blank" href="javascript:;">购物流程</a>
+                        <a class="item-body-item" target="_blank">支付方式</a>
+                        <a class="item-body-item">售后规则</a>
+                    </div>
+                </li>
+                <li class="mod-footer-guide-item">
+                    <div class="guide-item-title">配送方式</div>
+                    <div class="guide-item-body">
+                        <a class="item-body-item" target="_blank">配送运费</a>
+                        <a class="item-body-item" target="_blank">配送范围</a>
+                        <a class="item-body-item">配送时间</a>
+                    </div>
+                </li>
+                <li class="mod-footer-guide-item">
+                    <div class="guide-item-title">商家服务</div>
+                    <div class="guide-item-body">
+                        <a class="item-body-item">平台规则</a>
+                        <a class="item-body-item" target="_blank" href="@Url.Action("Enter","Seller")">商家入驻</a>
+                        <a class="item-body-item">联系我们</a>
+                    </div>
+                </li>
+                <li class="mod-footer-guide-item last">
+                    <div class="guide-item-title">信息反馈</div>
+                    <div class="guide-item-body">
+                        <a class="item-body-item" target="_blank">联系客服</a>
+                        <a class="item-body-item no-hover" href="javascript:;">客服电话&nbsp;&nbsp;400-605-3315</a>
+                        <a class="item-body-item no-hover" href="javascript:;">服务时间&nbsp;&nbsp;09:00-24:00</a>
+                        <a class="item-body-item" href="https://mail.qq.com/cgi-bin/loginpage" target="_blank">反馈邮箱&nbsp;&nbsp;yuxuan1491433427@qq.com</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="mod-footer-copyright">
+            Copyright © 2018-2019  助农为乐 版权所有
+        </div>
+    </div>
+    <script type="text/javascript">
+        <!--判断js-->
+    $(document).ready(function () {
+        $(".tab-head-item").hover(function () {
+            if (!$(this).is(":animated")) {
+                $(this).addClass("active");
+                $(this).find(".tab-body-item").removeClass("hide");
+            }
+        }, function () {
+            if (!$(this).is(":animated")) {
+                $(this).removeClass("active");
+                $(this).find(".tab-body-item").addClass("hide");
+            }
+        });
+
+        $('[data-toggle="tab"]').click(function () {
+            $(this).addClass("a").siblings().removeClass("a");
+        })
+
+       
+    })
+    </script>
+   
+</body>
+</html>

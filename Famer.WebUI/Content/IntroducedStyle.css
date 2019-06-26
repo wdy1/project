@@ -1,0 +1,482 @@
+﻿body {
+    font-family: roboto,sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    background: #fff;
+    color: #6d6d6d;
+    overflow-y: scroll;
+    -webkit-font-smoothing: antialiased!important
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0 0 15px;
+    color: #202020;
+    font-family: roboto,sans-serif
+}
+
+h1 {
+    /* 通过设置行高来缓解尴尬的起点 */
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 46px
+}
+h1.logo {
+    margin: 0;
+    padding: 0
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 34px
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 700
+}
+
+a {
+    color: #6145d6;
+    text-decoration: none;
+    transition: all .3s ease 0s
+}
+
+a,a:active,a:focus,a:active {
+    text-decoration: none;
+    outline: 0
+}
+
+a:hover,a:focus {
+    color: #3f25a9
+}
+img {
+    max-width: 100%
+}
+@media(min-width: 767px) {
+    .navbar {
+        padding:20px 0
+    }
+
+    .navbar.sticky {
+        padding: 10px 0
+    }
+
+    .navbar-nav {
+        padding-top: 15px
+    }
+
+    .sticky .navbar-nav {
+        padding-top: 10px
+    }
+}
+
+.navbar {
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+    background: #fff;
+    box-shadow: 0 0 0 1px #ededed
+}
+.navbar-brand {
+    padding: 0
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #8f8ca8;
+    text-transform: capitalize;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    padding: 0;
+    border-bottom: 1px dotted transparent
+}
+.navbar-default .navbar-nav li {
+    margin-right: 30px
+}
+.navbar-default .navbar-nav li:last-child {
+    margin-right: 0
+}
+.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus {
+    color: #6145d6;
+    background-color: transparent;
+    border-bottom: 1px dotted #6145d6
+}
+.navbar-default .navbar-nav>li>a:focus {
+    color: #8f8ca8
+}
+/* 面包导航按钮样式 */
+.navbar-toggle {
+    border-radius: 50%;
+    margin: 0;
+    padding: 8px 12px;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    background-repeat: repeat-x;
+    background-image: -webkit-linear-gradient(20deg,rgba(98,34,198,0.7) 20%,rgba(51,119,222,0.75) 90%);
+    background-image: -o-linear-gradient(20deg,rgba(98,34,198,0.7) 20%,rgba(51,119,222,0.75) 90%);
+    background-image: linear-gradient(20deg,rgba(98,34,198,0.7) 20%,rgba(51,119,222,0.75) 90%);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border: 0
+}
+
+.hero-slide .carousel-inner>.item>img,.hero-slide .carousel-inner>.item>a>img {
+    min-width: 100%;
+    height: 750px;
+}
+.hero-slide .container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40%;
+    transform: translateY(-50%)
+}
+.hero-slide .carousel-caption {
+    position: relative;
+    right: 0;
+    left: 0;
+    text-align: left;
+    text-shadow: none;
+    width: 60%
+}
+.hero-slide .carousel-caption h1 {
+    font-size: 40px;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin: 30px 0 20px;
+    -webkit-animation-delay: 150ms;
+    animation-delay: 150ms;
+    color: #000
+}
+.hero-slide .carousel-caption .lead {
+    font-size: 16px;
+    color: #333;
+    font-weight: 400;
+    margin-bottom: 30px;
+    -webkit-animation-delay: 200ms;
+    animation-delay: 200ms
+}
+.hero-slide .carousel-control.left,.hero-slide .carousel-control.right {
+    font-size: 30px;
+    width: 30px;
+    height: 100px;
+    line-height: 100px;
+    top: 50%;
+    background: #000;
+    cursor: pointer;
+    border: 0;
+    text-shadow: none;
+    /* 居中 */
+    transform: translateY(-50%)
+}
+.hero-slide .carousel-control.left {
+    left: -100%
+}
+
+.hero-slide .carousel-control.right {
+    right: -100%
+}
+
+.hero-slide:hover .left {
+    left: 0
+}
+
+.hero-slide:hover .right {
+    right: 0
+}
+.section-padding{
+    padding: 100px 0;
+}
+.section-title {
+    position: relative;
+    font-size: 28px;
+    line-height: 44px;
+    margin-bottom: 20px
+}
+.section-title:after {
+    position: absolute;
+    content: " ";
+    width: 61px;
+    height: 15px;
+    background: url("./Images/star.png") no-repeat center center;
+    left: 50%;
+    bottom: -20px;
+    margin-left: -30px
+}
+.content-row {
+    margin-top: 60px
+}
+/* 服务节 图标大小*/
+.our-services .media i:before {
+    font-size: 65px;
+    line-height: 65px
+}
+.our-services .media a:hover {
+    text-decoration: none
+}
+.service-content{
+    padding-bottom: 80px;
+    border-bottom: 1px solid #ededed;
+}
+/* 这个选择器有点学问  你可以这样理解  匹配到的元素是 .service-content的父元素下 第三个class为.service-content的元素
+   不过要特别注意 括号中的索引值是对父元素下的所有子元素 也就是说父元素的第三个子元素一定要满足class是service-content
+   并不一定需要存在三个service-content
+*/
+.service-content:nth-child(3),.service-content:nth-child(4){
+    padding-top: 80px;
+    border-bottom: 0;
+}
+.service-content .media-heading {
+    /* 设置行高使得文本起点下降 */
+    font-size: 21px;
+    line-height: 44px;
+    font-weight: 500
+}
+/* 所有的service-content的图标均与文字间隔40px */
+.service-content .media-left,.service-content .media>.pull-left {
+    padding-right: 40px
+}
+/* 下面几行代码 表示靠左的service-content 文字内容靠左点(padding-right:35px)
+               靠右的service-content 标签内容靠右点(padding-left:50px)
+*/
+.service-content:nth-child(1) .media-body,.service-content:nth-child(3) .media-body{
+    padding-right: 35px;
+}
+.service-content:nth-child(2) .media-left,.service-content:nth-child(4) .media-left{
+    padding-left: 50px;
+}
+
+.service-content .btn {
+    margin-top: 50px
+}
+.btn {
+    padding: 10px 27px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 22px;
+    text-transform: uppercase;
+    border-radius: 30px
+}
+.btn-lg{
+    padding: 17px 65px;
+    font-size: 14px;
+    font-weight: 800;
+}
+@keyframes BtnGradient {
+    0% {
+        background-position: 0% 56%
+    }
+
+    50% {
+        background-position: 100% 45%
+    }
+
+    100% {
+        background-position: 0% 56%
+    }
+}
+.btn-primary {
+    background: 0 0;
+    border: 0;
+    box-shadow: inset 0 0 0 2px #ededed;
+    background-size: 150% 150%;
+    animation: BtnGradient 5s ease infinite;
+    color: #bfbfbf;
+}
+.btn:focus,.btn:active:focus {
+    outline: 0
+}
+.btn-primary:hover,.active.btn-primary,.btn-primary:focus {
+    border-radius: 40px !important;
+    background-image: -webkit-linear-gradient(left,#2770d1 20%,#6b329a 88%);
+    background-image: -o-linear-gradient(left,#2770d1 20%,#6b329a 88%);
+    background-image: linear-gradient(to right,#2770d1 20%,#6b329a 88%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2770d1',endColorstr='#ff6b329a',GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    outline: 0!important;
+    -webkit-box-shadow: inset 0 0 0 2px transparent;
+    box-shadow: inset 0 0 0 2px transparent;
+    color: #fff
+}
+.working-process{
+    background-color: #f6f6f6;
+}
+.circle-connector{
+    margin-top: 60px;
+    position: relative;
+}
+/* 利用before的z-index值比process-circle低的特点使得这条线不会在圆形内部出现 */
+.circle-connector:before{
+    content: '';
+    width: 75%;
+    height: auto;
+    position: absolute;
+    top: 40%;
+    left: 13%;
+    border-top: 1px solid #d0d0d0;
+}
+.process-circle{
+    height: 125px;
+    width: 125px;
+    padding: 4px;
+    border-radius: 50%;
+    display: inline-block;
+    background: #f6f6f6;
+    border: 1px solid #d0d0d0;
+}
+/* a元素的border-radius为50%与外面一层的div形成同心圆 两者之间的距离为padding:4px */
+.process-circle a{
+    height: 115px;
+    width: 115px;
+    line-height: 108px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid #d0d0d0;
+}
+.process-circle a:hover{
+    background-color: #fff;
+    border: 1px dashed #d0d0d0;
+}
+.process-circle span{
+    display: block;
+    font-weight: 700;
+    color: #414141;
+    margin-top: 20px;
+}
+.work-filter{
+    margin: 60px 0 30px;
+}
+#filter{
+    overflow: hidden;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+#filter li{
+    display: inline-block;
+    position: relative;
+    padding: 0 17px;
+}
+#filter li a{
+    display: block;
+    margin: 0 5px 0 0;
+    cursor: pointer;
+    color: #6d6d6d;
+}
+#filter li a.active,#filter li a:hover{
+    border-bottom: 1px dotted #707070;
+    cursor: pointer;
+    color: #6145d6;
+    text-decoration: none;
+}
+#filter li:after{
+    position: absolute;
+    content: ':::';
+    font-size: 15px;
+    top: 0;
+    right: 0;
+    margin-right: -5px;
+    color: #d0d0d0;
+}
+/* 最后一个li元素不需要:::修饰 */
+#filter li:last-child:after{
+    content: "";
+}
+.portfolio-item{
+    margin-bottom: 30px;
+    min-height: 270px;
+}
+figure.css-hover-effect{
+    background: #8c63d4;
+    background: -moz-linear-gradient(45deg,#8c63d4 42%,#6d9ce5 88%);
+    background: -webkit-gradient(linear,left bottom,right top,color-stop(42%,#8c63d4),color-stop(88%,#6d9ce5));
+    background: -webkit-linear-gradient(45deg,#8c63d4 42%,#6d9ce5 88%);
+    background: -o-linear-gradient(45deg,#8c63d4 42%,#6d9ce5 88%);
+    background: -ms-linear-gradient(45deg,#8c63d4 42%,#6d9ce5 88%);
+    background: linear-gradient(45deg,#8c63d4 42%,#6d9ce5 88%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c63d4',endColorstr='#6d9ce5',GradientType=1 );
+    /* 之后的link 和 info将会以此为父元素绝对定位 */
+    position: relative;
+    overflow: hidden
+}
+figure.css-hover-effect img {
+    width: 100%;
+    opacity: 1;
+    -webkit-transition: opacity .35s;
+    -moz-transition: opacity .35s;
+    -o-transition: opacity .35s;
+    transition: opacity .35s
+}
+/* 当图片opacity降低时 figure元素的整体背景色才会显现 */
+figure.css-hover-effect:hover img {
+    opacity: .3
+}
+figure .figure-link{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+figure .figure-link a i{
+    width: 30px;
+    height: 30px;
+    display: block;
+    background: #28176b;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 3px;
+    transition: all 300ms linear 0s;
+}
+figure .figure-link a:hover{
+    text-decoration: none;
+}
+figure .figure-link a i:hover{
+    background-color: #fff;
+    color: #28176b;
+}
+figure .figure-info{
+    position: absolute;
+    bottom: 30%;
+    left: 30px;
+}
+figure .figure-info h2{
+    margin: 0;
+    font-size: 21px;
+    line-height: 22px;
+    font-weight: 300;
+}
+figure .figure-info h2 a{
+    color: #fff;
+    text-decoration: none;
+}
+figure.css-hover-effect span{
+    color: #f4f4f4;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+/* 先隐藏所有的文本 */
+figure.css-hover-effect h2,figure.css-hover-effect span,figure.css-hover-effect i{
+    opacity: 0;
+    -webkit-transition: opacity 0.35s,-webkit-transform 0.35s;
+    transition: opacity 0.35s,transform 0.35s;
+    /* 提前在x y轴放大,当鼠标移入时有缩小动画 */
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5);
+}
+figure.css-hover-effect:hover h2,figure.css-hover-effect:hover span,figure.css-hover-effect:hover .figure-link i{
+    opacity: 1;
+    transform: scale3d(1,1,1);
+}

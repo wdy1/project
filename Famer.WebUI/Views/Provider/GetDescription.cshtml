@@ -1,0 +1,33 @@
+﻿@using Famer.Entity.ViewModel
+@model Famer.Entity.ViewModel.ProviderViewModel
+
+
+<div id="com" class="comment">
+    <table class="table table-striped">
+        <caption>品牌名称:@</caption>
+        <thead>
+            <tr>
+                <th>供应商品参数：</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <th>商户名：@Model.user.UserName</th>
+                <th>供应地址：@Model.Sup.Address_Of_Sup @Model.Sup.Sup_Area</th>
+                <th>联系方式：@Model.Sup.Phone</th>
+            </tr>
+            <tr>
+                <th>供应种类：@Model.Sup.Sup_Class</th>
+                <th>更新时间：@Model.Sup.Sup_Time</th>
+                <th>参考价格：@Model.Sup.Sup_Of_Price</th>
+            </tr>
+            <tr>
+                <th>储藏方法：低温保鲜</th>
+                <th>包装方式: 包装</th>
+                <th>同城服务: 同城24小时物流送货上门</th>
+            </tr>
+        </thead>
+    </table>
+    <p style="text-align:center">@Model.Sup.Sup_Of_Description</p>
+    <img style="display:block;margin:0 auto" src="~/Images/弄啥勒/广告图片.jpg" />
+</div>

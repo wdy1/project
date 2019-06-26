@@ -1,0 +1,328 @@
+﻿
+@{ 
+        Layout = null;
+        AjaxOptions ajaxOpts = new AjaxOptions
+        {
+            UpdateTargetId = "title"
+        };
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/gloab.css" rel="stylesheet" />
+    <link href="~/fonts/iconfont.css" rel="stylesheet" />
+    <link href="~/Content/css/Register.css" rel="stylesheet" />
+    <script src="~/scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/scripts/register.js"></script>
+    <style type="text/css">
+        .f-fl {
+            float: left !important;
+        }
+
+        .xuan-icon-check-solid.blank {
+            top: 2px;
+            font-size: 20px;
+        }
+
+        .logo {
+            position: relative;
+            width: 376px;
+            cursor: pointer;
+        }
+
+            .logo .title {
+                font-family: 华文隶书;
+                display: inline;
+            }
+
+            .logo:hover {
+                color: #666;
+            }
+
+        .have-account {
+            font-size: 16px;
+            margin-top: -20px;
+            color: #999;
+        }
+
+            .have-account a {
+                color: #e22;
+                text-decoration: none;
+            }
+    </style>
+    <title>助农为乐 - 注册</title>
+</head>
+<body class="bgf4">
+    <div class="jumbotron" style="background-color: #fff">
+        <div class="container">
+            <div class="regis">
+                <a class="logo">
+                    <img src="~/Images/logo.png" />
+                    <h2 class="title">助农为乐</h2>
+                </a>
+                <h3 style="display: inline;margin-left: 15px;line-height: 10px;">欢迎注册</h3>
+            </div>
+            <div class="text-right have-account">
+                已有账号？
+                <a href="#">请登录</a>
+            </div>
+        </div>
+    </div>
+    <div class="login-box f-mt10 f-pb50">
+        <div class="main bgf">
+            <div class="reg-box-pan display-inline">
+                <div class="step">
+                    <ul>
+                        <li class="col-xs-4 on">
+                            <span class="num">
+                                <!-- 正方形 旋转45deg成菱形-->
+                                <em class="f-r5"></em>
+                                <i>1</i>
+                            </span>
+                            <!-- num元素的z-index大于 line-bg元素的z-index 因此这条直线无法占据整个50%-->
+                            <span class="line_bg lbg-r"></span>
+                            <p class="lbg-txt">填写账户信息</p>
+                        </li>
+                        <!-- 位于中间的步骤 预示着两边都有隐藏的直线-->
+                        <li class="col-xs-4">
+                            <span class="num">
+                                <em class="f-r5"></em>
+                                <i>2</i>
+                            </span>
+                            <span class="line_bg lbg-l"></span>
+                            <span class="line_bg lbg-r"></span>
+                            <p class="lbg-txt">验证账户信息</p>
+                        </li>
+                        <li class="col-xs-4">
+                            <span class="num">
+                                <em class="f-r5"></em>
+                                <i>3</i>
+                            </span>
+                            <span class="line_bg lbg-l"></span>
+                            <p class="lbg-txt">注册成功</p>
+                        </li>
+                    </ul>
+                </div>
+               
+                <!-- 表单填写开始 -->
+                <div class="reg-box" id="verifyCheck" style="margin-top:20px">
+                    @using (Html.BeginForm("Index", "Register"))
+                    {
+                        @Html.Hidden("Time",DateTime.Now)
+                        <div class="part1">
+                            <div class="item col-xs-12">
+                                <span class="intelligent-label .f-fl" style="float: left">
+                                    <b class="ftx04">*</b>
+                                    用户名：
+                                </span>
+                                <div class="f-fl item-ifo">
+                                    <input name="UserName" type="text" maxlength="20" class="txt03 f-r3 required" tabindex="1" data-valid="isNonEmpty||between:3-20||isUname"
+                                           data-error="用户名不能为空||用户长度必须是3-20位||只能输入中文、字母、数字、下划线、且以中文或字母开头" id="username">
+                                    <span class="ie8 xuan xuan-guanbi close hide"></span>
+                                    <label class="blank icon-sucessfill xuan xuan-icon-check-solid hide"></label>
+                                    <label class="focus">
+                                        <span>3-20位，中文、字母、数字、下划线的组合，以中文或字母开头</span>
+                                    </label>
+                                    <label class="focus valid error"></label>
+                                </div>
+                            </div>
+                            <div class="item col-xs-12">
+                                <span class="intelligent-label f-fl">
+                                    <b class="ftx04">*</b>
+                                    手机号：
+                                </span>
+                                <div class="f-fl item-ifo">
+                                    <input name="Phone" type="text" class="txt03 f-r3 required" tabindex="2" data-valid="isNonEmpty||isInt"
+                                           data-error="手机号码不能为空||手机号码格式不正确" maxlength="11" id="phone" />
+                                    <span class="ie8 xuan xuan-guanbi close hide"></span>
+                                    <label class="blank icon-sucessfill xuan xuan-icon-check-solid hide"></label>
+                                    <label class="focus">请填写11位有效的手机号码</label>
+                                    <label class="focus valid"></label>
+                                </div>
+                            </div>
+                            <div class="item col-xs-12">
+                                <span class="intelligent-label f-fl">
+                                    <b class="ftx04">*</b>
+                                    邮箱：
+                                </span>
+                                <div class="f-fl item-ifo">
+                                    <input name="Email" type="text" class="txt03 f-r3 required" tabindex="3" data-valid="isNonEmpty"
+                                           data-error="Email地址不能为空" id="email" />
+                                    <span class="ie8 xuan xuan-guanbi close hide"></span>
+                                    <label class="blank icon-sucessfill xuan xuan-icon-check-solid hide"></label>
+                                    <label class="focus">建议输入常用Email地址</label>
+                                    <label class="focus valid"></label>
+                                </div>
+                            </div>
+                            <div class="item col-xs-12">
+                                <span class="intelligent-label f-fl">
+                                    <b class="ftx04">*</b>
+                                    密码：
+                                </span>
+                                <div class="f-fl item-ifo">
+                                    <input name="Password" type="password" id="password" maxlength="20" class="txt03 f-r3 required" tabindex="4" style="ime-mode: disabled;"
+                                           onpaste="return false" autocomplete="off" data-valid="isNonEmpty||between:8-18||level:2"
+                                           data-error="密码不能为空||密码长度必须为8-18位||密码强度过低，存在被盗风险，建议字母+数字组合" />
+                                    <span class="ie8 xuan xuan-guanbi close hide" style="right:30px"></span>
+                                    <span class="showpwd" data-eye="password"></span>
+                                    <label class="icon-sucessfill blank xuan xuan-icon-check-solid hide"></label>
+                                    <label class="focus">8-18位英文（区分大小写）、数字、字符的组合</label>
+                                    <label class="focus valid"></label>
+                                    <span class="clearfix"></span>
+                                    <label class="strength">
+                                        <span class="f-fl f-size12">安全程度：</span>
+                                        <b>
+                                            <i>弱</i>
+                                            <i>中</i>
+                                            <i>强</i>
+                                        </b>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="item col-xs-12">
+                                <span class="intelligent-label f-fl">
+                                    <b class="ftx04">*</b>
+                                    确认密码：
+                                </span>
+                                <div class="f-fl item-ifo">
+                                    <input type="password" maxlength="20" tabindex="5" class="txt03 f-r3 required" style="ime-mode: disabled;" id="rePassword"
+                                           autocomplete="off" onpaste="return false" data-valid="isNonEmpty||between:8-18||isRepeat:password"
+                                           data-error="确认密码不能为空||密码长度必须为8-18位||两次输入的密码不一致" />
+                                    <span class="ie8 xuan xuan-guanbi close hide" style="right: 30px;"></span>
+                                    <span class="showpwd" data-eye="rePassword"></span>
+                                    <label class="icon-sucessfill blank xuan xuan-icon-check-solid hide"></label>
+                                    <label class="focus">重复输入确认密码</label>
+                                    <label class="focus valid"></label>
+                                </div>
+                            </div>
+                            <div class="item col-xs-12" style="height: auto;">
+                                <span class="intelligent-label f-fl">&nbsp;</span>
+                                <p class="f-size14 required" data-valid="isChecked" data-error="请先同意合约条款">
+                                    <input type="checkbox" checked style="font-size: 16px;height: 16px;width: 16px;" />
+                                    <a href="#" class="f-m15" style="margin-left: 0;">我已阅读并同意条款</a>
+                                </p>
+                                <label class="focus valid error"></label>
+                            </div>
+                            <div class="item col-xs-12">
+                                <span class="intelligent-label f-fl">&nbsp;</span>
+                                <div class="f-fl item-ifo">
+                                    <div class="btn btn-blue f-r3" id="btn-part1">下一步</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="part2" style="display: none">
+                            <div class="alert alert-info" style="width: 700px;">
+                                注册验证码已经发送至您的邮箱，请输入收件中的验证码，确保您的邮箱真实有效。
+                            </div>
+                            <div class="item col-xs-12 f-mb10">
+                                <span class="intelligent-label f-fl">邮箱：</span>
+                                <div id="email-address" class="f-fl item-ifo c-blue">
+
+                                </div>
+                            </div>
+                            <div class="item col-xs-12">
+                                <span class="intelligent-label f-fl">
+                                    <b class="ftx04">*</b>
+                                    验证码：
+                                </span>
+                                <div class="item-ifo f-fl">
+                                    <input type="text" maxlength="6" id="verifyNo" class="txt03 f-r3 f-fl required"
+                                           data-valid="isNonEmpty||isInt" style="width: 167px" data-error="验证码不能为空||请输入6位数字的验证码" />
+                                    <span class="btn btn-gray f-r3 f-ml5 f-size13" id="time_box" disabled style="width: 97px;display: none">发送验证码</span>
+                                    <span class="btn btn-gray f-r3 f-ml5 f-size13" id="verifyYZ" style="width: 97px;">发送验证码</span>
+                                    <span class="ie8 close xuan xuan-guanbi hide" style="right: 130px"></span>
+                                    <label class="focus">
+                                        <span>请查收邮件，并填写您收到邮件中的6位数字验证码（若验证码过期请按发送按钮）</span>
+                                    </label>
+                                    <label class="focus valid"></label>
+                                </div>
+                            </div>
+                            <div class="item col-xs-12">
+                                <span class="intelligent-label f-fl">&nbsp;</span>
+                                <div class="f-fl item-ifo">
+                                    <div class="btn btn-blue f-r3" id="btn-part2">注册</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="part3" style="display: none">
+                            
+                            <h3>恭喜<span id="usernamea"></span>，您已注册成功，开始您的投资之旅吧！</h3>
+                            <div class="item col-xs-12" style="margin-top:40px">
+                                <span class="intelligent-label f-fl">
+                                    &nbsp;
+                                </span>
+                                <div class="f-fl item-ifo">
+                                    <button type="submit" class="btn btn-blue f-r3">完成</button>
+                                </div> 
+                            </div>
+                        </div>
+
+                    }
+                   
+                </div>    
+            </div>
+        </div>
+    </div>
+    <div id="title" style="display:none">
+
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btn-part1").click(function () {
+                if(!verifyCheck._click())
+                    return;
+                var email = $("#email").val();
+                //将邮件地址参数传入Register控制器中的SentMail方法 
+                $.ajax({
+                    type: "post",
+                    url: "/Register/SentMail",
+                    dataType:"text",
+                    data: { "email": email },
+                    success: function (res) {
+                        if(res=="true")
+                        {
+                            $(".part1").hide();
+                            $(".part2").show();
+                            $(".step li").eq(1).addClass("on");
+                            $("#email-address").text(email);          
+                        }
+                        else
+                        {
+                            alert("邮件发送失败");
+                        }
+                    }
+                })
+            })
+
+            $("#btn-part2").click(function(){
+                if(!verifyCheck._click())
+                    return;
+                var codeString=$("#verifyNo").val();
+                $.ajax({
+                    type:"post",
+                    url:"/Register/CheckCode",
+                    data: { "codeString": codeString },
+                    success:function(res){
+                        if(res=="true")
+                        {
+                            $(".part2").hide();
+                            $(".part3").show();
+                            $(".step li").eq(2).addClass("on");
+                        }
+                        else
+                        {
+                            alert("输入的验证码错误，请重新填写或点击发送按钮");
+                        }
+                    }
+                })
+            })
+        })
+     </script>
+</body>
+</html>

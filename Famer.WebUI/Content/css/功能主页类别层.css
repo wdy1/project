@@ -1,0 +1,492 @@
+﻿.fresh-fs-bg1{
+    position: absolute;
+    z-index: 5;
+    top: 340px;
+    left: -120px;
+    background-image: url("../../Images/功能主页6.png");
+    background-position: -335px -354px;
+    background-repeat: no-repeat;
+    width: 174px;
+    height: 120px;
+}
+/* 轮播图最下方的黑色阴影 */
+.fresh-fs-shadow{
+    position: absolute;
+    bottom: -12px;
+    z-index: 100;
+    width: 1190px;
+    height: 24px;
+    left: 0;
+    background: url("../../Images/功能主页10.png");
+}
+.fresh-service{
+    height: 100px;
+    width: 1190px;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 30px;
+    z-index: 2;
+    background: #fff;
+}
+.fresh-service .mod-service-item{
+    box-sizing: content-box;
+    width: 200px;
+    height: 100px;
+    float: left;
+    padding-left: 30px;
+    margin-top: 10px;
+    position: relative;
+}
+.fresh-service .mod-service-item i.xuan,.fresh-service .mod-service-item i.fa{
+    box-sizing: border-box;
+    font-size: 40px;
+    height: 100px;
+    padding-top: 22px;
+    display: inline-block;
+}
+.fresh-service .mod-service-item i.fa{
+    padding-top: 15px;
+}
+/* 无奈用了最蠢的方法 绝对定位*/
+.fresh-service .mod-service-item .mod-service-title{
+    top: 0px;
+    height: 100px;
+    position: absolute;
+    margin-right: 20px;
+    margin-top: -7px;
+    left: 85px;
+}
+.fresh-service .mod-service-title h3{
+    font-size: 19px;
+    color: #5e5f61;
+    margin-bottom: 5px;
+}
+.fresh-service .mod-service-title p{
+    color: #b5b4b6;
+}
+/* 类别楼层展示 */
+.fresh-seckill{
+    position: relative;
+    width: 1190px;
+    height: 542px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+}
+/* 背景图*/
+.fresh-seckill .fresh-seckill-bg-left{
+    position: absolute;
+    left: -150px;
+    bottom: 18px;
+    width: 709px;
+    height: 710px;
+    background: url("../../Images/功能主页5.png") 0 0 no-repeat;
+}
+.fresh-seckill .fresh-seckill-bg-right{
+    position: absolute;
+    right: -71px;
+    top: 125px;
+    width: 145px;
+    height: 145px;
+    background-image: url("../../Images/功能主页6.png");
+    background-repeat: no-repeat;
+    background-position: -335px -205px;
+}
+/* 早市 晚市 抢鲜*/
+.fresh-seckill .fresh-seckill-tab{
+    position: relative;
+    z-index: 2;
+}
+.fresh-seckill .tab-head{
+    padding-left: 50px;
+    height: 100px;
+    background: url("../../Images/功能主页4.png") 0 0 no-repeat;
+}
+.fresh-seckill .tab-head a{
+    text-decoration: none;
+}
+.fresh-seckill .tab-head .tab-head-item{
+    box-sizing: content-box;
+    float: left;
+    position: relative;
+    height: 60px;
+    margin-top: 25px;
+    padding: 16px 0 16px 64px;
+    width: 130px;
+    margin-right: 10px;
+    color: #909090;
+    cursor: pointer;
+    font-size: 18px;
+}
+.fresh-seckill .tab-head .tab-head-item.a{
+    color: #00c65d;
+}
+.fresh-seckill .tab-head .tab-head-item .xuan{
+    position: absolute;
+    font-size: 48px;
+    left: 0;
+    top: 50%;
+    margin-top: -20px;
+    width: 48px;
+    height: 48px;
+}
+.fresh-seckill .tab-head .tab-head-item .title{
+    margin-top: -3px;
+}
+.fresh-seckill .tab-head .tab-head-item .tip{
+    font-size: 15px;
+    margin-top: 5px;
+}
+/* 抢鲜部分轮播图样式 */
+.fresh-seckill .fresh-seckill-tab .tab-body{
+    height: 432px;
+    background: hsla(0,0%,100%,.95);
+    border: 10px solid #646464;
+    border-color: hsla(0,0%,39%,.95);
+    border-top: none;
+}
+.fresh-seckill .tab-body .slider{
+    margin: 0 35px;
+    width: 1100px;
+    height: 403px;
+    position: relative;
+}
+.fresh-seckill .tab-body .slider a.slider-control{
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    width: 20px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 20px;
+    background: #ccc;
+    color: #fff;
+    font-family: simsun;
+    margin-top: -25px;
+}
+.fresh-seckill .tab-body .slider .left{
+    left: -35px;
+}
+.fresh-seckill .tab-body .slider .right{
+    right: -35px;
+}
+.fresh-seckill .tab-body .slider .slider-list {
+    box-sizing: content-box;
+    padding: 30px 0 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.fresh-seckill .tab-body .slider .goods-item{
+    float: left;
+    width: 220px;
+    height: 345px;
+}
+.fresh-seckill .tab-body .slider .goods-item .goods-item-link{
+    display: block;
+    box-sizing: content-box;
+    padding: 40px 20px 0;
+    height: 305px;
+    position: relative;
+    background: hsla(0,0%,100%,.9);
+    transition: all 0.25s ease 0s;
+    color: #232321;
+    text-decoration: none;
+}
+.fresh-seckill .tab-body .slider .goods-item .goods-item-link:hover .goods-item-btn{
+    height: 40px;
+}
+/* 相对于 goods-item-link定位 */
+.fresh-seckill .tab-body .slider .goods-item .goods-item-price{
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    /* 常见的居中方法 */
+    margin-left: -90px;
+    width: 180px;
+    height: 30px;
+    text-align: center;
+    background: #ff541f;
+    border-radius: 0 0 15px 15px;
+    font-family: Arial;
+}
+.fresh-seckill .tab-body .slider .goods-item .goods-item-price-zn{
+    margin: 0 5px;
+    font-size: 20px;
+    color: #fff;
+}
+.fresh-seckill .tab-body .slider .goods-item .goods-item-price-m{
+    margin: 0 5px;
+    font-size: 14px;
+    color: hsla(0,0%,100%,.5);
+    text-decoration: line-through;
+}
+.fresh-seckill .tab-body .slider .goods-item .goods-item-img{
+    margin-bottom: 13px;
+    width: 180px;
+    height: 180px;
+}
+.fresh-seckill .tab-body .slider .goods-item .goods-item-name {
+    margin-bottom: 14px;
+    height: 54px;
+    line-height: 1.7;
+    white-space: normal;
+    font-size: 16px;
+    color: #222;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    text-align: center;
+}
+.fresh-seckill .tab-body .slider .goods-item .goods-item-progress{
+    padding-top: 0;
+}
+.fresh-seckill .tab-body .slider .goods-item .goods-item-progress-text{
+    margin-bottom: 7px;
+    font-size: 14px;
+    color: #909090;
+    text-align: center;
+}
+.fresh-seckill .tab-body .slider .goods-item .goods-item-progress-line{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 3px;
+    background: #ddd;
+}
+.goods-item-progress-line i{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    height: 3px;
+    background: #ff541f;
+    transition: width 0.25s ease;
+}
+.fresh-seckill .tab-body .slider .goods-item .goods-item-btn{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 0;
+    background: #ff541f;
+    color: #fff;
+    transition: height .25s ease 0s;
+}
+
+/*  特色购区域层 */
+.z-floor{
+    
+    margin-bottom: 78px;
+    position: relative;
+}
+/* 背景图片 */
+#fresh-unique-1 .unique-1-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 440px;
+    background: #1e1d22 url("../../Images/功能主页1.jpg") 50% no-repeat;
+}
+#fresh-unique-1 .fresh-unique-1-inner{
+    box-sizing: content-box;
+    position: relative;
+    z-index: 2;
+    width: 1190px;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+#fresh-unique-1 .fresh-unique-1-inner .fresh-mod-head{
+    margin-bottom: 30px;
+    height: 60px;
+    background: url("../../Images/功能主页11.png") 0 0 no-repeat;
+}
+#fresh-unique-1 .fresh-mod-head .fresh-mod-head-inner{
+    text-align: center;
+    width: 284px;
+    margin: 0 auto;
+}
+#fresh-unique-1 .fresh-mod-head-inner .fresh-mod-head-title{
+    height: 42px;
+    line-height: 42px;
+    font-size: 28px;
+    font-weight: 400;
+    overflow: hidden;
+    color: #fff;
+    margin: 0;
+}
+#fresh-unique-1 .fresh-mod-head-inner .fresh-mod-head-title i{
+    margin: 0 10px;
+    color: #909090;
+    font-size: 24px;
+    font-style: normal;
+}
+#fresh-unique-1 .fresh-mod-head-inner .fresh-mod-head-subtitle{
+    color: hsla(0,0%,100%,.5);
+    height: 21px;
+    font-size: 14px;
+    font-weight: 400;
+    overflow: hidden;
+    margin: 0;
+}
+/*  精选100内容样式 */
+#fresh-unique-1 .fresh-unique-1-inner .fresh-unique-top100{
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    height: 584px;
+    width: 1190px;
+    background: #fff url("../../Images/功能主页12.jpg") center 0 no-repeat;
+}
+#fresh-unique-1 .fresh-unique-top100 .fresh-top100-head{
+    box-sizing: content-box;
+    padding: 40px 0 35px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+#fresh-unique-1 .fresh-top100-head .fresh-top100-head-inner{
+    display: inline-block;
+}
+#fresh-unique-1 .fresh-top100-head .fresh-top100-head-title{
+    float: left;
+    margin: 0;
+    margin-right: 8px;
+    background: url("../../Images/功能主页13.png") 0 -84px no-repeat;
+    width: 68px;
+    height: 30px;
+    text-indent: -999px;
+    overflow: hidden;
+}
+#fresh-unique-1 .fresh-top100-head .fresh-top100-head-subtitle{
+    float: left;
+    font-size: 20px;
+    color: #222;
+    margin: 0;
+}
+#fresh-unique-1 .fresh-top100-goods{
+    margin-bottom: 9px;
+    box-sizing: content-box;
+    padding: 0 0 0 20px;
+}
+#fresh-unique-1 .fresh-unique-top100 a.fresh-goods-item{
+    float: left;
+    box-sizing: content-box;
+    text-decoration: none;
+    margin-right: 10px;
+    position: relative;
+    padding-top: 10px;
+    width: 280px;
+    height: 410px;
+    transition: all 0.25s ease-in-out;
+}
+#fresh-unique-1 .fresh-unique-top100 a.fresh-goods-item:hover{
+    transform: translateY(-10px);
+}
+#fresh-unique-1 .fresh-unique-top100 .top100-goods-item-img{
+    display: block;
+    width: 100%;
+    height: 220px;
+    text-align: center;
+}
+#fresh-unique-1 .fresh-unique-top100 .top100-goods-item-price{
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #FFF;
+    text-align: center;
+    background: url("../../Images/功能主页13.png") 0 0 no-repeat;
+    width: 80px;
+    height: 80px;
+}
+#fresh-unique-1 .fresh-unique-top100 .top100-goods-item-price .price-title{
+    box-sizing: content-box;
+    padding-top: 15px;
+    font-size: 18px;
+    font-family: Arial;
+    margin: 0;
+}
+#fresh-unique-1 .fresh-unique-top100 .top100-goods-item-price .price-subtitle{
+    width: 57px;
+    margin: 0 auto;
+    font-size: 14px;
+    border-top: 1px solid #daccb3;
+    font-family: Arial;
+    white-space: nowrap;
+    box-sizing: content-box;
+    padding-top: 3px;
+}
+#fresh-unique-1 .fresh-unique-top100 .top100-goods-item-info{
+    margin-top: -110px;
+    box-sizing: content-box;
+    padding: 130px 20px 0;
+    height: 160px;
+    background: #f7f7f9;
+}
+#fresh-unique-1 .fresh-unique-top100 .info-title{
+    margin-bottom: 15px;
+    font-size: 16px;
+    height: 24px;
+    color: #b49966;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    text-overflow: ellipsis;
+}
+#fresh-unique-1 .fresh-unique-top100 .info-line{
+    display: block;
+    margin-bottom: 15px;
+    height: 1px;
+    background: #eee;
+}
+#fresh-unique-1 .fresh-unique-top100 .info-name{
+    margin-bottom: 8px;
+    height: 27px;
+    font-size: 18px;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#fresh-unique-1 .fresh-unique-top100 .info-des{
+    height: 42px;
+    font-size: 14px;
+    color: #909090;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+}
+#fresh-unique-1 .fresh-unique-top100 a.fresh-top100-btn{
+    display: block;
+    margin: 0 auto;
+    width: 118px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #00c65d;
+    background: #fff;
+    border: 1px solid #00c65d;
+    font-size: 16px;
+    box-sizing: content-box;
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+}
+#fresh-unique-1 .fresh-unique-top100 a.fresh-top100-btn:hover{
+    color: #fff;
+    background: #00c65d;
+}
+#fresh-unique-1 .fresh-unique-top100 .fresh-top100-btn i{
+    margin-left: 5px;
+    font-size: 20px;
+    line-height: 20px;
+    font-style: normal;
+}
+
+
+

@@ -1,0 +1,39 @@
+﻿@model Famer.Entity.Model.UserInfo
+
+@if (Model.UserName == "" || Model.UserName.IsEmpty())
+{
+    <li id="login" class="fore1">
+        <a class="link-login" href="/Login/Index">你好，请登录</a>&nbsp;&nbsp;
+        <a class="link-regist style-red" href="/Register/Index">免费注册</a>
+    </li>
+}
+else
+{
+    <li id="login" class="fore1 dropdown">
+        <div class="dt cw-icon">
+            <i class="glyphicon glyphicon-chevron-down"></i>
+            <a class="username" target="_blank" href="@Url.Action("Info","User",new {UserId=Model.UserID })">@Model.UserName</a>
+            <i class="icon-plus"></i>
+        </div>
+        <div class="dd dropdown-layer">
+            <div class="dd-spacer"></div>
+            <div class="userinfo">
+                <div class="u-pic">
+                    <a target="_blank" href="@Url.Action("Info","User",new {UserId=Model.UserID })">
+                        <img src="@Url.Action("GetImage","User",new { UserId=Model.UserID})" style="height: 60px;width: 60px;border-radius: 50%">
+                    </a>
+                </div>
+                <div class="u-plus">
+                    <a class="login-out" href="/Home/LoginOut">
+                        退出
+                    </a>
+                    <a class="icon-plus" href="#" target="_blank"></a>
+                </div>
+                <div class="u-msg">
+                    <a href="#" target="_blank">开通PLUS 平均省1021元/年></a>
+                </div>
+            </div>
+        </div>
+    </li>
+}
+

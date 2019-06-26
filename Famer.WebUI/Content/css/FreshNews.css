@@ -1,0 +1,344 @@
+﻿.zixuntopkuang {
+    position: relative;
+    margin-bottom: 50px;
+    padding-top: 1px;
+    min-height: 550px;
+}
+
+.h11 {
+    height: 25px;
+    line-height: 10px;
+}
+
+.toppart {
+    width: 1200px;
+    margin-left: 100px;
+    background: #fff;
+}
+
+.biaoti {
+    font-size: 17px;
+}
+
+.a1 {
+    position: relative;
+}
+
+.fx1 {
+    float: left;
+    margin-left: 0;
+}
+
+.pos-rel {
+    position: relative;
+    float: left;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.article-index {
+    width: 380px;
+    height: 260px;
+    border: 0 solid #dedede;
+    background: #f5f5f5;
+}
+
+.adv-public {
+    overflow: hidden;
+    position: relative;
+}
+
+.clear {
+    clear: both;
+    overflow: hidden;
+    display: block;
+}
+
+.h10 {
+    height: 10px;
+    line-height: 10px;
+}
+
+.fourimg {
+    margin-left: 0;
+}
+
+li.img-two {
+    float: left;
+    width: 184px;
+    margin-bottom: 10px;
+    line-height: 24px;
+}
+
+.text-wid-auto {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 16px;
+    margin-bottom: -5px;
+    margin-top: 5px;
+}
+
+li.img-two img {
+    height: 120px;
+    width: 100%;
+}
+
+.pub-tit-new {
+    border-top: 1px solid #ccc;
+}
+
+.ziti {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.list-catname {
+    display: block;
+    width: 100%;
+}
+
+a.tit {
+    width: 73%;
+    font-size: 18px;
+    line-height: 24px;
+    float: left;
+    display: inline-block;
+    margin: 9px 0;
+}
+
+.text-wid-auto {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.tooltip {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.xunxiliebiao {
+    padding: 0;
+}
+
+.zixunbg1 {
+    position: absolute;
+    z-index: -10;
+    left: -76px;
+    bottom: -128px;
+    width: 150px;
+    height: 330px;
+    background: url("../../image/youxuan-zuoxia.png");
+}
+
+.zixunbg2 {
+    z-index: -10;
+    position: absolute;
+    right: -265px;
+    top: 100px;
+    width: 357px;
+    height: 426px;
+    background: url("../../image/youxuan-youxia.png");
+}
+
+.fxr {
+    font-size: 14px;
+    line-height: 40px;
+    color: #999;
+    float: right;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.xxzx {
+    font-size: 20px;
+}
+
+.fx2 {
+    float: left;
+    height: 100%;
+    margin: 0 10px;
+    width: 62px;
+    position: relative;
+}
+
+.img-1 {
+    width: 230px;
+    height: 150px;
+    left: -40px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.pos-abs {
+    position: absolute;
+}
+
+.xxzximg {
+    width: 230px;
+    height: 160px;
+}
+
+.con-text {
+    width: 500px;
+    float: right;
+    margin-left: 220px;
+}
+
+.type-cat {
+    float: left;
+    height: 26px;
+    line-height: 26px;
+    max-width: 90px;
+    overflow: hidden;
+    padding: 0 10px;
+    text-align: center;
+    color: #fff;
+    background: #00a5f2;
+}
+
+.min {
+    width: 100%;
+    display: block;
+    margin: 0;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 0;
+}
+
+.text-wid {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 24px;
+}
+
+.text-infor {
+    font-size: 14px;
+    color: #999;
+    line-height: 26px;
+    margin-bottom: 20px;
+}
+
+.font-gray {
+    font-size: 12px;
+    color: rgba(0,0,0,0.4);
+}
+
+.iconfont-comm {
+    font-family: normal;
+    font-style: normal;
+}
+
+.fs-12 {
+    font-size: 12px;
+}
+
+.keytags {
+    font-size: 14px;
+    padding: 0 0 0 50px;
+}
+
+.zixunsize {
+    position: relative;
+    margin-bottom: 50px;
+    padding-top: 1px;
+    min-height: 1850px;
+}
+
+.fx3 {
+    float: right;
+}
+
+.lunbo2 {
+    width: 305px;
+    height: 220px;
+}
+
+.lunbo2-size {
+    width: 305px;
+    height: 220px;
+    border: 0 solid #dedede;
+    background: #f5f5f5;
+}
+
+.lunbo2-liebiao {
+    padding: 0;
+    float: left;
+}
+
+a.titt {
+    overflow: hidden;
+    width: 25%;
+    font-size: 17px;
+    line-height: 24px;
+    float: left;
+    display: inline-block;
+    margin: 9px 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+a.title {
+    padding-left: 5px;
+    overflow: hidden;
+    width: 75%;
+    font-size: 17px;
+    line-height: 24px;
+    float: left;
+    display: inline-block;
+    margin: 9px 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.rad100a {
+    width: 48%;
+}
+
+.img-three {
+    float: left;
+    width: 150px;
+    margin-bottom: 10px;
+    line-height: 24px;
+}
+
+.img-3 {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.img-123 {
+    padding-left: 0;
+}
+
+.m-more {
+    margin: 0;
+    text-align: center;
+    padding: 20px;
+}
+
+.cur-poin {
+    cursor: pointer;
+}
+
+.fs-16 {
+    font-size: 16px;
+}
+
+.btn-mid {
+    display: inline-block;
+    padding: 10px 30px;
+    line-height: 18px;
+    border: 0;
+}
+
+.box-shadow {
+    box-shadow: 0 0 5px rgba(0,0,0,.1);
+    color: #333;
+}

@@ -1,0 +1,140 @@
+﻿.pos-text {
+    padding: 10px 0;
+    display: block;
+    font-size: 15px;
+    border: 1px solid #ededed;
+    border-left: 0;
+    border-right: 0;
+    color: black;
+    line-height: 25px;
+}
+
+
+.l-list {
+    float: left;
+    width: 880px;
+    padding: 0 20px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.add-type {
+    color: #fff;
+    margin: 35px 12px 12px 12px;
+    height: 30px;
+    width: 80px;
+}
+
+.type-show {
+    text-align: center;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 18px;
+    color: #fff;
+    background: #a0a0a0;
+    border-radius: 50px;
+}
+
+.pub-detail {
+    padding: 0;
+}
+
+.pad20 {
+    padding: 20px !important;
+}
+
+.pub-detail.tit {
+    font: 400 36px/50px 'Microsoft Yahei';
+    color: #333;
+    padding-bottom: 10px;
+}
+
+.rad50 {
+    border-radius: 50px;
+}
+
+.font-blank {
+    color: #000 !important;
+}
+
+.font-gray {
+    padding: 0;
+    font-size: 12px;
+}
+
+.zgncpwfont {
+    font-size: 16px;
+    font-style: normal;
+}
+
+.introduce {
+    text-indent: 2em;
+    border: 1px solid #eee;
+    font-size: 14px;
+    font-family: 'Microsoft YaHei';
+    color: #999;
+    line-height: 20px;
+    padding: 10px;
+    margin: 0 20px;
+}
+
+.pub-content
+.content {
+    padding: 0 20px;
+    margin: 0;
+    font-size: 18px;
+    text-indent: 2em !important;
+}
+
+.explain-font {
+    padding: 20px;
+    color: #999 !important;
+}
+
+.tips-con {
+    padding-left: 0;
+    line-height: 25px;
+    white-space: normal;
+    font-family: 楷体;
+    font-size: 12px;
+}
+
+.bds_more {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    display: inline-block;
+    padding: 0px;
+    margin: 8px;
+}
+
+.img-list-shadow {
+    padding: 20px 0;
+}
+
+.xwxqybuju {
+    position: relative;
+    margin-bottom: 50px;
+    padding-top: 1px;
+    min-height: 3000px;
+    overflow: hidden;
+}
+
+.fenxiangkuang {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 25px;
+    height: 50px;
+    width: 700px;
+}
+
+.fenxianglogo {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+
+.content

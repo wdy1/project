@@ -1,0 +1,435 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300" rel="stylesheet" type="text/css">
+    <link href="~/Content/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/flaticon.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/IntroducedStyle.css" rel="stylesheet" />
+    <title>助农 - 为乐 </title>
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+        /* 仿微软按钮 */
+        a.myButton {
+            position: relative;
+            text-decoration: none;
+            overflow: hidden;
+            background-color: #000;
+            color: #fff;
+            padding: 15px 35px 15px 15px;
+            font-size: 15px;
+            transition: all 0.3s ease-out 0s;
+        }
+
+            a.myButton:before {
+                content: "";
+                width: 0%;
+                height: 2px;
+                background-color: #fff;
+                position: absolute;
+                left: 14px;
+                bottom: 13px;
+                transition: all 0.3s ease-in-out 0s;
+            }
+
+            a.myButton i {
+                position: absolute;
+                right: 15px;
+                top: 10px;
+                transition: all 0.3s ease-out 0s;
+            }
+
+            a.myButton:hover {
+                background-color: #222;
+                text-decoration: #fff;
+            }
+
+                a.myButton:hover i {
+                    transform: translateX(8px);
+                }
+
+                a.myButton:hover:before {
+                    width: 57%;
+                }
+    </style>
+</head>
+<body>
+    <div class="st-container" id="st-container">
+        <div class="st-pusher">
+            <div class="st-content">
+                <header class="header">
+                    <nav class="navbar navbar-default" role="navigation">
+                        <!-- 响应式菜单下拉按钮 -->
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <i class="fa fa-bars"></i>
+                                </button>
+                                <h1 class="logo">
+                                    <a class="navbar-brand" href="HomePage.html">
+                                        <img src="~/Images/logo.png" alt="logo" />
+                                    </a>
+                                </h1>
+                            </div>
+                            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a class="page-scroll" href="#home">主页</a></li>
+                                    <li><a class="page-scroll" href="#services">服务</a></li>
+                                    <li><a class="page-scroll" href="#work">工作</a></li>
+                                    <li><a class="page-scroll" href="#about">关于</a></li>
+                                    <li><a class="page-scroll" href="#blog">记录</a></li>
+                                    <li><a class="page-scroll" href="#contact">联系</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </header>
+                <!-- 轮播图 -->
+                <div id="x-corp-carousel" class="carousel slide hero-slide" data-ride="carousel">
+                    <!--轮播指标-->
+                    <ol class="carousel-indicators">
+                        <li data-target="#x-corp-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#x-corp-carousel" data-slide-to="1"></li>
+                    </ol>
+                    <!-- 轮播项目 -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="~/Images/商务2.jpg">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <!-- 添加css3动画库 -->
+                                    <h1 class="animated lightSpeedIn">一致的好评 & 流畅的服务</h1>
+                                    <p class="lead animated lightSpeedIn">
+                                        助农为乐是专为农产品销售商提供的跨区域线上销售平台，<br />
+                                        它迅捷的服务方式受到众多客户好评。
+                                    </p>
+                                    <a class="myButton" href="/Home/Index">加入我们<i class="fa fa-angle-right" style="margin-left: 12px;font-size: 25px;"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="~/Images/农业4.jpg" alt="hero-slide">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <h1 class="animated bounceIn" style="color: #fff">新理念 & 新世界</h1>
+                                    <p class="lead animated bounceIn" style="color: #eeeeee">
+                                        的身份解放军买咯附近酒店浪费了时间发了使得房价降幅，<br />
+                                        偶觉得佛i九十点附近哦设计的佛
+                                    </p>
+                                    <a class="myButton" href="#">获取资讯<i class="fa fa-angle-right" style="margin-left: 12px;font-size: 25px;"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 轮播导航 -->
+                    <a class="left carousel-control" href="#x-corp-carousel" role="button" data-slide="prev">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#x-corp-carousel" role="button" data-slide="next">
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <!-- 服务内容 -->
+                <section id="services" class="our-services section-padding">
+                    <div class="container">
+                        <div class="row text-center">
+                            <div class="col-xs-12 col-md-12 col-sm-12">
+                                <h2 class="section-title wow fadeInDown animated" data-wow-duration="2s">What We Do</h2>
+                            </div>
+                        </div>
+                        <div class="row content-row">
+                            <div class="col-xs-12 col-md-6 col-sm-6 service-content">
+                                <!-- bootstrap媒体布局 -->
+                                <div class="media">
+                                    <a class="media-left" href="#">
+                                        <i class="flaticon-bulb11"></i>
+                                    </a>
+                                    <div class="media-body">
+                                        <h3 class="media-heading">服务一 & 描述它</h3>
+                                        <p>
+                                            在此处描述一段服务内容，我们将会。。。，然后<br>
+                                            。。。
+                                            。。。。。。。。
+                                            最终。。。。。。
+                                        </p>
+                                        <a class="btn btn-primary">READ MORE</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 service-content">
+                                <div class="media">
+                                    <a class="media-left" href="#">
+                                        <i class="flaticon-window22"></i>
+                                    </a>
+                                    <div class="media-body">
+                                        <h3 class="media-heading">服务二 & 描述它</h3>
+                                        <p>
+                                            在此处描述一段服务内容，我们将会。。。，然后<br>
+                                            。。。
+                                            。。。。。。。。
+                                            最终。。。。。。
+                                        </p>
+                                        <a class="btn btn-primary">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 service-content">
+                                <div class="media">
+                                    <a class="media-left" href="#">
+                                        <i class="flaticon-speaker30"></i>
+                                    </a>
+                                    <div class="media-body">
+                                        <h3 class="media-heading">服务三 & 描述它</h3>
+                                        <p>
+                                            在此处描述一段服务内容，我们将会。。。，然后<br>
+                                            。。。
+                                            。。。。。。。。
+                                            最终。。。。。。
+                                        </p>
+                                        <a class="btn btn-primary">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 col-sm-6 service-content">
+                                <div class="media">
+                                    <a class="media-left" href="#">
+                                        <i class="flaticon-bars6"></i>
+                                    </a>
+                                    <div class="media-body">
+                                        <h3 class="media-heading">服务四 & 描述它</h3>
+                                        <p>
+                                            在此处描述一段服务内容，我们将会。。。，然后<br>
+                                            。。。
+                                            。。。。。。。。
+                                            最终。。。。。。
+                                        </p>
+                                        <a class="btn btn-primary">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- 工作流程 -->
+                <section class="working-process section-padding">
+                    <div class="container">
+                        <div class="row text-center">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <h2 class="section-title wow fadeInDown animated" data-wow-duration="2s">我们的工作流程</h2>
+                            </div>
+                        </div>
+                        <div class="row text-center circle-connector">
+                            <div class="col-xs-6 col-sm-3 col-md-3">
+                                <div class="process-circle animated zoomIn">
+                                    <a href="#"><img src="~/Images/met.png"></a>
+                                    <span>第一步</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3">
+                                <div class="process-circle animated zoomIn">
+                                    <a href="#"><img src="~/Images/met2.png"></a>
+                                    <span>第二步</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3">
+                                <div class="process-circle animated zoomIn">
+                                    <a href="#"><img src="~/Images/met3.png"></a>
+                                    <span>第三步</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3">
+                                <div class="process-circle animated zoomIn">
+                                    <a href="#"><img src="~/Images/met4.png"></a>
+                                    <span>第四步</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- 工作部分 -->
+                <section class="section-padding work-section" id="work">
+                    <div class="container">
+                        <div class="row text-center">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <h2 class="section-title wow fadeInDown animated">日常的工作</h2>
+                            </div>
+                        </div>
+                        <div class="work-filter text-center">
+                            <ul class="list-inline" id="filter">
+                                <li><a class="active">All</a></li>
+                                <li><a>work1</a></li>
+                                <li><a>work2</a></li>
+                                <li><a>work3</a></li>
+                                <li><a>work4</a></li>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <div class=".my-shuffle-container">
+                                <div class="portfolio-item col-xs-12 col-sm-6 col-md-4" data-groups="['all','marketing','development','branding']">
+                                    <div class="single-portfolio">
+                                        <figure class="css-hover-effect">
+                                            <img src="~/Images/work1.jpg" />
+                                            <figcaption class="figure-caption">
+                                                <div class="figure-link">
+                                                    <a data-toggle="modal" data-target="#portfolioModal1" href="#">
+                                                        <i class="flaticon-slanting1"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="figure-info">
+                                                    <span>工作的相关描述</span>
+                                                    <h2>
+                                                        <a href="#">相关链接</a>
+                                                    </h2>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="portfolio-item col-xs-12 col-sm-6 col-md-4" data-groups="['all','marketing','design','branding']">
+                                    <div class="single-portfolio">
+                                        <figure class="css-hover-effect">
+                                            <img src="~/Images/work2.jpg" />
+                                            <figcaption class="figure-caption">
+                                                <div class="figure-link">
+                                                    <a data-toggle="modal" data-target="#portfolioModal2" href="#">
+                                                        <i class="flaticon-slanting1"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="figure-info">
+                                                    <span>工作的相关描述</span>
+                                                    <h2>
+                                                        <a href="#">相关链接</a>
+                                                    </h2>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="portfolio-item col-xs-12 col-sm-6 col-md-4" data-groups="['all','development']">
+                                    <div class="single-portfolio">
+                                        <figure class="css-hover-effect">
+                                            <img src="~/Images/work3.jpg" style="height: 230px" />
+                                            <figcaption class="figure-caption">
+                                                <div class="figure-link">
+                                                    <a data-toggle="modal" data-target="#portfolioModal3" href="#">
+                                                        <i class="flaticon-slanting1"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="figure-info">
+                                                    <span>工作的相关描述</span>
+                                                    <h2>
+                                                        <a href="#">相关链接</a>
+                                                    </h2>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="portfolio-item col-xs-12 col-sm-6 col-md-4" data-groups="['all','design','branding']">
+                                    <div class="single-portfolio">
+                                        <figure class="css-hover-effect">
+                                            <img src="~/Images/work4.jpg" />
+                                            <figcaption class="figure-caption">
+                                                <div class="figure-link">
+                                                    <a data-toggle="modal" data-target="#portfolioModal4" href="#">
+                                                        <i class="flaticon-slanting1"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="figure-info">
+                                                    <span>工作的描述</span>
+                                                    <h2>
+                                                        <a href="#">相关链接</a>
+                                                    </h2>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="portfolio-item col-xs-12 col-sm-6 col-md-4" data-groups="['all','marketing','design']">
+                                    <div class="single-portfolio">
+                                        <figure class="css-hover-effect">
+                                            <img src="~/Images/work5.jpg" />
+                                            <figcaption class="figure-caption">
+                                                <div class="figure-link">
+                                                    <a data-toggle="modal" data-target="#portfolioModal5" href="#">
+                                                        <i class="flaticon-slanting1"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="figure-info">
+                                                    <span>工作的描述</span>
+                                                    <h2>
+                                                        <a href="#">相关链接</a>
+                                                    </h2>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="portfolio-item col-xs-12 col-sm-6 col-md-4" data-groups="['all','development','branding']">
+                                    <div class="single-portfolio">
+                                        <figure class="css-hover-effect">
+                                            <img src="~/Images/work6.jpg" />
+                                            <figcaption class="figure-caption">
+                                                <div class="figure-link">
+                                                    <a data-toggle="modal" data-target="#portfolioModal6" href="#">
+                                                        <i class="flaticon-slanting1"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="figure-info">
+                                                    <span>工作的描述</span>
+                                                    <h2>
+                                                        <a href="#">相关链接</a>
+                                                    </h2>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 模态框代码 -->
+                        <!-- 按钮 -->
+                        <div class="more-work-button text-center">
+                            <a class="btn btn-primary btn-lg">More Works</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="~/scripts/jquery-3.3.1.js"></script>
+    <script src="~/scripts/jquery.smooth-scroll.js"></script>
+    <script src="~/scripts/wow.js"></script>
+    <script src="~/scripts/bootstrap.js"></script>
+    <script type="text/javascript">
+
+    wow=new WOW({
+        animateClass:'animated',
+        offset:100
+    });
+        wow.init();
+        $(document).ready(function () {
+            // 配置页面锚目标滚动效果
+            $("li a.page-scroll").smoothScroll({
+                speed:900,
+            });
+            $("#filter a").bind("click",function () {
+                shuffleInstance.filter("design");
+            })
+        })
+    </script>
+</body>
+</html>
+

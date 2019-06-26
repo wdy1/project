@@ -1,0 +1,383 @@
+﻿@model Famer.WebUI.Models.YouXuanViewModel
+
+@{
+    ViewBag.Title = "助农优选";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/css/优选一百样式.css" rel="stylesheet" />
+<div class="index">
+    <!-- 轮播 -->
+    <div class="lunbobox">
+        <div class="lunboboxsize">
+            <div class="background-1">
+                <div class="lunboboxposition grid_c1 ">
+                    <div class="boxtop">
+                        <div class="logobox">
+                            <h2 class="logoboder">新闻资讯-精选</h2>
+                            <p class="logofontsize">
+                                /&nbsp;&nbsp;
+                                精挑细选100分健康美味
+                                &nbsp;&nbsp;/
+                            </p>
+                        </div>
+                        <ul class="boxtopcontent grid_c1">
+                            <li class="logo-1">
+                                <i class="logo-y logo-position"></i>
+                                <span class="logo-1-right">精挑细选</span>
+                            </li>
+                            <li class="logo-1">
+                                <i class="logo-y logo-position"></i>
+                                <span class="logo-1-right">产地直采</span>
+                            </li>
+                            <li class="logo-2 logo-2-size">
+                                <i class="logo-y logo-position"></i>
+                                <span class="logo-1-right">严格质检</span>
+                            </li>
+                            <li class="logo-1">
+                                <i class="logo-y logo-position"></i>
+                                <span class="logo-1-right">全程冷链</span>
+                            </li>
+                            <li class="logo-1">
+                                <i class="logo-y logo-position"></i>
+                                <span class="logo-1-right">无忧售后</span>
+                            </li>
+                            <li class="logo-1">
+                                <i class="logo-y logo-position"></i>
+                                <span class="logo-1-right">安全保证</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="">
+                        <div class="lunbo">
+                            <a href="新鲜资讯.html"> <img class="front" src="~/Images/优选100/lunbo3.jpg" alt="PIC"></a>
+                            <a href="新鲜资讯.html"><img class="back" src="~/Images/优选100/轮播1.jpg" alt="PIC"></a>
+                            <a href="新鲜资讯.html">
+                                <img class="activeh" src="~/Images/优选100/轮播2.jpg" alt="PIC">
+                            </a>
+                            <div class="btns">
+                                <span class="btn"></span>
+                                <span class="btn"></span>
+                            </div>
+                        </div>
+                        <div class="zuoxia"></div>
+                        <div class="youxia"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--优选框-->
+
+    <div class="youxuan">
+        <div class="youxuansize grid_c1">
+            <div class="youxuan-title">
+                <div class="titlemid">
+                    <h3 class="mainer">
+                        本
+                        <i>/</i>
+                        期
+                        <i>/</i>
+                        优
+                        <i>/</i>
+                        选
+                    </h3>
+                    <p class="title-sup">每期鲜味 精心为你</p>
+                </div>
+            </div>
+            <div class="week-news-all">
+                <div class="week-newsdata">
+                    "每周二、五上新"
+                </div>
+                <div class="week-news">
+
+                    @foreach (var item in Model.benqiyouxuan)
+                    {
+                        <a class="news-item " href="@Url.Action("Details","Products",new { ListId=item.List_Id,ProductId=item.SellerDetails.Product_Id})">
+                            <div class="news-item-info">
+                                <img class="news-item-image" src="@item.Image" alt="@item.BgoodsName">
+                                <p class="news-item-promote">
+                                    <span class="news-item-promote-text1">优选卖点</span>
+                                    <span class="news-item-promote-text2">"爽脆多汁 甜度高 富含花青素"</span>
+                                </p>
+                                <p class="news-item-name" title="@item.BgoodsDes">@item.BgoodsDes</p>
+                                <p class="goods-item-desc">8-12年生长期 只为更好品质</p>
+                                <div class="goods-item-priceg">
+                                    <span class="goods-item-price">￥@item.Price</span>
+                                    <span class="goods-item-g">
+                                        /500g
+                                    </span>
+                                    <span class="goods-item-plus">
+                                        <em class="goods-item-plus-price">
+                                            ￥@item.Price
+                                        </em>
+                                        <i class="goods-item-plus-icon ico-plus"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>}
+
+                </div>
+            </div>
+            <div class="youxuan-zuoxia"></div>
+            <div class="youxuan-youshang"></div>
+        </div>
+    </div>
+
+    <!--优选合集-->
+    <div class="youxuan-more">
+        <div class="more-gradient">
+            <div class="more-inner grid_c1">
+                <div class="youxuan-title">
+                    <div class="titlemid">
+                        <h3 class="mainer">
+                            优
+                            <i>/</i>
+                            选
+                            <i>/</i>
+                            合
+                            <i>/</i>
+                            集
+                        </h3>
+                        <p class="title-sup">时间沉淀，值得回购</p>
+                    </div>
+                </div>
+                <div class="more-body">
+                    <div class="tab more-tab">
+                        <div class="tab-head">
+                            <div class="tab-head-item part1">
+                                <span class="tab-head-item-inner">
+                                    <i class="mod-iconfont icon-fresh-shuiguo"></i>
+                                    <em class="tab-head-txt">新鲜果蔬</em>
+                                    <i class="mod-ver"></i>
+                                </span>
+                            </div>
+                            <div class="tab-head-item part2">
+                                <span class="tab-head-item-inner">
+                                    <i class="mod-iconfont icon-fresh-shuiguo"></i>
+                                    <em class="tab-head-txt">海鲜水产</em>
+                                    <i class="mod-ver"></i>
+                                </span>
+                            </div>
+                            <div class="tab-head-item part3">
+                                <span class="tab-head-item-inner">
+                                    <i class="mod-iconfont icon-fresh-shuiguo"></i>
+                                    <em class="tab-head-txt">肉禽蛋品</em>
+                                    <i class="mod-ver"></i>
+                                </span>
+                            </div>
+                            <div class="tab-head-item part4">
+                                <span class="tab-head-item-inner">
+                                    <i class="mod-iconfont icon-fresh-shuiguo"></i>
+                                    <em class="tab-head-txt">冷冻速食</em>
+                                    <i class="mod-ver"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="tab-body" style="overflow:hidden">
+                            <div class="tab-body-item tab-1" style="display: none">
+                                @foreach (var item1 in Model.xxgs)
+                                {
+                                    <a class="goods-item" href="@Url.Action("Details","Products",new { ListId=item1.List_Id,ProductId=item1.SellerDetails.Product_Id})" target="_blank">
+                                        <img class="goods-item_img" width="180" height="180" src="@item1.Image" alt="PIC">
+                                        <p class="goods-item-tag">“@item1.BgoodsDes”</p>
+                                        <p class="goods-item-name">@item1.BgoodsName</p>
+                                        <div class="goods-item-priceg">
+                                            <span class="goods-item-price">
+                                                ￥@item1.Price
+                                            </span>
+                                            <span class="goods-item-g"></span>
+                                            <span class="goods-item-plus">
+                                                <em class="goods-item-plus-price">
+                                                    ￥@item1.Price
+                                                </em>
+                                                <i class="goods-item-plus-icon ico-plus"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                }
+                            </div>
+                            <div class="tab-body-item tab-2" style="display: none;overflow:hidden">
+                                @foreach (var item2 in Model.hxsc)
+                                {
+                                    <a class="goods-item" href="@Url.Action("Details","Products",new { ListId=item2.List_Id,ProductId=item2.SellerDetails.Product_Id})" target="_blank">
+                                        <img class="goods-item_img" width="180" height="180" src="@item2.Image" alt="PIC">
+                                        <p class="goods-item-tag">“@item2.BgoodsDes”</p>
+                                        <p class="goods-item-name">@item2.BgoodsName</p>
+                                        <div class="goods-item-priceg">
+                                            <span class="goods-item-price">
+                                                ￥@item2.Price
+                                            </span>
+                                            <span class="goods-item-g"></span>
+                                            <span class="goods-item-plus">
+                                                <em class="goods-item-plus-price">
+                                                    ￥@item2.Price
+                                                </em>
+                                                <i class="goods-item-plus-icon ico-plus"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                }
+
+                            </div>
+                            <div class="tab-body-item tab-3" style="display: none;overflow:hidden">
+                                @foreach (var item3 in Model.rqdp)
+                                {
+                                    <a class="goods-item" href="@Url.Action("Details","Products",new { ListId=item3.List_Id,ProductId=item3.SellerDetails.Product_Id})" target="_blank">
+                                        <img class="goods-item_img" width="180" height="180" src="@item3.Image" alt="PIC">
+                                        <p class="goods-item-tag">“@item3.BgoodsDes”</p>
+                                        <p class="goods-item-name">@item3.BgoodsName</p>
+                                        <div class="goods-item-priceg">
+                                            <span class="goods-item-price">
+                                                ￥@item3.Price
+                                            </span>
+                                            <span class="goods-item-g"></span>
+                                            <span class="goods-item-plus">
+                                                <em class="goods-item-plus-price">
+                                                    ￥@item3.Price
+                                                </em>
+                                                <i class="goods-item-plus-icon ico-plus"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                }
+
+                            </div>
+                            <div class="tab-body-item tab-4" style="display: none;overflow:hidden">
+                                @foreach (var item4 in Model.rqdp)
+                                {
+                                    <a class="goods-item" href="@Url.Action("Details","Products",new { ListId=item4.List_Id,ProductId=item4.SellerDetails.Product_Id})" target="_blank">
+                                        <img class="goods-item_img" width="180" height="180" src="@item4.Image" alt="PIC">
+                                        <p class="goods-item-tag">“@item4.BgoodsDes”</p>
+                                        <p class="goods-item-name">@item4.BgoodsName</p>
+                                        <div class="goods-item-priceg">
+                                            <span class="goods-item-price">
+                                                ￥@item4.Price
+                                            </span>
+                                            <span class="goods-item-g"></span>
+                                            <span class="goods-item-plus">
+                                                <em class="goods-item-plus-price">
+                                                    ￥@item4.Price
+                                                </em>
+                                                <i class="goods-item-plus-icon ico-plus"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="more-bg1"></div>
+                <div class="more-bg2"></div>
+                <div class="more-bg3"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    onload = function () {
+        var btns = document.getElementsByClassName('btn'),
+            imgs = document.getElementsByClassName('lunbo')[0].getElementsByTagName('img');
+
+        var index = 2,
+            front = 0,
+            back = 0,
+            offset = false,
+            timer = setInterval(timer, 40000);
+
+
+
+        for (var i = 0; i < btns.length; i++) {
+            (function (i) {
+                btns[i].onclick = function () { click(i) };
+            })(i);
+
+            btns[i].onmouseover = function () {
+                offset = true;
+            }
+            btns[i].onmouseout = function () {
+                offset = false;
+            }
+        }
+
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].onmouseover = function () {
+                offset = true;
+            }
+            imgs[i].onmouseout = function () {
+                offset = false;
+            }
+        }
+
+        function timer() {
+            console.log(offset)
+            if (offset) {
+                return;
+            }
+            else {
+                click(1)
+            }
+        }
+
+        function click(x) {
+            imgs[index].setAttribute('class', '');
+            if (x === 0) {
+                if (--index < 0) {
+                    index = --imgs.length;
+                }
+                front = back = index;
+                if (++front > --imgs.length) { front = 0 }
+                if (--back < 0) { back = --imgs.length }
+                imgs[front].style.zIndex = '1';
+                imgs[back].style.zIndex = '0';
+            }
+            else {
+                if (++index > --imgs.length) {
+                    index = 0;
+                }
+                front = back = index;
+                if (++front > --imgs.length) { front = 0 }
+                if (--back < 0) { back = --imgs.length }
+                imgs[front].style.zIndex = '0';
+                imgs[back].style.zIndex = '1';
+            }
+            imgs[index].style.zIndex = '10';
+            imgs[front].setAttribute('class', 'front')
+            imgs[back].setAttribute('class', 'back')
+            imgs[index].setAttribute('class', 'activeh');
+        }
+    }
+</script>
+<script type="text/javascript">
+    <!--判断js-->
+    $(document).ready(function () {
+        $(".part1").hover(function () {
+            if(!$(".tab-1").is(":animated")){
+                $(".tab-1").show().siblings().hide()
+            }
+        },function () {
+            if(!$(".tab-1").is(":animated")){
+                $("tab-1").hide();
+            }
+        });
+        $(".part2").hover(function () {
+            if(!$(".tab-2").is(":animated")){
+                $(".tab-2").show().siblings().hide();
+            }
+        })
+        $(".part3").hover(function () {
+            if(!$(".tab-3").is(":animated")){
+                $(".tab-3").show().siblings().hide();
+            }
+        })
+        $(".part4").hover(function () {
+            if(!$(".tab-4").is(":animated")){
+                $(".tab-4").show().siblings().hide();
+            }
+        })
+    })
+</script>

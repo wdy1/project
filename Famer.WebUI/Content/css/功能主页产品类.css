@@ -1,0 +1,403 @@
+#nav{
+    width: 1190px;
+    margin: 0 auto;
+    height: 40px;
+    margin-top: 25px;
+}
+#nav .introduced{
+    height: 100%;
+    background-color: #222;
+    color: #fff;
+    float: left;
+    font-size: 14px;
+    padding: 11px 39px;
+    position: relative;
+}
+#nav .total-nav{
+    margin-bottom: 0;
+    margin-left: 75px;
+    float: left;
+    height: 100%;
+    list-style: none;
+}
+#nav .total-nav li{
+    float: left;
+    height: 100%;
+    margin: 0 10px;
+    width: 80px;
+    position: relative;
+}
+/* 最后一个li后面没有 */
+#nav .total-nav li:not(:last-child):after{
+    content: "";
+    width: 2px;
+    height: 16px;
+    position: absolute;
+    right: 5px;
+    top: 12px;
+    background-color: #111;
+}
+#nav .total-nav li.spacer{
+    margin: 0 10px;
+    width: 3px;
+    height: 18px;
+    background-color: #111;
+    float: left;
+}
+#nav .total-nav a.highlight{
+    color: #00c65d;
+}
+#nav .total-nav a{
+    color: #222;
+    position: absolute;
+    text-decoration: none;
+    font-size: 14px;
+    top: 10px;
+    transition: color 0.3s ease-out 0s;
+}
+#nav .total-nav a:hover{
+    color: #00c65d;
+}
+#nav a.character-assur{
+    box-sizing: border-box;
+    padding: 9px 80px 0 29px;
+    width: 195px;
+    float: right;
+    color: #00c65d;
+    margin-right: 2px;
+    position: relative;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+#nav .character-assur span{
+    display: block;
+}
+#nav a.character-assur i.fa{
+    position: absolute;
+    font-size: 16px;
+    top: 9px;
+    left: 0;
+    color: #00c65d;
+}
+#nav a.character-assur i.glyphicon{
+    position: absolute;
+    font-size: 12px;
+    top: 9px;
+    right: 2px;
+}
+.mod-container{
+    height: 410px;
+    position: relative;
+    line-height: 1.5;
+    width: 1190px;
+    margin: 0 auto;
+}
+/* 产品分类栏 */
+.fresh-fs-nav{
+    position: relative;
+    z-index: 5;
+    float: left;
+    width: 190px;
+    height: 400px;
+    background: #fff;
+    box-shadow: 0 1px 10px rgba(0,0,0,.14);
+}
+.fresh-fs-nav .tab{
+    position: relative;
+    height: 400px;
+}
+.fresh-fs-nav .tab .tab-head{
+    height: 100%;
+}
+.fresh-fs-nav .tab .tab-head .tab-head-item{
+    position: relative;
+    height: 80px;
+    border-left: 1px solid transparent;
+}
+/* 这个相对于tab-head-item单独定位 这条线的作用是 当鼠标悬停时 右边的产品分类边框border被覆盖 出现缺口 */
+.fresh-fs-nav .tab-head-item:after{
+    content: none;
+    position: absolute;
+    z-index: 100;
+    right: -2px;
+    top: 0;
+    width: 2px;
+    height: 79px;
+    background: #fff;
+}
+/* 存在于tab-head-item中的一格 这一格的高度为79+1px 宽度为130+40*/
+.fresh-fs-nav .tab-head-item .tab-head-item-inner{
+    box-sizing: content-box;
+    position: relative;
+    margin: 0 10px;
+    padding: 18px 0 0 40px;
+    width: 130px;
+    height: 61px;
+    border-top: 1px dotted #ddd;
+}
+.fresh-fs-nav .tab-head-item-inner.item1{
+    border-top-color: transparent;
+}
+/* 相对tab-head-item-inner定位 一条鼠标悬停时出现的线 出现代码 content:""
+   在这之前 看到的线 属于border-top 的虚线 但悬停时虚线会消失
+*/
+.fresh-fs-nav .tab-head-item-inner:after,.fresh-fs-nav .tab-head-item-inner:before{
+    content: none;
+    position: absolute;
+    left: -10px;
+    width: 190px;
+    height: 1px;
+    background: #dddddd;
+}
+.fresh-fs-nav .tab-head-item-inner:after{
+    bottom: -1px;
+}
+.fresh-fs-nav .tab-head-item-inner:before{
+    top: -1px;
+}
+.fresh-fs-nav .tab-head-item.active{
+    border-left-color: #ddd;
+    background: #fff;
+}
+.fresh-fs-nav .tab-head-item.active:after{
+    content: '';
+}
+.fresh-fs-nav .tab-head-item.active .tab-head-item-inner{
+    /* 消失的虚线 */
+    border-top-color: transparent;
+}
+.fresh-fs-nav .tab-head-item.active .tab-head-item-inner:after,.fresh-fs-nav .tab-head-item.active .tab-head-item-inner:before{
+    /* 出现的整长 width:190px height:1px 的背景为#ddd的实线*/
+    content: '';
+}
+.fresh-fs-nav .tab-head-item.active .tab-head-item-inner.item5:after{
+    /* 最后一个item出现的线往下1px*/
+    bottom: 0;
+}
+/* 总之 当鼠标悬停时 属于tab-head-item-inner border-top的虚线消失 而tab-head-item-inner:after和before代表的实线出现上下两边
+   同时tab-head-item的左边框颜色出现#ddd 整个背景变为#fff  tab-head-item:after代表的实线出现在右方
+*/
+
+/*  图标 */
+.fresh-fs-nav .tab-head-item .item-icon{
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 26px;
+    height: 26px;
+}
+    .fresh-fs-nav .tab-head-item .item1 .item-icon {
+        background-image: url('../../Images/功能主页7.png');
+        background-position: 0 0;
+        background-repeat: no-repeat;
+    }
+.fresh-fs-nav .tab-head-item .item2 .item-icon{
+    background-image: url('../../Images/功能主页7.png');
+    /* 取得图片中某一块地方的方法   先把整个图片向左移30px 于是宽高为26px 26px的块就能取得移过来的内容 */
+    background-position: -30px 0;
+    background-repeat: no-repeat;
+}
+.fresh-fs-nav .tab-head-item .item3 .item-icon{
+    background-image: url('../../Images/功能主页7.png');
+    background-position: 0 -30px;
+    background-repeat: no-repeat;
+}
+.fresh-fs-nav .tab-head-item .item4 .item-icon{
+    background-image: url('../../Images/功能主页7.png');
+    background-position: -30px -30px;
+    background-repeat: no-repeat;
+}
+.fresh-fs-nav .tab-head-item .item5 .item-icon{
+    background-image: url('../../Images/功能主页7.png');
+    background-position: -60px 0;
+    background-repeat: no-repeat;
+}
+.fresh-fs-nav .tab-head-item .item-title{
+    display: block;
+    position: relative;
+    margin-bottom: 7px;
+    height: 19px;
+    font-size: 14px;
+    color: #222;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+.fresh-fs-nav .tab-head-item .item-title:after{
+    content: ">";
+    /* 相对于.item-title元素定位 */
+    position: absolute;
+    right: 0;
+    top: 1.2px;
+    height: 19px;
+    line-height: 19px;
+    font-family: SimSun-ExtB;
+}
+.fresh-fs-nav .tab-head-item .item-title:hover{
+    color: #00c65d;
+}
+.fresh-fs-nav .tab-head-item .item-children,.fresh-fs-nav .tab-head-item .item-title{
+    white-space: normal;
+    /* 以省略号表示超出部分 */
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.fresh-fs-nav .tab-head-item .item-children .item-children-item{
+    display: inline-block;
+    padding: 0 3px;
+    color: #909090;
+    border-left: 1px solid #909090;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+}
+.fresh-fs-nav .tab-head-item .item-children-item:hover{
+    color: #00c65d;
+}
+.fresh-fs-nav .tab-head-item .item-children-item:last-child{
+    padding-left: 5px;
+}
+.fresh-fs-nav .tab-head-item .item-children-item:first-child{
+    border-left: none;
+    padding-left: 0;
+}
+/* 隐藏的产品展示部分 */
+.fresh-fs-nav .tab .tab-body-item{
+    box-sizing: content-box;
+    position: absolute;
+    left: 190px;
+    padding: 10px 20px;
+    width: 760px;
+    min-height: 378px;
+    background: #fff;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+/* 很死板 因为.tab-body-item相对于tab-head-item定位所以 必须提前
+   理想的定位应该是相对于.tab-head 定位
+*/
+.b-1{
+    top: 0;
+}
+.b-2{
+    top: -80px;
+}
+.b-3{
+    top: -160px;
+}
+.b-4{
+    top: -240px;
+}
+.b-5{
+    top: -320px;
+}
+.fresh-fs-nav .tab-head-item .tab-body-item .body-title{
+    box-sizing: content-box;
+    display: inline-block;
+    width: 55px;
+    position: relative;
+    font-weight: 700;
+    padding: 9px 5px;
+    text-decoration: none;
+    margin-right: 7px;
+}
+/* 主类名为三个字时*/
+.fresh-fs-nav .tab-head-item .tab-body-item .title-3-word{
+    text-align: center;
+}
+/* 主类名为两个字时*/
+.fresh-fs-nav .tab-head-item .tab-body-item .title-2-word{
+    box-sizing: border-box;
+    padding: 9px 0px 9px 30px;
+    width: 65px;
+}
+.fresh-fs-nav .tab-head-item .tab-body-item .body-title:after{
+    content: '>';
+    position: absolute;
+    font-family: SimSun-ExtB;
+    right: 0;
+    top: 10px;
+}
+.fresh-fs-nav .tab-head-item .tab-body-item .body-title:hover{
+    color: #00c65d;
+}
+.fresh-fs-nav .tab-head-item .tab-body-item .body-goods{
+    border-left: 1px solid #a0a0a0;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+}
+.fresh-fs-nav .tab-head-item .tab-body-item .body-goods:hover{
+    color: #00c65d;
+}
+/* 产品栏 水平分隔线 */
+.fresh-fs-nav .tab-body-item .pop:after{
+    content: '';
+    width: 670px;
+    height: 1px;
+    position: absolute;
+    bottom: -15px;
+    background: #dddddd;
+}
+.fresh-fs-nav .tab-body-item .pop-1:after{
+    left: -48px;
+}
+.fresh-fs-nav .tab-body-item .pop-2:after{
+    left: -149px;
+}
+.fresh-fs-nav .tab-body-item .pop-3:after{
+    left: -162px;
+}
+.fresh-fs-nav .tab-body-item .pop-4:after{
+    left: -377px;
+}
+.fresh-fs-nav .tab-body-item .pop-5:after{
+    left: -233px;
+}
+.fresh-fs-nav .tab-body-item .pop-6:after{
+    left: -60px;
+}
+.fresh-fs-nav .tab-body-item .pop-7:after{
+    left: -418px;
+}
+.fresh-fs-nav .tab-body-item .pop-8:after{
+    left: -323px;
+}
+.fresh-fs-nav .tab-body-item .pop-9:after{
+    left: -530px;
+}
+.fresh-fs-nav .tab-body-item .pop-10:after{
+    left: -133px;
+}
+.fresh-fs-nav .tab-body-item .pop-11:after{
+    left: -205px;
+}
+.fresh-fs-nav .tab-body-item .pop-12:after{
+    left: -555px;
+}
+.fresh-fs-nav .tab-body-item .pop-13:after{
+    left: -540px;
+}
+.fresh-fs-nav .tab-body-item .pop-14:after{
+    left: -507px;
+}
+.fresh-fs-nav .tab-body-item .pop-15:after{
+    left: -560px;
+}
+.fresh-fs-nav .tab-body-item .pop-16:after{
+    left: -345px;
+}
+.fresh-fs-nav .tab-body-item .pop-17:after{
+    left: -425px;
+}
+.fresh-fs-nav .tab-body-item .pop-18:after{
+    left: -4px;
+}
+
+
+
+
+

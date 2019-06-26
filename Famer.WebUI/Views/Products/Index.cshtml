@@ -1,0 +1,143 @@
+﻿@model Famer.WebUI.Models.ProductsViewModel
+
+@{
+    ViewBag.Title = "助农为乐 - 商品搜索";
+}
+<link href="~/Content/css/功能主页二级页面.css" rel="stylesheet" />
+<link href="~/Content/css/全局右侧工具条.css" rel="stylesheet" />
+<style type="text/css">
+    *{
+            margin: 0;
+            padding: 0;
+        }
+</style>
+<div class="Z-search">
+    <div id="z-selector" class="selector"></div>
+    <div id="z-main" class="z-main2">
+        <div class="m-list">
+            <div class="ml-wrap">
+                <div class="filter" id="z-filter">
+                    <!-- 排序内容 -->
+                </div>
+                <div id="z-goodslist" class="goods-list">
+                    <ul class="gl-wrap clearfix">
+                        @foreach (var item in Model.SD)
+                        {
+                            <li class="gl-item">
+                                <div class="gl-i-wrap">
+                                    <div class="p-img">
+                                        <a target="_blank" title="@item.Title" href="@Url.Action("Details","Products",new { ListId=item.ListID,ProductId=item.Product_Id})">
+                                            <img width="220" height="220" src="@item.Image" />
+                                        </a>
+                                    </div>
+                                    <div class="p-price">
+                                        <strong>
+                                            <em>￥</em><i>@item.Price<i style="margin:0">0</i></i>
+                                        </strong>
+                                    </div>
+                                    <div class="p-name p-name-type-2">
+                                        <a href="@Url.Action("Details","Products",new { ListId=item.ListID,ProductId=item.Product_Id})" target="_blank" title="@item.Title">
+                                            <em>
+                                                <span class="p-tag" style="background-color: #c81623;">助农超市</span><font class="skcolor-zn">苹果</font>
+                                                @item.ProductDes
+                                            </em>
+                                            <i class="p-des">
+                                                @item.Title
+                                            </i>
+                                        </a>
+                                    </div>
+                                    <div class="p-commit">
+                                        <strong>
+                                            <a>114万+</a>条评价
+                                        </strong>
+                                    </div>
+                                    <div class="p-shop">
+                                        <span class="z-im-icon">
+                                            <a href="#">助农水果自营专区</a>
+                                            <b class="zn-kefu" title="联系客服"></b>
+                                        </span>
+                                    </div>
+                                    <div class="p-icons">
+                                        <div class="goods-icons zn-picon-tips" data-toggle="tooltip" title="助农自营 品质保障" data-placement="bottom">
+                                            自营
+                                        </div>
+                                        <div style="background-color: #fe901d" class="goods-icons zn-picon-tips" data-placement="bottom" data-toggle="tooltip" title="定期免运费 省心又实惠">
+                                            定期
+                                        </div>
+                                        <div style="background-color: #26cb15" class="goods-icons zn-picon-tips">助农检测</div>
+                                        <div class="goods-icons2 zn-picon-tips" data-toggle="tooltip" data-placement="bottom" title="本商品可领取优惠券">券119-20</div>
+                                    </div>
+                                    <div class="p-operate">
+                                        @using (Html.BeginForm("AddToCart", "Cart", FormMethod.Post))
+                                        {
+                                            @Html.Hidden("ProductId", item.Product_Id)
+                                            @Html.Hidden("ListID", item.ListID)
+                                            @Html.Hidden("Price", item.Price)
+                                            @Html.Hidden("Image", item.Image)
+                                            @Html.Hidden("ProductDes", item.ProductDes)
+                                            <a class="p-o-btn addcart" onclick="addtocart(this)">
+                                                <i></i>加入购物车
+                                            </a>
+                                         }
+                                   </div>
+                               </div>
+                           </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="m-aside">
+            <div class="aside-bar">
+                <div class="jx-goods">
+                    <div class="m-title">
+                        <h3>商品精选</h3>
+                    </div>
+                    <div class="m-content">
+                        <ul class="clearfix" style="list-style: none;box-sizing:content-box">
+                            @foreach (var item in Model.CC)
+                            {
+                                <li>
+                                    <div class="p-img">
+                                        <a target="_blank" href="#">
+                                            <img height="160" width="160" src="@item.Image" />
+                                        </a>
+                                    </div>
+                                    <div class="p-price">
+                                        <strong>
+                                            <em>¥</em>
+                                            <i>@item.Price</i>
+                                        </strong>
+                                    </div>
+                                    <div class="p-name">
+                                        <a target="_blank" href="#">
+                                            <em><font class="skcolor-zn">苹果</font>@item.ProductDes</em>
+                                        </a>
+                                    </div>
+                                    <div class="p-com" style="padding: 8px 10px 0;box-sizing: content-box">
+                                        已有<span style="color: #005aa0;">1461</span>人评价
+                                    </div>
+                                </li>
+                             }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="z-globe-toolbar">
+    <div class="zn-toolbar-wrap z-wrap">
+        <div class="zn-toolbar Z-toolbar">
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    //加入购物车时调用的js方法
+    function addtocart(a) {
+        var parent=a.parentNode;
+        parent.submit();
+    }
+</script>

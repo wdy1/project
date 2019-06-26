@@ -1,0 +1,74 @@
+﻿@using Famer.Entity.Model
+@model Famer.Entity.ViewModel.RequirementViewModel
+@using PagedList.Mvc;
+
+@{
+    Layout = "~/Views/Shared/_Layout3.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>供应大厅</title>
+    
+    <style>
+        .container1 {
+            margin: 0 auto;
+            width: 1190px;
+            display: inline;
+        }
+
+        .main-table {
+            width: 1190px;
+            margin: 0 auto;
+            background-color: oldlace;
+        }
+    </style>
+</head>
+<body>
+    <div class="ui-hotVisa-prolist" id="con1">
+        <div class="ui-hotVisa-head">
+        </div>
+        <hr />
+        <hr />
+        <div class="container1">
+            <div class="main-table">
+                <table class="table table-striped">
+                    <caption>最新供应:</caption>
+                    <thead>
+                        <tr>
+                            <th>发布时间</th>
+                            <th>供应名称</th>
+                            <th>截止日期</th>
+                            <th>求购数量</th>
+                            <th>地区</th>
+                            <th>买家</th>
+                        </tr>
+                        @foreach (PurImformation p in Model.Pulinfo)
+                        {
+                            <tr>
+                                <th>@p.Pur_Time</th>
+                                <th>@p.Pur_Of_Name</th>
+                                <th>@p.Pur_OverTime</th>
+                                <th>@p.Num/KG</th>
+                                <th>@p.Address_Of_Pur</th>
+                                <th>肖秀荣</th>
+                                <th><button style="color: darkorange">查看详情</button></th>
+                            </tr>
+                        }
+                    </thead>
+                </table>
+            </div>
+        </div>     
+    </div>
+
+    <script src="~/scripts/bootstrap.min.js"></script>
+    <script src="~/scripts/jquery-3.3.1.min.js"></script>
+    @*<script type="text/javascript">
+            $(function () { $('#collapseOne').collapse('hide') });
+        </script>*@
+</body>
+</html>
+
+

@@ -1,0 +1,105 @@
+﻿#header .w{
+    height: 40px;
+    box-sizing: content-box;
+    padding: 15px 0;
+    width: 990px;
+    margin: 0 auto;
+}
+#header .w #logo-2018{
+    float: left;
+    width: 330px;
+    position: relative;
+    zoom: 1;
+}
+#header .zn-seller{
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    width: 242px;
+    height: 40px;
+    position: relative;
+}
+#header .zn-title{
+    position: absolute;
+    left: 0;
+    top: 8px;
+    font-family: 华文隶书;
+    font-size: 32px;
+    color: #e21214;
+}
+#header .z-s{
+    position: absolute;
+    right: 0;
+    top: 10px;
+    font-size: 24px;
+    color: #777;
+    font-weight: 600;
+}
+#header .zn-seller i{
+    height: 100%;
+    width: 1px;
+    background-color: #777;
+    position: absolute;
+    right: 105px;
+    top: 5px;
+}
+#header .header-right{
+    float: right;
+    padding-top: 23px;
+}
+#header .header-right a{
+    color: #48a7e7;
+    font-size: 12px;
+    cursor: help;
+}
+#header .icon-help{
+    box-sizing: content-box;
+    padding-right: 5px;
+    display: inline-block;
+    width: 16px;
+    height: 18px;
+    margin-left: 5px;
+    vertical-align: middle;
+    cursor: help;
+    background: url("../../Images/icons-small.png") -120px 0 no-repeat;
+}
+.w{
+    width: 990px;
+    margin: 0 auto;
+}
+.w .form-panel{
+    box-sizing: content-box;
+    border: 1px solid #dfdfdf;
+    border-top: 2px solid #7c7c7e;
+    margin-top: 10px;
+}
+.form-panel .form-panel-body{
+    box-sizing: content-box;
+    padding: 10px;
+}
+.form-panel #app .m{
+    margin-bottom: 10px;
+}
+.form-panel #app .m .m-title{
+    cursor: default;
+    overflow: hidden;
+    zoom: 1;
+}
+.form-panel #app h4.title{
+    font-size: 16px;
+    font-family: "Microsoft Himalaya";
+    font-weight: 600;
+    line-height: 180%;
+    color: #333;
+    margin-bottom: 5px;
+    float: left;
+    margin-right: 10px;
+}
+.form-panel #app .m .m-content p.email-tip{
+    font-weight: 600;
+}
+.form-panel #app .m .m-content .form-describe-text{
+    color: #999;
+    line-height: 20px;
+    font-size: 12px;
+}

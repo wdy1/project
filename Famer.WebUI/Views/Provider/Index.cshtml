@@ -1,0 +1,74 @@
+﻿@model PagedList.IPagedList<Famer.Entity.Model.SupImformation>
+@using PagedList.Mvc;
+
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>供应大厅</title>
+    
+    <style>
+        .page{
+
+        }
+    </style>
+</head>
+<body>
+    @*展示的内容*@
+    <div class="ui-hotVisa-prolist clearfix" id="con1">
+        <div class="ui-hotVisa-head">
+        </div>
+        @foreach (var p in Model)
+        {
+            <div class="J_hot-proList" id="con2">
+                <img src="@p.Sup_Of_Image" width="225" height="320" />
+                <div class="ui-proCover J_proCover-active" id="con3">
+                    <a href="@Url.Action("Details","Provider", new { id = p.SupplyID})">
+                        <div class="ui-cover">
+                            <div class="ui-coverInfos">
+                                <div class="ui-coverInfo-head">
+                                </div>
+                                <div class="ui-coverInfo-foot">
+                                    <p>
+                                        @p.Sup_Of_Name
+                                        <em class="coverInfo-icon">￥</em>
+                                        <em class="coverInfo-price">@p.Sup_Of_Price</em>
+                                        <em class="coverInfo-qi">起</em>
+                                    </p>
+                                    <p>
+                                        ——— <em>@p.Sup_Time.ToString("yyyy-MM-dd")</em> ———
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+            
+        }
+        
+    </div>
+    <div class="page" style="float:right;position:relative;top:50px;">
+        @Html.PagedListPager(Model, page => Url.Action("Index", "Provider", new { page, currentFilter = ViewBag.CurrentFilter }),
+       PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(
+           new AjaxOptions
+           {
+               UpdateTargetId = "ui-hotVisa-prolist",
+               InsertionMode = InsertionMode.Replace,
+               HttpMethod = "GET"
+           })
+       )
+    </div>
+
+    <script src="~/scripts/bootstrap.min.js"></script>
+    <script src="~/scripts/jquery-3.3.1.min.js"></script>
+    @*<script type="text/javascript">
+        $(function () { $('#collapseOne').collapse('hide') });
+    </script>*@
+</body>
+</html>

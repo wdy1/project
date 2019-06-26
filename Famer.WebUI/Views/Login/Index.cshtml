@@ -1,0 +1,82 @@
+﻿@using Famer.Entity.ViewModel;
+@model LoginViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/Login.css" rel="stylesheet" />
+    <script src="~/scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <title>助农为乐 - 登录</title>
+    <style type="text/css">
+        .field-validation-error{
+            color:#F00;
+            font-size:12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @class = "login form-group", id = "loginform" }))
+        {
+            @Html.ValidationSummary(true)
+            <p class="title">Log in <small>wanyuxuan</small></p>
+            <input name="Phone" id="Phone" type="text" placeholder="Username Or Telephone" />
+            <i class="fa fa-user"></i>
+            <span class="Errormsg-1" style="color:red;font-size:12px"></span>
+            <input name="Password" id="Password" type="password" placeholder="Password" />
+            <i class="fa fa-key"></i>
+            <span class="Errormsg-2" style="color:red;font-size:12px"></span>
+            @Html.ValidationMessageFor(m=>m.Password)
+            <a href="#">忘记密码</a>
+            <button type="submit">
+                <i class="spiner fa fa-check-square-o"></i>
+                <span class="state">Log in</span>
+            </button>
+        }
+        <div style="text-align: center;clear: both;margin-top: 80px"></div>
+        <div>
+            <p></p>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //数据验证
+            var phone = $("#Phone");
+            var password = $("#Password");
+            var Error_1 = $(".Errormsg-1");
+            var Error_2 = $(".Errormsg-2");
+            //定义正则表达式
+            var patt_1 = /^[a-zA-Z0-9]{6,16}$/;
+            var patt_2 = /^[a-z].{6,}[0-9]$/;
+            phone.change(function () {
+                var userval = phone.val();
+                if (userval == "") {
+                    Error_1.text("用户名不能为空");
+                } else if (!patt_1.test(userval)) {
+                    Error_1.text("用户名长度必须在6到16位之间");
+                } else {
+                    Error_1.text("");
+                }
+            }).keyup(function () {
+                $(this).change();
+            });
+            password.change(function () {
+                var passwordval = password.val();
+                if (passwordval == "") {
+                    Error_2.text("密码不能为空");
+                } else {
+                    Error_2.text("");
+                }
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+﻿@model Famer.Entity.Model.Comment_Top
+
+@{
+    Layout = "~/Views/Shared/_Layout4.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>助农讲堂</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/助农学堂.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="section">
+        <!--右边文本内容-->
+        <div class="right-content">
+            <div class="content-box clearfix">
+                <div class="content-list">
+                    <div db-list>
+                        @*<div id="commment-show" class="commment-show">
+                            @Html.Action("ForumSummery", "Article", new { ListId = Model.TopicID})
+                        </div>*@
+                    </div>
+                </div>
+                <div class="conter-right">
+                    <div class="new-class disc">
+                        <h2><b>精品课程</b></h2>
+                        <ul class="no-left">
+                            <li>
+                                <a href="http://www.cnhnb.com/xt/article-56945.html" title="白菜叶上有黑点是什么原因？有黑点的白菜还能吃吗？" target="_blank">
+                                    白菜叶上有黑点是什么原因？有黑点的白菜还能吃吗？
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.cnhnb.com/xt/article-56945.html" title="白菜叶上有黑点是什么原因？有黑点的白菜还能吃吗？" target="_blank">
+                                    白菜叶上有黑点是什么原因？有黑点的白菜还能吃吗？
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.cnhnb.com/xt/article-56945.html" title="白菜叶上有黑点是什么原因？有黑点的白菜还能吃吗？" target="_blank">
+                                    白菜叶上有黑点是什么原因？有黑点的白菜还能吃吗？
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.cnhnb.com/xt/article-56945.html" title="白菜叶上有黑点是什么原因？有黑点的白菜还能吃吗？" target="_blank">
+                                    白菜叶上有黑点是什么原因？有黑点的白菜还能吃吗？
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.cnhnb.com/xt/article-56945.html" title="白菜叶上有黑点是什么原因？有黑点的白菜还能吃吗？" target="_blank">
+                                    白菜叶上有黑点是什么原因？有黑点的白菜还能吃吗？
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="new-class disc">
+                        <h2><b>热门推荐</b></h2>
+                        <ul class="no-left" style="list-style: none">
+                            <li>
+                                <span class="topRank">1</span>
+                                <a href="http://www.cnhnb.com/xt/article-56945.html" title="白菜叶上有黑点是什么原因？有黑点的白菜还能吃吗？" target="_blank">
+                                    白菜叶上有黑点是什么原因？有黑点的白菜还能吃吗？
+                                </a>
+                            </li>
+                            <li>
+                                <span class="topRank">2</span>
+                                <a href="http://www.cnhnb.com/xt/article-56945.html" title="白菜叶上有黑点是什么原因？有黑点的白菜还能吃吗？" target="_blank">
+                                    白菜叶上有黑点是什么原因？有黑点的白菜还能吃吗？
+                                </a>
+                            </li>
+                            <li>
+                                <span class="topRank">3</span>
+                                <a href="http://www.cnhnb.com/xt/article-56945.html" title="白菜叶上有黑点是什么原因？有黑点的白菜还能吃吗？" target="_blank">
+                                    白菜叶上有黑点是什么原因？有黑点的白菜还能吃吗？
+                                </a>
+                            </li>
+                            <li>
+                                <span class="topRank">4</span>
+                                <a href="http://www.cnhnb.com/xt/article-56945.html" title="白菜叶上有黑点是什么原因？有黑点的白菜还能吃吗？" target="_blank">
+                                    白菜叶上有黑点是什么原因？有黑点的白菜还能吃吗？
+                                </a>
+                            </li>
+                            <li>
+                                <span class="topRank">5</span>
+                                <a href="http://www.cnhnb.com/xt/article-56945.html" title="白菜叶上有黑点是什么原因？有黑点的白菜还能吃吗？" target="_blank">
+                                    白菜叶上有黑点是什么原因？有黑点的白菜还能吃吗？
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="~/scripts/bootstrap.min.js"></script>
+    <script src="~/scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#report").click(function () {
+                var ListId = parseInt($("#report").attr("data-list"), 10);
+                var Content1 = $("#Content1").val() ? $("#Content1").val() : "";
+                $.ajax({
+                    url: "/Article/ForumSummery",
+                    data: JSON.stringify({ "ListId": ListId, "Content1": Content1 }),
+                    type: 'post',
+                    contentType: 'application/json;chatset=utf-8',
+                    success: function (data) {
+                        alert("评论成功");
+                        $("#comment-show").html(data);
+                    },
+                    error: function () {
+                        console.log("请求失败");
+                    }
+                }
+                 )
+            }
+            )
+        }
+        )
+    </script>
+    <script>
+    $(document).ready(function () {
+        $(".left-nav dt").click(function () {
+            $(this).parent().find("dd").slideToggle(200).parent().siblings().find("dd").slideUp(200);
+        });
+    })
+    </script>
+
+</body>
+</html>
+

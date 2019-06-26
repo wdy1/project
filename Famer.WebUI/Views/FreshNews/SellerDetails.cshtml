@@ -1,0 +1,138 @@
+﻿@model Famer.WebUI.Models.FreshNewsDetailViewModel
+@{
+    ViewBag.Title = "SellerDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/css/FreshNews.css" rel="stylesheet" />
+<link href="~/Content/css/优选一百样式.css" rel="stylesheet" />
+<link href="~/Content/css/新闻详情页样式.css" rel="stylesheet" />
+<h2>SellerDetails</h2>
+<div class="index">
+    <div class="h11" style="border-top: 1px  solid #ddd ;"></div>
+    <div class="youxuan">
+        <div class="xwxqybuju grid_c1">
+            <div class="pos-text">
+                <a href="#">农业头条</a>
+                <span>></span>
+                <a href="#">信息中心</a>
+                <span> ></span>
+                <a href="#">@Model.xiangqing.Type</a>
+                <span> ></span>
+                <a href="#">@Model.xiangqing.ClassName</a>
+            </div>
+            <div class="fx1 pad-r clearfix pos-rel">
+                <div class="l-list clearfix">
+                    <div class="fx1 add-type clearfix">
+                        <a class="fx1 type-shpw" href="#" target="_blank" style="display: inline;border-radius: 15px;background: #798d8f;width: 85px;height: 30px">
+                            <p style="font-size: 17px;margin: 0;padding: 5px">@Model.xiangqing.ClassName</p>
+                        </a>
+                    </div>
+                    <div class="fx1 pad-r clearfix pos-rel">
+                        <div class="l-list clearfix">
+                            <div class="clear"></div>
+                            <div class="pub-detail pad20 clearfix" style="margin-bottom: 20px">
+                                <h1 class="tit">@Model.xiangqing.Title</h1>
+                                <div class="fx1" style="height: 18px;margin-top: 20px">
+                                    <span class="gray-rad-50 rad50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    <span class="font-blank">作者&nbsp;&nbsp;&nbsp;&nbsp;西红柿&nbsp;&nbsp;</span>
+                                    <span class="font-gray">发布时间：@Model.xiangqing.Time</span>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class=" font-gray">
+                                        来源:<a>助农为乐网</a>
+
+                                    </span>
+                                </div>
+                                <div class="fxr font-gray">
+                                    <i class="zgncpwfont">
+                                        <img src="~/Images/点击.png" style="height: 18px ;width: 18px">1235
+                                    </i>
+                                    &nbsp;&nbsp;&nbsp;|
+                                    <span style="font-size: 16px">
+                                        &nbsp;<img src="~/Images/评论.png" style="width: 20px;height: 22px;padding-bottom:2px">18
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="h11"></div>
+                            <div class="introduce clearfix">
+                                @Model.xiangqing.Introduction
+                            </div>
+                            <div class="h11"></div>
+                            <div class="pub-content clearfix">
+                                <div class="con-tont clearfix">
+                                    <div class="content">
+                                        <p style="line-height: 40px">
+                                            @Model.xiangqing.Introduction
+                                        </p>
+                                        <p style="text-align: center">
+                                            <img src="@Model.xiangqing.Image">
+                                        </p>
+                                        <p style="line-height: 40px">
+                                            @Model.xiangqing.Contents
+                                        </p>
+                                    </div>
+                                    <div class="h11"></div>
+                                    <div class="youxuan " style="width:700px;text-align: center;margin-left: 70px">
+                                        <center>
+                                            <img src="~/Images/headerqrcode.png" style="width:130px" />
+                                        </center>
+                                        <div class="h11"></div>
+                                        <div class="clearfix" pad20 fs-14>
+                                            微信公众号：助农为乐，扫一扫二维码关注，您又多一个朋友
+                                        </div>
+                                        <div class="h11"></div>
+                                        <div class="tips-con clearfix">
+                                            <p class="fx1 clearfix">
+                                                【注】 版权声明：凡是本网原创作品，转载须注明来自农产品网，并做衔接http://www.znwl.com,违者必究<br />
+                                                凡本网注明“来源：XXX（非农产品网）”或未列明“原创”的作品，均转载或部分摘选自百度等媒体，或为本网会员发布，均为传递更多信息，并不代表农产品网赞同其观点和对其真实性负责。被转载网站、媒体、图片等，当事人若认为有侵权之处，或要求列明出处，请在第一时间联系我们删除或修改。电话：12312341231 电子邮件：123123。您的合作将不胜感谢。
+                                            </p>
+                                        </div>
+                                        <div class="h11"></div>
+                                        <div class="clearfix" style="text-align:center">
+                                            <p class="fenxiangkuang">分享</p>
+                                            <ul style="height:40px;width: 700px;text-align: center;padding-left: 0">                         
+                                                <li class="bds_more">
+                                                    <a href="https://im.qq.com/" target="_blank"><img src="~/Images/行业资讯/qq.png" class="fenxianglogo" /></a>
+                                                </li>
+                                                <li class="bds_more">
+                                                   <a href="#" target="_blank"><img src="~/Images/行业资讯/微信.png" class="fenxianglogo" /></a>
+                                                </li>
+                                                <li class="bds_more">
+                                                   <a href="https://weibo.com/" target="_blank"><img src="~/Images/行业资讯/新浪微博.png" class="fenxianglogo" /></a>
+                                                </li>
+                                                <li class="bds_more">
+                                                    <a href="#"><img src="~/Images/行业资讯/QQ空间.png" class="fenxianglogo" /></a>
+                                                </li>
+                                                <li class="bds_more">
+                                                   <a href="#" target="_blank"><img src="~/Images/行业资讯/腾讯微博.png" class="fenxianglogo" /></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="h11"></div>
+                                        <div class="clearfix about-info" style="border-top: 1px solid #9d9d9d">
+                                            <div class="img-list-shadow clearfix">
+                                                <div class="clearfix">
+                                                    <a style="font-size: 15px">相关推荐</a>
+                                                </div>
+                                                <ul class="threepic">
+                                                    @foreach (var item in Model.three)
+                                                    {
+                                                    <li style="float: left">
+                                                        <a href="#" title="@item.Title">
+                                                            <img style="width: 200px;height: 200px;margin: 10px " src="@item.Image">
+                                                            <p style="position: relative;top:-40px;left: 0px;text-overflow: ellipsis;font-size: 16px ">@item.Title</p>
+                                                        </a>
+                                                    </li>
+                                                    }                                                   
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

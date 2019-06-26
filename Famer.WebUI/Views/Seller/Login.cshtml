@@ -1,0 +1,89 @@
+﻿@using Famer.Entity.ViewModel;
+@model LoginViewModelForSel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="~/Content/css/商家登录.css" rel="stylesheet" />
+    <title>助农为乐 - 商家登录</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .field-validation-error{
+            margin-top: 3px;
+            background-color: #fff5d1;
+            border: 1px solid #fff5d1;
+            line-height: 25px;
+            padding-left: 5px;
+            position: absolute;
+            top: 98px;
+        }
+    </style>
+</head>
+<body id="mainframe">
+    <div class="w">
+        <div class="logo">
+            <a>
+                <span>助农为乐</span>
+                <span>商家后台</span>
+                <i class="dot"></i>
+            </a>
+        </div>
+    </div>
+    <div id="content">
+        <div class="login-wrap">
+            <div class="w">
+                <div class="login-form">
+                    <div class="login-title">
+                        <div class="login-text">
+                            <span style="color: #999;">助农为乐商家登录</span>
+                        </div>
+                    </div>
+                    <div class="login-tab">
+                        <a href="#" class="login-type">
+                            账户登录
+                        </a>
+                    </div>
+                    <div style="position: absolute;top: 80px;width: 100%;">
+                        @using (Html.BeginForm("Login", "Seller", FormMethod.Post, new { @class = "form" }))
+                        {
+                            @Html.ValidationSummary(true)
+                            <div class="item-info">
+                                <input name="Phone" id="Phone" class="text" type="text" maxlength="20" size="20" placeholder="已认证手机号" />
+                            </div>
+                            <div class="item-info" style="margin: 0">
+                                <input name="Password" id="Password" type="password" class="text" placeholder="密码" />
+                            </div>
+                            @Html.ValidationMessageFor(m => m.Password)
+                            <div class="item-info login-btn">
+                                <input type="submit" class="btn-entry" value="登&nbsp;&nbsp;录" />
+                            </div>
+                            <div class="item">
+                                <div style="float: left">
+                                    <a href="#">没有账户？</a>
+                                </div>
+                                <div style="float: right">
+                                    <a href="#">忘记密码？</a>
+                                </div>
+                            </div>
+                           }
+                    </div>
+                </div>
+            </div>
+            <div class="login-banner">
+                <div class="w">
+                    <div id="banner-bg" class="i-inner">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

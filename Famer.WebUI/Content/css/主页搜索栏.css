@@ -1,0 +1,379 @@
+﻿div.w{
+    position: relative !important;
+    width: 1190px !important;
+    margin: 0 auto;
+}
+.header-wrap .logo-2018{
+    margin: 40px 0 22px 0px;
+    padding: 0;
+    position: relative;
+    z-index: 12;
+    float: left;
+    width: 276px;
+    height: 50px;
+    cursor: default;
+}
+.logo-title{
+    cursor: default;
+    font-family: 华文隶书;
+    margin: 42px 0 25px 35px;
+    display: inline;
+}
+/* 输入框 */
+.header-wrap .search-2018{
+    width: 400px;
+    margin: 43px 70px 0 155px;
+    position: relative;
+    float: left;
+    z-index: 11;
+}
+/* 搜索结果列表 */
+.header-wrap .search-2018 #shelper{
+    position: absolute;
+    width: 395px;
+    overflow: hidden;
+    top: 44px;
+    border: 1px solid #888;
+    background: #f1f1f1;
+}
+.header-wrap .search-2018 .form{
+    width: 100%;
+    height: 40px;
+    position: relative;
+}
+.header-wrap .search-2018 .form a{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 40px;
+
+}
+.header-wrap .search-2018 input.text{
+    font-size: 18px;
+    color: #111111;
+    width: 100%;
+    float: left;
+    padding: 7px 15px;
+    padding-left: 7px;
+    border: solid 2px #888;
+    outline: none;
+    margin-bottom: 4px;
+    transition: all 0.2s ease-out 0s;
+}
+.header-wrap .search-2018 .form span{
+    position: absolute;
+    font-size: 18px;
+    color: #ccc;
+    top: 9px;
+    right: 9px;
+
+}
+.header-wrap .search-2018 .text.f1{
+    border: 2px solid #111;
+    border-right-width: 40px;
+}
+.header-wrap .search-2018 input.text:focus+a span{
+    display: block;
+}
+/* 购物车 */
+.header-wrap .mycart-2018{
+    position: relative;
+    margin: 43px 0 0px 0;
+    float: left;
+    z-index: 11;
+    height: 38px;
+}
+.header-wrap .mycart-2018:hover .spacer{
+    position: absolute;
+    right: 0;
+    top: -7px;
+    height: 12px;
+    width: 138px;
+    background: #fff;
+}
+/* 京东很喜欢在内部div搞边框啊================*/
+.header-wrap .mycart-2018 .cw-icon{
+    box-sizing: content-box;
+    width: 64px;
+    padding: 0 30px 0 42px;
+    height: 100%;
+    border: 1px solid #dfdfdf;
+    line-height: 100%;
+}
+.header-wrap .mycart-2018 .cw-icon i{
+    position: absolute;
+    display: block;
+    overflow: hidden;
+}
+.header-wrap .mycart-2018 i.ci-left{
+    left: 10px;
+    width: 18px;
+    height: 18px;
+    top: 9px;
+    font-style: normal;
+    font-size: 18px;
+}
+.header-wrap .mycart-2018 .ci-count{
+    position: absolute;
+    top: -5px;
+    left: auto;
+    right: 0;
+    display: inline-block;
+    padding: 1px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    background-color: #f30213;
+    border-radius: 7px;
+    font-style: normal;
+    min-width: 14px;
+}
+.header-wrap .mycart-2018 .cw-icon a{
+    color: #666;
+    text-decoration: none;
+    height: 100%;
+    position: absolute;
+    top: 12px;
+}
+.header-wrap .mycart-2018 .dropdown-layer{
+    position: absolute;
+    display: none;
+}
+.header-wrap .mycart-2018:hover .dropdown-layer{
+    box-sizing: content-box;
+    display: block;
+    right: 0;
+    width: 308px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    top: 40px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+.header-wrap .mycart-2018 .dropdown-layer .prompt{
+    padding: 10px 15px;
+}
+.header-wrap .mycart-2018 .dropdown-layer .nogoods{
+    box-sizing: content-box;
+    padding-left: 30px;
+    height: 49px;
+    line-height: 49px;
+    color: #999;
+    overflow: hidden;
+}
+.header-wrap .mycart-2018 .nogoods b{
+    float: left;
+    width: 56px;
+    height: 49px;
+    background-image: url("../../Images/settleup-nogoods.png");
+}
+/*  购物车中有商品时 */
+.header-wrap .mycart-2018 .Cart-content{
+    font-family: "microsoft yahei";
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    background: #fff;
+    color: #232321;
+}
+.header-wrap .mycart-2018 .cart-head{
+    height: 25px;
+    padding: 6px 8px;
+    box-sizing: content-box;
+    line-height: 25px;
+    overflow: hidden;
+    zoom: 1;
+}
+.header-wrap .mycart-2018 .Cart-content .cart-head-title{
+    font-size: 12px;
+    font-weight: 700;
+}
+.header-wrap .mycart-2018 .cart-inner{
+    background: #fff;
+    height: auto;
+    max-height: 344px;
+    overflow-y: auto;
+    zoom: 1;
+}
+.header-wrap .mycart-2018 #cart-list{
+    list-style: none;
+    box-sizing: content-box;
+    /* 最令人恶心的一处  在浏览器后台根本看不到 padding:40px 所以导致如果不设置 padding:0 莫名其妙的该元素向内缩进40px  */
+    padding: 0 !important;
+    margin: 0;
+    margin-top: -1px;
+}
+.header-wrap .mycart-2018 #cart-list li.dt{
+    background: #bffab1;
+}
+.header-wrap .mycart-2018 #cart-list li{
+    box-sizing: content-box;
+    padding: 8px 10px;
+    border-top: 1px dotted #ccc;
+    overflow: hidden;
+    line-height: 17px;
+    vertical-align: bottom;
+    list-style: none;
+    zoom: 1;
+}
+.header-wrap .mycart-2018 #cart-list .fl{
+    float: left;
+}
+.header-wrap .mycart-2018 #cart-list .fr{
+    float: right;
+}
+.header-wrap .mycart-2018 #cart-list .hl-orange{
+    background: #f60;
+    margin-right: 5px;
+    display: inline-block;
+    padding: 0 2px;
+    font: 12px/16px simsun,"Hiragino Sans GB";
+    box-sizing: content-box;
+}
+.header-wrap .mycart-2018 #cart-list em{
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 400;
+}
+.header-wrap .mycart-2018 #cart-list .cart-img{
+    margin-right: 10px;
+}
+.header-wrap .mycart-2018 #cart-list .cart-des{
+    width: 120px;
+    height: 52px;
+    overflow: hidden;
+}
+.header-wrap .mycart-2018 #cart-list .cart-des a{
+    text-decoration: none;
+}
+.header-wrap .mycart-2018 #cart-list .cart-detail{
+    float: right;
+    text-align: right;
+    overflow: hidden;
+}
+.header-wrap .mycart-2018 #cart-list .p-price{
+    font-weight: 700;
+    overflow: hidden;
+    color: #e4393c;
+}
+.header-wrap .mycart-2018 #cart-list a.delete{
+    text-decoration: none;
+}
+.header-wrap .mycart-2018 .cart-footer{
+    padding: 8px;
+    box-sizing: content-box;
+    background: #f5f5f5;
+    overflow: hidden;
+    zoom: 1;
+    text-align: right;
+}
+.header-wrap .mycart-2018 .cart-total{
+    float: left;
+    line-height: 29px;
+    color: #666;
+}
+.header-wrap .mycart-2018 .cart-footer a{
+    text-decoration: none;
+    float: right;
+    padding: 0 10px;
+    box-sizing: content-box;
+    background: #E4393C;
+    text-align: center;
+    line-height: 29px;
+    font-weight: 700;
+    border-radius: 3px;
+    color: #fff;
+    height: 29px;
+}
+/* 扫码 */
+.header-wrap .saoma-2018{
+    position: relative;
+    margin-top: 43px;
+    float: right;
+    margin-left: 20px;
+    width: 120px;
+}
+.header-wrap .saoma-2018 a.saoma-link{
+    box-sizing: content-box;
+    text-align: center;
+    /* 又是个内部边框 */
+    border: 1px solid #dfdfdf;
+    display: block;
+    height: 38px;
+    line-height: 38px;
+    position: relative;
+    padding-left: 30px;
+    background-color: #f9f9f9;
+    color: #232321;
+    text-decoration: none;
+}
+/* 在这里遇到一个奇怪的现象 当鼠标悬停在a标签上时 二维码图片出现 一切正常
+   而当我把 visibility这一变化去掉 它依然可以正常变化 但是它(二维码图片)会挡住下面的元素
+   表现为 鼠标无法点击用来隐藏图片的区域 不管这个区域有什么 鼠标无法点击 但可视
+   基本确定 设置 visibile 是为了让下面的元素可点击 否则光opacity=0无法实现
+*/
+.header-wrap .saoma-2018 a.saoma-link:hover+.saoma-photo{
+    opacity: 1;
+    visibility: visible;
+}
+.header-wrap .saoma-2018 a.saoma-link i{
+    font-size: 25px;
+    position: absolute;
+    top: 7px;
+    left: 8px;
+}
+.header-wrap .saoma-2018 a.saoma-link .saoma-text{
+    display: inline-block;
+}
+
+.header-wrap .saoma-2018 .saoma-photo{
+    box-sizing: content-box;
+    position: absolute;
+    border: 1px solid #dfdfdf;
+    padding: 5px;
+    width: 108px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+    zoom: 1;
+    top: 39px;
+    transition: all 0.3s ease-in 0s;
+    background-color: #FFFFFF;
+}
+.header-wrap .saoma-2018 .saoma-photo .saoma-img{
+    width: 110px;
+    height: 110px;
+}
+.header-wrap .saoma-img img{
+    width: 100%;
+    height: 100%;
+    border: 0;
+    vertical-align: center;
+}
+/* 热词 */
+/* 在这里遇到了一个现象 当我在mycart那个div中设置了一个padding-buttom时 会导致.hotwords元素位置严重下降
+    而且值越大.hotwords元素有向左移动的趋势,基于此 确定所有的元素都在环绕第一个logo 它是浮动的
+*/
+.header-wrap .hotwords-2018{
+    box-sizing: content-box;
+    height: 24px;
+    line-height: 24px;
+    margin-left: 0px;
+    width: 447px;
+    padding-left: 155px;
+    font-size: 14px;
+    color: #333;
+    float: left;
+    overflow: hidden;
+}
+.header-wrap .hotwords-2018 a.highlight{
+    color: #f30213;
+}
+.header-wrap .hotwords-2018 a{
+    margin-right: 10px;
+    color: #666;
+    text-decoration: none;
+}
+.header-wrap .hotwords-2018 a:hover{
+    color: #00c65d;
+}

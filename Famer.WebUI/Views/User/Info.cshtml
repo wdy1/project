@@ -1,0 +1,375 @@
+﻿@model Famer.Entity.Model.UserInfo
+
+@{
+    ViewBag.Title = "个人中心";
+    Layout = "~/Views/Shared/_UserInfoLayout.cshtml";
+}
+<link href="~/Content/css/个人中心主页.css" rel="stylesheet" />
+<!-- 个人中心内容 -->
+<div id="container">
+    <div class="w">
+        <div id="content">
+            <div id="sub">
+                <div id="menu">
+                    <dl class="sub-fore">
+                        <dt>设置</dt>
+                        <dd><a href="#" style="color: #e4393c">个人信息</a></dd>
+                        <dd><a href="#" target="_self">我的订单</a></dd>
+                        <dd><a href="#" target="_self">账号绑定</a></dd>
+                        <dd><a href="#" target="_self">收货地址</a></dd>
+                        <dd><a href="#" target="_self">邮件订阅</a></dd>
+                        <dd><a href="#" target="_self">应用授权</a></dd>
+                        <dd><a href="#" target="_self">采购需求单</a></dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="main">
+                <div class="user-main">
+                    <div class="mt">
+                        <ul class="info-list">
+                            <li class="fore-1 now">
+                                <a href="#" class="op">基本信息</a>
+                            </li>
+                            <li class="fore-2">
+                                <a href="#" class="op">头像照片</a>
+                            </li>
+                            <li class="fore-3">
+                                <a href="#" class="op">更多个人信息</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mc">
+                        <div class="mc-item1">
+                            <div class="basi-set">
+                                @using (Html.BeginForm("Info", "User", FormMethod.Post, new { @class = "form-horizontal",id="userform" }))
+                                {
+                                    <input name="UserId" style="display:none" value="@Model.UserID"/>
+                                    <input id="Sex" name="Sex" style="display:none" value="@Model.Sex"/>
+                                    <input id="UserName" name="UserName" value="@Model.UserName" style="display:none"/>
+                                    <input id="Nian" name="Year" value="@Model.year" style="display:none"/>
+                                    <input id="Yue" name="Month" value="@Model.month" style="display:none"/>
+                                    <input id="Ri" name="Day" value="@Model.day" style="display:none"/>
+                                    <input id="Intro" name="UserIntro" value="@Model.UserIntroduction" style="display:none"/>
+                                    <input id="Email" name="Email" value="@Model.Email" style="display:none"/>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">用户ID:</label>
+                                        <p class="col-md-9">
+                                            <strong>@Model.UserID</strong>
+                                        </p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3"><em>*</em>用户名:</label>
+                                        <div class="col-md-9" style="padding-left: 0">
+                                            <strong style="margin-top: 6px;display: inline-block">@Model.UserName</strong>
+                                            <a href="#" class="set-change">修改</a>
+                                            <span style="color: #999">可用于登录，请牢记</span>
+                                        </div>
+                                        <div class="col-md-9" style="display: none;padding-left: 0">
+                                            <input id="Username" type="text" autocomplete="off" class="form-control" style="width: 50%" />
+                                            <p>支持中文、英文、数字、"-"、"_"的组合，至少2个字符</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">性别:</label>
+                                        <div class="col-md-9" style="padding-left: 0;padding-top: 6px">
+                                            <input class="sexradio" type="radio" name="sex" value="男" />
+                                            <label class="mr10">男</label>
+                                            <input class="sexradio" type="radio" name="sex" value="女" />
+                                            <label class="mr10">女</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3"><em>*</em>生日:</label>
+                                        <div class="col-md-9" style="padding-left: 0">
+                                            <select name="Year" id="year" class="form-control" style="width: 25%;display: inline-block">
+                                                <option value="0" selected="selected">请选择</option>
+                                                <option value="2018">2018</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2016">2016</option>
+                                                <option value="2015">2015</option>
+                                                <option value="2014">2014</option>
+                                                <option value="2013">2013</option>
+                                                <option value="2012">2012</option>
+                                                <option value="2011">2011</option>
+                                                <option value="2010">2010</option>
+                                                <option value="2009">2009</option>
+                                                <option value="2008">2008</option>
+                                                <option value="2007">2007</option>
+                                                <option value="2006">2006</option>
+                                                <option value="2005">2005</option>
+                                                <option value="2004">2004</option>
+                                                <option value="2003">2003</option>
+                                                <option value="2002">2002</option>
+                                                <option value="2001">2001</option>
+                                                <option value="2000">2000</option>
+                                                <option value="1999">1999</option>
+                                                <option value="1998">1998</option>
+                                                <option value="1997">1997</option>
+                                                <option value="1996">1996</option>
+                                                <option value="1995">1995</option>
+                                                <option value="1994">1994</option>
+                                                <option value="1993">1993</option>
+                                                <option value="1992">1992</option>
+                                                <option value="1991">1991</option>
+                                                <option value="1900">1990</option>
+                                                <option value="1989">1989</option>
+                                                <option value="1988">1988</option>
+                                                <option value="1987">1987</option>
+                                                <option value="1986">1986</option>
+                                                <option value="1985">1985</option>
+                                                <option value="1984">1984</option>
+                                                <option value="1983">1983</option>
+                                                <option value="1982">1982</option>
+                                                <option value="1981">1981</option>
+                                                <option value="1980">1980</option>
+                                                <option value="1979">1979</option>
+                                                <option value="1978">1978</option>
+                                                <option value="1977">1977</option>
+                                                <option value="1976">1976</option>
+                                                <option value="1975">1975</option>
+                                                <option value="1974">1974</option>
+                                                <option value="1973">1973</option>
+                                                <option value="1972">1972</option>
+                                                <option value="1971">1971</option>
+                                                <option value="1970">1970</option>
+                                            </select>
+                                            <span class="m5">年</span>
+                                            <select name="Month" id="month" class="form-control" style="width: 25%;display: inline-block">
+                                                <option value="0" selected="selected">请选择</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                            </select>
+                                            <span class="m5">月</span>
+                                            <select name="Day" id="day" class="form-control" style="width: 25%;display: inline-block">
+                                                <option value="0" selected="selected">请选择</option>
+                                                <option value="1">1</option>
+                                                <!-- 天数由月份和年份动态生成 -->
+                                            </select>
+                                            <span class="m5">日</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3"><em>*</em>个人介绍:</label>
+                                        <div class="col-md-9" style="padding-left: 0">
+                                            <textarea id="Intro2" placeholder="这个人懒死了，什么也没写" class="form-control" rows="10" cols="15">@Model.UserIntroduction</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">邮箱:</label>
+                                        <div class="col-md-9" style="padding-left: 5px">
+                                            <strong style="margin-top: 6px;display: inline-block">@Model.Email</strong>
+                                            <a href="#" class="set-change">更改验证</a>
+                                        </div>
+                                        <div class="col-md-9" style="padding-left: 5px;display: none">
+                                            <input id="Email2" autocomplete="off" type="email" class="form-control" style="width: 70%" />
+                                        </div>
+                                    </div>
+                                    <button id="Submit" type="button" class="btn col-md-offset-3 col-md-3">提交</button>
+                                }
+                            </div>
+                            <div class="user-info">
+                                <div class="u-img">
+                                    <img src="@Url.Action("GetImage","User",new { UserId=Model.UserID})" />
+                                    <div class="mask"></div>
+                                </div>
+                                <div class="u-info">
+                                    <div>
+                                        <b>用户名：枪火PInk</b>
+                                    </div>
+                                    <div class="u-level">
+                                        <span class="rank">
+                                            <s></s>
+                                            <a href="#" target="_blank" title="475">分享点数472</a>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        个人信用：<a href="#" target="_blank">65.5</a>
+                                    </div>
+                                    <div>用户类型：@Model.UserRole</div>
+                                    <div>会员类型：普通会员</div>
+                                </div>
+                            </div>
+                            <div class="annotate">
+                                注：修改手机请到<a href="#">账户安全</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="mc-item2">
+                            <div class="photo-set">
+                                <form id="loadimg" class="form-horizontal" enctype="multipart/form-data" action="/User/UploadHeaderImg" method="post">
+                                    @Html.Hidden("UserId",Model.UserID)
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">上传自定义头像</label>
+                                        <div class="col-md-3">
+                                            <a class="btn" href="javascript:;" style="padding-top: 6px;cursor: default;color: #337ab7">
+                                                Choose File...
+                                                <input type="file" name="Image" size="40" onchange="showPreview(this)" />
+                                            </a>
+                                        </div>
+                                        <span class="label label-info col-md-4" id="upload-file-info"></span>
+                                    </div>
+                                </form>
+                                <div class="img-count">
+                                    <div class="header-img">
+                                        @if (Model.ImageData == null)
+                                        {
+                                            <img id="MyHeader" src="~/Images/默认头像.jpg" height="150" width="150" />
+                                        }
+                                        else
+                                        {
+                                            <img id="MyHeader" src="@Url.Action("GetImage","User",new { UserId=Model.UserID})" width="150" height="150"/>
+                                        }
+                                    </div>
+                                </div>
+                                <div class="recommend">
+                                    <h3>推荐头像</h3>
+                                </div>
+                                <div class="recommend-img">
+                                    <!---->
+                                    <button type="button" class="btn" id="savehead">保存头像</button>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="mc-item3">3</div>
+                    </div>
+                </div>
+            </div>
+            <!-- 清除浮动 使得父元素content拥有高度-->
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    //即时预览头像
+    function showPreview(source) {
+        var file = source.files[0];
+        if (window.FileReader) {
+            var fr = new FileReader();
+            console.log(fr);
+            var myheader = document.getElementById("MyHeader");
+            fr.onloadend = function (e) {
+                myheader.src = e.target.result;
+            };
+            fr.readAsDataURL(file);
+
+        }
+    }
+    $(document).ready(function () {
+        // 更改样式
+        var ops=$(".op");
+        ops.each(function () {
+            $(this).on("click",function () {
+                $(this).parent("li").eq(0).addClass("now").siblings().removeClass("now");
+            })
+        });
+        ops.eq(0).click(function () {
+            $(".mc-item1").show(1000).siblings().hide();
+        });
+        ops.eq(1).click(function () {
+            $(".mc-item2").show(1000).siblings().hide();
+        });
+        ops.eq(2).click(function () {
+            $(".mc-item3").show(1000).siblings().hide();
+        });
+        $(".set-change").click(function () {
+            $(this).parent("div").eq(0).hide().next().show();
+        });
+
+        function f(year,month){
+            var d=new Date(year,month,0);
+            return d.getDate();
+        }
+        // 年月份改变时更新天数
+        $("#year").val($("#Nian").val());
+        $("#month").val($("#Yue").val());
+        $("#day").val($("#Ri").val());
+        $("#month").change(function () {
+            var year = parseInt($("#year option:selected").val(), 10);
+            var month = parseInt($("#month option:selected").val(), 10);
+            $("#Yue").attr("value", month);
+            var date = f(year, month);
+            // 获取当前年份、月份对应的天数
+            if (month !== 0) {
+                $("#day").empty();
+                for (var i = 1; i <= date; i++) {
+                    var option = $("<option></option>");
+                    option.text(i);
+                    option.attr("value", i);
+                    $("#day").append(option);
+                }
+            } else {
+                $("#Ri").attr("value", 0);
+                var first = $("<option></option>");
+                first.text("请选择");
+                first.attr("value", 0);
+                $("#day").empty().append(first);
+            }
+        });
+        $("#year").change(function () {
+            var year = parseInt($("#year option:selected").val(), 10);
+            var month = parseInt($("#month option:selected").val(), 10);
+            $("#Nian").attr("value", year);
+            var date = f(year, month);
+            // 获取当前年份、月份对应的天数
+            if (month !== 0) {
+                $("#day").empty();
+                for (var i = 1; i <= date; i++) {
+                    var option = $("<option></option>");
+                    option.text(i);
+                    option.attr("value", i);
+                    $("#day").append(option);
+                }
+            } else {
+                var first = $("<option></option>");
+                first.text("请选择");
+                first.attr("value", 0);
+                $("#day").empty().append(first);
+            }
+        });
+        $("#day").change(function () {
+            var day = parseInt($("#day option:selected").val());
+            $("#Ri").attr("value", day);
+        })
+        //性别的提交方式 不填默认为保密
+        var sex = $("#Sex").val() ? $("#Sex").val() : "保密";
+        $("#Sex").attr("value", sex);
+        $(".sexradio").each(function () {
+            $(this).click(function () {
+                var sex = $(this).val();
+                if ($(this).prop("checked")) {
+                    $("#Sex").attr("value", sex);
+                }
+            })
+        });
+        //用户名修改逻辑不填默认为之前的用户名
+        var fir = $("#UserName").val();
+        var f_em = $("#Email").val();
+        $("#Submit").click(function (e) {
+            var s_em = $("#Email2").val();
+            var sec = $("#Username").val();
+            var intro_text=$("#Intro2").val();
+            $("#UserName").attr("value", sec ? sec : fir);
+            $("#Intro").val(intro_text);
+            $("#Email").attr("value", s_em ? s_em : f_em);
+            $("#userform").submit();
+        })
+        $("input[type='file']").eq(0).change(function () {
+            $("#upload-file-info").html($(this).val());
+        })
+        $("#savehead").click(function () {
+            $("#loadimg").submit();
+        })
+    })
+</script>
+
